@@ -1,0 +1,1075 @@
+.favoritos-page {
+  width: 100%;
+  min-height: 100vh;
+
+  box-sizing: border-box;
+
+  background: #f7f9fc;
+
+  color: #111827;
+
+  padding: 20px 20px 130px;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.favoritos-header {
+  width: 100%;
+  max-width: 700px;
+
+  margin: 0 auto 20px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+}
+
+.favoritos-back {
+  width: 42px;
+  height: 42px;
+
+  flex: 0 0 42px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  color: #1a2240;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 2px 8px rgba(15, 23, 42, 0.06);
+
+  transition:
+    transform 0.15s ease,
+    background 0.15s ease;
+}
+
+.favoritos-back:hover {
+  background: #f1f5f9;
+
+  transform: translateX(-1px);
+}
+
+.favoritos-header-icon {
+  width: 58px;
+  height: 58px;
+
+  flex: 0 0 58px;
+
+  border-radius: 50%;
+
+  background: #1a2240;
+
+  color: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.favoritos-header-info {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.favoritos-header-info h1 {
+  margin: 0;
+
+  color: #111b4d;
+
+  font-size: 22px;
+  line-height: 1.2;
+
+  font-weight: 700;
+}
+
+.favoritos-header-info span {
+  margin-top: 5px;
+
+  color: #64748b;
+
+  font-size: 14px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   PESQUISA
+========================================================= */
+
+.favoritos-search {
+  width: 100%;
+  max-width: 700px;
+
+  height: 56px;
+
+  box-sizing: border-box;
+
+  margin: 0 auto 16px;
+
+  padding: 0 16px;
+
+  border-radius: 24px;
+
+  background: #ffffff;
+
+  color: #64748b;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  box-shadow:
+    0 2px 10px rgba(15, 23, 42, 0.04);
+}
+
+.favoritos-search input {
+  width: 100%;
+  height: 100%;
+
+  min-width: 0;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: #111827;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 15px;
+}
+
+.favoritos-search input::placeholder {
+  color: #94a3b8;
+}
+
+.favoritos-search-clear {
+  width: 32px;
+  height: 32px;
+
+  flex: 0 0 32px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #f1f5f9;
+
+  color: #64748b;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   FILTROS DE CORES
+========================================================= */
+
+.favoritos-filtros-cores {
+  width: 100%;
+  max-width: 700px;
+
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  overflow-x: auto;
+
+  padding:
+    2px 2px 10px;
+
+  scrollbar-width: none;
+}
+
+.favoritos-filtros-cores::-webkit-scrollbar {
+  display: none;
+}
+
+.favoritos-filtro {
+  flex: 0 0 auto;
+
+  min-height: 38px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  padding: 0 13px;
+
+  border: 1px solid #e5eaf0;
+
+  border-radius: 19px;
+
+  background: #ffffff;
+
+  color: #64748b;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+
+  cursor: pointer;
+
+  transition:
+    background 0.15s ease,
+    color 0.15s ease,
+    border-color 0.15s ease,
+    transform 0.15s ease;
+}
+
+.favoritos-filtro:hover {
+  transform: translateY(-1px);
+}
+
+.favoritos-filtro span {
+  width: 12px;
+  height: 12px;
+
+  display: block;
+
+  flex: 0 0 12px;
+
+  border-radius: 50%;
+}
+
+.favoritos-filtro.active {
+  border-color: #042251;
+
+  background: #042251;
+
+  color: #ffffff;
+}
+
+
+/* CORES DOS FILTROS */
+
+.favoritos-filtro-yellow span {
+  background: #f5df74;
+}
+
+.favoritos-filtro-green span {
+  background: #9ed8a6;
+}
+
+.favoritos-filtro-blue span {
+  background: #8ebfe3;
+}
+
+.favoritos-filtro-cyan span {
+  background: #7dd3e8;
+}
+
+.favoritos-filtro-pink span {
+  background: #e7a6c6;
+}
+
+.favoritos-filtro-purple span {
+  background: #b9a1e8;
+}
+
+
+/* =========================================================
+   CONTEÚDO
+========================================================= */
+
+.favoritos-content {
+  width: 100%;
+  max-width: 700px;
+
+  margin: 10px auto 0;
+}
+
+
+/* =========================================================
+   LISTA
+========================================================= */
+
+.favoritos-list {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 14px;
+}
+
+
+/* =========================================================
+   CARD DO FAVORITO
+========================================================= */
+
+.favoritos-card {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 18px;
+
+  border: none;
+
+  border-radius: 22px;
+
+  background: #ffffff;
+
+  color: #111827;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 3px 12px rgba(15, 23, 42, 0.06);
+
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.favoritos-card:hover {
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 6px 18px rgba(15, 23, 42, 0.09);
+}
+
+.favoritos-card:active {
+  transform: scale(0.995);
+}
+
+
+/* =========================================================
+   TOPO DO CARD
+========================================================= */
+
+.favoritos-card-top {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 12px;
+}
+
+.favoritos-reference {
+  min-width: 0;
+
+  color: #111b4d;
+
+  font-size: 17px;
+
+  line-height: 1.3;
+
+  font-weight: 700;
+}
+
+.favoritos-version {
+  flex: 0 0 auto;
+
+  min-width: 42px;
+  height: 28px;
+
+  padding: 0 9px;
+
+  box-sizing: border-box;
+
+  border-radius: 14px;
+
+  background: #f1f5f9;
+
+  color: #1a2240;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   TEXTO DO VERSÍCULO
+========================================================= */
+
+.favoritos-card-text {
+  margin: 14px 0 0;
+
+  color: #334155;
+
+  font-family:
+    Georgia,
+    'Times New Roman',
+    serif;
+
+  font-size: 16px;
+
+  line-height: 1.7;
+
+  font-weight: 400;
+}
+
+
+/* =========================================================
+   RODAPÉ DO CARD
+========================================================= */
+
+.favoritos-card-bottom {
+  margin-top: 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  color: #94a3b8;
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+.favoritos-card-color {
+  width: 14px;
+  height: 14px;
+
+  border-radius: 50%;
+
+  display: block;
+
+  box-shadow:
+    0 0 0 1px rgba(15, 23, 42, 0.08);
+}
+
+.favoritos-card-color-yellow {
+  background: #f5df74;
+}
+
+.favoritos-card-color-green {
+  background: #9ed8a6;
+}
+
+.favoritos-card-color-blue {
+  background: #8ebfe3;
+}
+
+.favoritos-card-color-cyan {
+  background: #7dd3e8;
+}
+
+.favoritos-card-color-pink {
+  background: #e7a6c6;
+}
+
+.favoritos-card-color-purple {
+  background: #b9a1e8;
+}
+
+
+/* =========================================================
+   ESTADO VAZIO
+========================================================= */
+
+.favoritos-empty {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 48px 24px;
+
+  border-radius: 28px;
+
+  background: #ffffff;
+
+  text-align: center;
+
+  box-shadow:
+    0 3px 12px rgba(15, 23, 42, 0.05);
+}
+
+.favoritos-empty-icon {
+  width: 68px;
+  height: 68px;
+
+  margin: 0 auto 18px;
+
+  border-radius: 50%;
+
+  background: #eef2f7;
+
+  color: #1a2240;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.favoritos-empty h2 {
+  margin: 0;
+
+  color: #111b4d;
+
+  font-size: 20px;
+
+  line-height: 1.3;
+}
+
+.favoritos-empty p {
+  max-width: 400px;
+
+  margin: 10px auto 22px;
+
+  color: #64748b;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+}
+
+.favoritos-empty button {
+  height: 48px;
+
+  padding: 0 20px;
+
+  border: none;
+
+  border-radius: 24px;
+
+  background: #042251;
+
+  color: #ffffff;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   OVERLAY DO BOTTOM SHEET
+========================================================= */
+
+.favoritos-sheet-overlay {
+  position: fixed;
+  z-index: 2000;
+  inset: 0;
+  background: rgba(4, 10, 25, 0.55);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0;
+  box-sizing: border-box;
+  animation:
+    favoritos-overlay-in
+    0.18s ease;
+}
+
+
+/* =========================================================
+   BOTTOM SHEET
+========================================================= */
+
+.favoritos-bottom-sheet {
+  width: 100%;
+  max-width: 620px;
+
+  max-height: 88vh;
+
+  box-sizing: border-box;
+
+  overflow-y: auto;
+
+  padding:
+    10px 24px 24px;
+
+  border-radius:
+    30px
+    30px
+    24px
+    24px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 -8px 30px
+    rgba(15, 23, 42, 0.16);
+
+  animation:
+    favoritos-sheet-up
+    0.2s ease;
+}
+
+.favoritos-sheet-handle {
+  width: 70px;
+  height: 4px;
+
+  margin: 4px auto 20px;
+
+  border-radius: 4px;
+
+  background: #d8dee8;
+}
+
+
+/* =========================================================
+   HEADER DO BOTTOM SHEET
+========================================================= */
+
+.favoritos-sheet-header {
+  width: 100%;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 16px;
+}
+
+.favoritos-sheet-header > div {
+  min-width: 0;
+}
+
+.favoritos-sheet-version {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 26px;
+
+  padding: 0 9px;
+
+  border-radius: 13px;
+
+  background: #eef2f7;
+
+  color: #1a2240;
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+.favoritos-sheet-header h2 {
+  margin: 9px 0 0;
+
+  color: #111b4d;
+
+  font-size: 20px;
+
+  line-height: 1.3;
+
+  font-weight: 700;
+}
+
+.favoritos-sheet-close {
+  width: 40px;
+  height: 40px;
+
+  flex: 0 0 40px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #f1f5f9;
+
+  color: #475569;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   COR DA MARCAÇÃO NO SHEET
+========================================================= */
+
+.favoritos-sheet-color-info {
+  margin-top: 17px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  color: #64748b;
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+.favoritos-sheet-color-dot {
+  width: 14px;
+  height: 14px;
+
+  border-radius: 50%;
+
+  display: block;
+}
+
+.favoritos-sheet-color-yellow {
+  background: #f5df74;
+}
+
+.favoritos-sheet-color-green {
+  background: #9ed8a6;
+}
+
+.favoritos-sheet-color-blue {
+  background: #8ebfe3;
+}
+
+.favoritos-sheet-color-cyan {
+  background: #7dd3e8;
+}
+
+.favoritos-sheet-color-pink {
+  background: #e7a6c6;
+}
+
+.favoritos-sheet-color-purple {
+  background: #b9a1e8;
+}
+
+
+/* =========================================================
+   TEXTO DO BOTTOM SHEET
+========================================================= */
+
+.favoritos-sheet-text {
+  margin-top: 20px;
+
+  padding:
+    18px;
+
+  border-radius: 20px;
+
+  background: #f8fafc;
+}
+
+.favoritos-sheet-text p {
+  margin: 0;
+
+  color: #334155;
+
+  font-family:
+    Georgia,
+    'Times New Roman',
+    serif;
+
+  font-size: 16px;
+
+  line-height: 1.75;
+}
+
+.favoritos-sheet-text p + p {
+  margin-top: 14px;
+
+  padding-top: 14px;
+
+  border-top:
+    1px solid #e5eaf0;
+}
+
+.favoritos-sheet-text strong {
+  margin-right: 4px;
+
+  color: #1a2240;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 12px;
+
+  vertical-align: super;
+}
+
+
+/* =========================================================
+   AÇÕES DO BOTTOM SHEET
+========================================================= */
+
+.favoritos-sheet-actions {
+  margin-top: 20px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+.favoritos-button-primary,
+.favoritos-button-danger {
+  width: 100%;
+
+  min-height: 52px;
+
+  border-radius: 26px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.favoritos-button-primary {
+  border: none;
+
+  background: #042251;
+
+  color: #ffffff;
+}
+
+.favoritos-button-danger {
+  border: 1px solid #e5e7eb;
+
+  background: #ffffff;
+
+  color: #dc2626;
+}
+
+
+/* =========================================================
+   ANIMAÇÕES
+========================================================= */
+
+@keyframes favoritos-overlay-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes favoritos-sheet-up {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================================================
+   TABLET / DESKTOP
+========================================================= */
+
+@media (min-width: 768px) {
+  .favoritos-page {
+    padding:
+      28px 24px 140px;
+  }
+
+  .favoritos-header-info h1 {
+    font-size: 24px;
+  }
+
+  .favoritos-card {
+    padding: 20px;
+  }
+
+  .favoritos-card-text {
+    font-size: 17px;
+  }
+}
+
+
+/* =========================================================
+   CELULAR
+========================================================= */
+
+@media (max-width: 600px) {
+  .favoritos-page {
+    padding:
+      18px 16px 125px;
+  }
+
+  .favoritos-header {
+    gap: 11px;
+
+    margin-bottom: 18px;
+  }
+
+  .favoritos-back {
+    width: 40px;
+    height: 40px;
+
+    flex-basis: 40px;
+  }
+
+  .favoritos-header-icon {
+    width: 54px;
+    height: 54px;
+
+    flex-basis: 54px;
+  }
+
+  .favoritos-header-info h1 {
+    font-size: 20px;
+  }
+
+  .favoritos-header-info span {
+    font-size: 13px;
+  }
+
+  .favoritos-search {
+    height: 54px;
+
+    border-radius: 22px;
+  }
+
+  .favoritos-card {
+    padding: 17px;
+
+    border-radius: 22px;
+  }
+
+  .favoritos-reference {
+    font-size: 16px;
+  }
+
+  .favoritos-card-text {
+    font-size: 15.5px;
+
+    line-height: 1.7;
+  }
+
+  .favoritos-bottom-sheet {
+    max-height: 90vh;
+
+    padding:
+      9px 20px 22px;
+
+    border-radius:
+      30px
+      30px
+      20px
+      20px;
+  }
+
+  .favoritos-sheet-header h2 {
+    font-size: 19px;
+  }
+
+  .favoritos-sheet-text {
+    padding: 16px;
+  }
+
+  .favoritos-sheet-text p {
+    font-size: 15px;
+  }
+}
+
+
+/* =========================================================
+   CELULAR PEQUENO
+========================================================= */
+
+@media (max-width: 380px) {
+  .favoritos-header-info h1 {
+    font-size: 18px;
+  }
+
+  .favoritos-header-info span {
+    font-size: 12px;
+  }
+
+  .favoritos-header-icon {
+    width: 50px;
+    height: 50px;
+
+    flex-basis: 50px;
+  }
+
+  .favoritos-card-top {
+    align-items: flex-start;
+  }
+
+  .favoritos-version {
+    height: 25px;
+
+    min-width: 38px;
+
+    padding: 0 7px;
+
+    font-size: 10px;
+  }
+
+  .favoritos-card-text {
+    font-size: 15px;
+  }
+}

@@ -1,0 +1,391 @@
+.sobre-page {
+  width: 100%;
+  min-height: 100vh;
+  padding-bottom: 96px;
+  background: #ffffff;
+  color: #111b4d;
+}
+
+.sobre-content {
+  width: min(680px, calc(100% - 28px));
+  margin: 0 auto;
+  padding: 30px 0 40px;
+}
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+.sobre-header {
+  margin-bottom: 26px;
+  padding: 0 10px;
+}
+
+.sobre-header h1 {
+  margin: 0;
+
+  font-size: 40px;
+  line-height: 1.12;
+  font-weight: 700;
+
+  color: #111b4d;
+}
+
+.sobre-header p {
+  margin: 8px 0 0;
+
+  font-size: 16px;
+  line-height: 1.5;
+
+  color: #64748b;
+}
+
+/* =========================
+   CARD SOBRE
+========================= */
+
+.sobre-card {
+  width: 100%;
+
+  padding: 22px 20px;
+
+  border-radius: 25px;
+
+  background: #f5f7fa;
+
+  box-shadow: 0 4px 14px rgba(16, 24, 40, 0.06);
+}
+
+.sobre-card-heading {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.sobre-heading-icon {
+  width: 48px;
+  height: 48px;
+
+  flex-shrink: 0;
+
+  border-radius: 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #e9f8f7;
+  color: #168f8a;
+}
+
+.sobre-card-heading h2 {
+  margin: 0;
+
+  font-size: 19px;
+  line-height: 1.3;
+  font-weight: 700;
+
+  color: #111b4d;
+}
+
+.sobre-text {
+  margin-top: 19px;
+}
+
+.sobre-text p {
+  margin: 0 0 14px;
+
+  font-size: 15px;
+  line-height: 1.7;
+
+  color: #52657d;
+}
+
+.sobre-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* =========================
+   VERSÍCULO
+========================= */
+
+.sobre-versiculo-card {
+  width: 100%;
+
+  margin-top: 17px;
+
+  padding: 24px 20px;
+
+  border-radius: 25px;
+
+  background: #042251;
+  color: #ffffff;
+
+  text-align: center;
+
+  box-shadow:
+    0 7px 18px rgba(4, 34, 81, 0.15);
+}
+
+.sobre-versiculo-icon {
+  color: #1cc7c1;
+}
+
+.sobre-versiculo-card p {
+  margin: 13px 0 0;
+
+  font-size: 17px;
+  line-height: 1.65;
+
+  font-style: italic;
+}
+
+.sobre-versiculo-card strong {
+  display: block;
+
+  margin-top: 12px;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  color: #1cc7c1;
+}
+
+/* =========================
+   VERSÃO
+========================= */
+
+.sobre-versao-card {
+  width: 100%;
+
+  margin-top: 17px;
+
+  padding: 18px 20px;
+
+  border-radius: 21px;
+
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  background: #eef4fb;
+
+  border: 1px solid #e1e9f3;
+}
+
+.sobre-versao-logo {
+  width: 45px;
+  height: 45px;
+
+  flex-shrink: 0;
+
+  border-radius: 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #042251;
+  color: #1cc7c1;
+}
+
+.sobre-versao-card > div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sobre-versao-card strong {
+  font-size: 14px;
+  color: #111b4d;
+}
+
+.sobre-versao-card span {
+  font-size: 12px;
+  color: #64748b;
+}
+
+/* =========================
+   DOCUMENTOS
+========================= */
+
+.sobre-documentos {
+  margin-top: 17px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sobre-documento {
+  width: 100%;
+  min-height: 76px;
+
+  padding: 11px 15px;
+
+  border: 1px solid #e4e8ee;
+  border-radius: 20px;
+
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  background: #ffffff;
+  color: #111b4d;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 3px 11px rgba(16, 24, 40, 0.05);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.sobre-documento:hover {
+  transform: translateY(-2px);
+
+  border-color: #d5deea;
+
+  box-shadow:
+    0 6px 16px rgba(16, 24, 40, 0.09);
+}
+
+.sobre-documento:active {
+  transform: scale(0.985);
+}
+
+.sobre-documento-icon {
+  width: 47px;
+  height: 47px;
+
+  flex-shrink: 0;
+
+  border-radius: 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sobre-termos-icon {
+  background: #e8eef8;
+  color: #042251;
+}
+
+.sobre-licenca-icon {
+  background: #e9f8f7;
+  color: #168f8a;
+}
+
+.sobre-documento-content {
+  min-width: 0;
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sobre-documento-content strong {
+  font-size: 15px;
+  font-weight: 700;
+
+  color: #111b4d;
+}
+
+.sobre-documento-content span {
+  font-size: 12px;
+  line-height: 1.4;
+
+  color: #64748b;
+}
+
+.sobre-documento-arrow {
+  flex-shrink: 0;
+
+  color: #94a3b8;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  .sobre-content {
+    width: calc(100% - 20px);
+    padding-top: 24px;
+  }
+
+  .sobre-header {
+    margin-bottom: 22px;
+    padding: 0 8px;
+  }
+
+  .sobre-header h1 {
+    font-size: 34px;
+  }
+
+  .sobre-header p {
+    font-size: 14px;
+  }
+
+  .sobre-card {
+    padding: 19px 16px;
+    border-radius: 21px;
+  }
+
+  .sobre-heading-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+  }
+
+  .sobre-card-heading h2 {
+    font-size: 16px;
+  }
+
+  .sobre-text p {
+    font-size: 13px;
+    line-height: 1.65;
+  }
+
+  .sobre-versiculo-card {
+    padding: 21px 16px;
+    border-radius: 21px;
+  }
+
+  .sobre-versiculo-card p {
+    font-size: 15px;
+  }
+
+  .sobre-versao-card {
+    padding: 15px;
+    border-radius: 19px;
+  }
+
+  .sobre-documento {
+    min-height: 70px;
+    padding: 10px 12px;
+    border-radius: 18px;
+  }
+
+  .sobre-documento-icon {
+    width: 43px;
+    height: 43px;
+    border-radius: 13px;
+  }
+
+  .sobre-documento-content strong {
+    font-size: 14px;
+  }
+
+  .sobre-documento-content span {
+    font-size: 11px;
+  }
+}

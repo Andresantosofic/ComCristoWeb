@@ -1,0 +1,248 @@
+/* =========================================================
+   PÁGINA
+========================================================= */
+
+.menu-page {
+  width: 100%;
+  min-height: 100vh;
+
+  padding-bottom: 96px;
+
+  background: #ffffff;
+  color: #111b4d;
+}
+
+
+/* =========================================================
+   CONTEÚDO
+========================================================= */
+
+.menu-content {
+  width: min(680px, calc(100% - 28px));
+
+  margin: 0 auto;
+
+  padding: 30px 0 40px;
+}
+
+
+/* =========================================================
+   CABEÇALHO
+========================================================= */
+
+.menu-header {
+  margin-bottom: 24px;
+
+  padding: 0 10px;
+}
+
+.menu-header h1 {
+  margin: 0;
+
+  color: #111b4d;
+
+  font-size: 40px;
+  line-height: 1.12;
+
+  font-weight: 700;
+}
+
+.menu-header p {
+  max-width: 620px;
+
+  margin: 8px 0 0;
+
+  color: #64748b;
+
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+
+/* =========================================================
+   OPÇÕES
+========================================================= */
+
+.menu-options {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 16px;
+}
+
+
+/* =========================================================
+   ITEM
+========================================================= */
+
+.menu-item {
+  width: 100%;
+  min-height: 82px;
+
+  padding: 12px 14px;
+
+  border: 0;
+  border-radius: 24px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 16px;
+
+  background: #f5f7fa;
+  color: #17335f;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 3px 10px rgba(16, 24, 40, 0.04);
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.menu-item:hover {
+  transform: translateY(-2px);
+
+  background: #f8fafc;
+
+  box-shadow:
+    0 6px 16px rgba(16, 24, 40, 0.08);
+}
+
+.menu-item:active {
+  transform: scale(0.985);
+}
+
+
+/* =========================================================
+   ÍCONE
+========================================================= */
+
+.menu-item-icon {
+  width: 58px;
+  height: 58px;
+
+  flex: 0 0 58px;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #f1f5f9;
+
+  color: #1f5d87;
+}
+
+
+/* =========================================================
+   CONTEÚDO DO ITEM
+========================================================= */
+
+.menu-item-content {
+  min-width: 0;
+
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.menu-item-content strong {
+  color: #17335f;
+
+  font-size: 20px;
+  line-height: 1.25;
+
+  font-weight: 700;
+}
+
+.menu-item-content span {
+  color: #64748b;
+
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   SETA
+========================================================= */
+
+.menu-item-arrow {
+  flex-shrink: 0;
+
+  color: #1f5d87;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .menu-content {
+    width: calc(100% - 20px);
+
+    padding-top: 24px;
+  }
+
+  .menu-header {
+    margin-bottom: 22px;
+
+    padding: 0 8px;
+  }
+
+  .menu-header h1 {
+    font-size: 34px;
+  }
+
+  .menu-header p {
+    font-size: 14px;
+  }
+
+  .menu-options {
+    gap: 14px;
+  }
+
+  .menu-item {
+    min-height: 76px;
+
+    padding: 10px 12px;
+
+    border-radius: 21px;
+
+    gap: 13px;
+  }
+
+  .menu-item-icon {
+    width: 54px;
+    height: 54px;
+
+    flex-basis: 54px;
+  }
+
+  .menu-item-content strong {
+    font-size: 17px;
+  }
+
+  .menu-item-content span {
+    font-size: 13px;
+  }
+
+  .menu-item-arrow {
+    width: 20px;
+    height: 20px;
+  }
+}

@@ -1,0 +1,383 @@
+.wallpapers-page {
+  width: 100%;
+  min-height: 100vh;
+  padding-bottom: 96px;
+  box-sizing: border-box;
+  background: #ffffff;
+  color: #123d67;
+}
+
+/* =========================
+   CONTEÚDO
+========================= */
+
+.wallpapers-content {
+  width: min(900px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 20px 0 30px;
+  box-sizing: border-box;
+}
+
+/* =========================
+   VOLTAR
+========================= */
+
+.wallpapers-back-container {
+  width: 100%;
+  height: 60px;
+
+  display: flex;
+  align-items: center;
+
+  margin-bottom: 10px;
+}
+
+.wallpapers-back {
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 0 12px;
+
+  border: none;
+  border-radius: 21px;
+
+  background: #f1f4f8;
+
+  color: #123a63;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.wallpapers-back:hover {
+  background: #e5eaf0;
+  transform: translateX(-2px);
+}
+
+.wallpapers-back:active {
+  transform: scale(0.97);
+}
+
+/* =========================
+   CATEGORIA
+========================= */
+
+.wallpaper-category {
+  width: 100%;
+  margin-bottom: 26px;
+}
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+.wallpaper-category-header {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 12px;
+}
+
+.wallpaper-category-header h2 {
+  margin: 0;
+
+  font-size: 20px;
+  line-height: 1.2;
+
+  font-weight: 700;
+
+  color: #123d67;
+}
+
+/* =========================
+   VER TUDO
+========================= */
+
+.wallpaper-see-all {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 2px;
+
+  padding: 0;
+
+  border: none;
+  background: transparent;
+
+  color: #123d67;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.wallpaper-see-all:hover {
+  opacity: 0.75;
+  transform: translateX(2px);
+}
+
+.wallpaper-see-all:active {
+  transform: scale(0.97);
+}
+
+/* =========================
+   LISTA HORIZONTAL
+========================= */
+
+.wallpaper-horizontal-list {
+  width: 100%;
+
+  display: flex;
+
+  gap: 12px;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  padding: 2px 0 6px;
+
+  scroll-behavior: smooth;
+
+  scrollbar-width: none;
+}
+
+.wallpaper-horizontal-list::-webkit-scrollbar {
+  display: none;
+}
+
+/* =========================
+   ITEM WALLPAPER
+   Android: 135 x 180
+========================= */
+
+.wallpaper-item {
+  width: 135px;
+  height: 180px;
+
+  flex: 0 0 135px;
+
+  padding: 0;
+
+  overflow: hidden;
+
+  border: none;
+  border-radius: 22px;
+
+  background: #e8edf3;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 2px 7px rgba(0, 0, 0, 0.12);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.wallpaper-item:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 6px 14px rgba(0, 0, 0, 0.18);
+}
+
+.wallpaper-item:active {
+  transform: scale(0.97);
+}
+
+.wallpaper-item:focus-visible,
+.wallpaper-see-all:focus-visible,
+.wallpapers-back:focus-visible {
+  outline: 3px solid rgba(18, 58, 99, 0.3);
+  outline-offset: 3px;
+}
+
+.wallpaper-item img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  user-select: none;
+}
+
+/* =========================
+   CARD FINAL
+   Android
+========================= */
+
+.wallpapers-coming-soon {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 16px;
+
+  margin-top: 10px;
+  margin-bottom: 20px;
+
+  padding: 18px;
+
+  box-sizing: border-box;
+
+  border-radius: 24px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 3px 10px rgba(0, 0, 0, 0.10);
+}
+
+.wallpapers-coming-icon {
+  width: 48px;
+  height: 48px;
+
+  flex: 0 0 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #123d67;
+}
+
+.wallpapers-coming-content {
+  min-width: 0;
+}
+
+.wallpapers-coming-content h2 {
+  margin: 0;
+
+  font-size: 16px;
+  line-height: 1.3;
+
+  font-weight: 700;
+
+  color: #123d67;
+}
+
+.wallpapers-coming-content p {
+  margin: 4px 0 0;
+
+  font-size: 14px;
+  line-height: 1.45;
+
+  color: #7d8799;
+}
+
+/* =========================
+   CARREGANDO
+========================= */
+
+.wallpapers-loading {
+  width: 100%;
+  min-height: 300px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+.wallpapers-loading p {
+  margin: 0;
+
+  font-size: 15px;
+
+  color: #68758d;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+  .wallpapers-content {
+    width: calc(100% - 24px);
+    padding: 12px 0 30px;
+  }
+
+  .wallpapers-back-container {
+    height: 52px;
+    margin-bottom: 8px;
+  }
+
+  .wallpaper-category {
+    margin-bottom: 24px;
+  }
+
+  .wallpaper-category-header {
+    margin-bottom: 10px;
+  }
+
+  .wallpaper-category-header h2 {
+    font-size: 20px;
+  }
+
+  .wallpaper-see-all {
+    font-size: 13px;
+  }
+
+  .wallpaper-horizontal-list {
+    gap: 12px;
+  }
+
+  .wallpaper-item {
+    width: 135px;
+    height: 180px;
+    flex-basis: 135px;
+
+    border-radius: 22px;
+  }
+
+  .wallpapers-coming-soon {
+    gap: 14px;
+
+    margin-top: 8px;
+
+    padding: 16px;
+
+    border-radius: 22px;
+  }
+
+  .wallpapers-coming-icon {
+    width: 48px;
+    height: 48px;
+    flex-basis: 48px;
+  }
+
+  .wallpapers-coming-content h2 {
+    font-size: 16px;
+  }
+
+  .wallpapers-coming-content p {
+    font-size: 14px;
+  }
+}

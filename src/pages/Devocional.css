@@ -1,0 +1,633 @@
+.devocional-page {
+  width: 100%;
+  min-height: 100vh;
+  padding-bottom: 96px;
+  background: #ffffff;
+  color: #111827;
+}
+
+.devocional-header {
+  display: none;
+}
+
+/* ============================================================
+   ÁREA PRINCIPAL
+   ============================================================ */
+
+.devocional-content {
+  width: min(780px, calc(100% - 24px));
+  margin: 0 auto;
+  padding: 18px 0 50px;
+}
+
+/* ============================================================
+   TÍTULO
+   ============================================================ */
+
+.devocional-title-area {
+  width: 100%;
+  text-align: center;
+}
+
+.devocional-title-area h2 {
+  margin: 0;
+  font-size: 28px;
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+
+.devocional-streak {
+  margin-top: 10px;
+  font-size: 15px;
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+/* ============================================================
+   DATA
+   ============================================================ */
+
+.devocional-date {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  margin-top: 10px;
+  margin-bottom: 0;
+  font-size: 12px;
+  line-height: 1.3;
+  font-weight: 600;
+  color: #667085;
+}
+
+/* ============================================================
+   SEMANA
+   ============================================================ */
+
+.devocional-week {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 18px;
+  margin-bottom: 24px;
+}
+
+.devocional-day {
+  min-width: 0;
+  height: 68px;
+  padding: 7px 3px;
+  box-sizing: border-box;
+
+  border: 1px solid #e4e8f0;
+  border-radius: 16px;
+
+  background: #ffffff;
+  color: #667085;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 4px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.devocional-day:hover:not(:disabled) {
+  transform: translateY(-2px);
+  border-color: #b8c8f5;
+  box-shadow: 0 4px 12px rgba(16, 24, 40, 0.08);
+}
+
+.devocional-day:active:not(:disabled) {
+  transform: scale(0.96);
+}
+
+.devocional-day-name {
+  font-size: 11px;
+  line-height: 1;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2px;
+}
+
+.devocional-day-number {
+  font-size: 20px;
+  line-height: 1;
+  font-weight: 800;
+}
+
+.devocional-day-month {
+  font-size: 9px;
+  font-weight: 500;
+  color: #98a2b3;
+}
+
+.devocional-day-selected {
+  background: #1a2240;
+  border-color: #1a2240;
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(26, 34, 64, 0.18);
+  transform: translateY(-1px);
+}
+
+.devocional-day-selected .devocional-day-name,
+.devocional-day-selected .devocional-day-number,
+.devocional-day-selected .devocional-day-month {
+  color: #ffffff;
+}
+
+.devocional-day-disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.devocional-day-completed {
+  background: #e9f8ef;
+  border-color: #b9e8cc;
+  color: #16834b;
+}
+
+.devocional-day-check {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #16834b;
+  color: #ffffff;
+  flex-shrink: 0;
+}
+
+.devocional-day-selected.devocional-day-completed {
+  background: #1a2240;
+  border-color: #1a2240;
+  color: #ffffff;
+}
+
+.devocional-day-check svg {
+  width: 13px;
+  height: 13px;
+  stroke-width: 3;
+}
+
+.devocional-day-selected.devocional-day-completed {
+  background: #1a2240;
+  border-color: #1a2240;
+  color: #ffffff;
+}
+.devocional-day-selected.devocional-day-completed .devocional-day-check {
+  background: #ffffff;
+  color: #1a2240;
+}
+
+.devocional-day:not(.devocional-day-selected):hover {
+  border-color: #c7cedb;
+  background: #f7f9fc;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(16, 24, 40, 0.08);
+}
+/* ============================================================
+   CARD PRINCIPAL
+   ============================================================ */
+
+.devocional-main-card {
+  width: 100%;
+  overflow: hidden;
+  background: transparent;
+}
+
+/* ============================================================
+   TEMA + VERSÍCULO
+   Equivalente ao cardTema Android
+   ============================================================ */
+
+.devocional-theme {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 26px 24px 24px;
+  border-radius: 30px;
+  background: #1a2240;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(16, 24, 40, 0.12);
+}
+
+.devocional-theme > span {
+  display: block;
+  width: 100%;
+  font-size: 12px;
+  line-height: 1.3;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-align: center;
+}
+
+.devocional-theme h2 {
+  margin: 14px 0 0;
+  font-size: 28px;
+  line-height: 1.2;
+  font-weight: 700;
+  text-align: center;
+}
+
+.devocional-theme-divider {
+  width: 80px;
+  height: 3px;
+  margin: 12px auto 16px;
+  border-radius: 3px;
+}
+
+.devocional-theme-verse {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.65;
+  font-weight: 400;
+  text-align: center;
+}
+
+.devocional-theme-reference {
+  display: block;
+  margin-top: 14px;
+  font-size: 18px;
+  line-height: 1.3;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* ============================================================
+   ESTUDO / REFLEXÃO
+   ============================================================ */
+.devocional-theme + .devocional-section {
+  margin-top: 16px;
+}
+
+.devocional-section {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 16px;
+  padding: 18px;
+  border-radius: 24px;
+  background: #f5f7fa;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  box-shadow: 0 3px 10px rgba(16, 24, 40, 0.08);
+}
+
+.devocional-section-icon {
+  width: 60px;
+  height: 60px;
+  min-width: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.devocional-section-icon svg {
+  width: 30px;
+  height: 30px;
+}
+
+.devocional-section-content {
+  min-width: 0;
+  flex: 1;
+  padding-top: 1px;
+}
+
+.devocional-section h3 {
+  margin: 0;
+  font-size: 24px;
+  line-height: 1.2;
+  font-weight: 900;
+  color: #1a2240;
+}
+
+.devocional-text {
+  margin-top: 10px;
+}
+
+.devocional-text p {
+  margin: 0 0 16px;
+  font-size: 16px;
+  line-height: 1.65;
+  font-weight: 700;
+  color: #2a3342;
+  opacity: 0.85;
+}
+
+.devocional-text p:last-child {
+  margin-bottom: 0;
+}
+
+.devocional-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* ============================================================
+   ÁREA VAZIA / ERRO
+   ============================================================ */
+
+.devocional-empty {
+  box-sizing: border-box;
+  min-height: 180px;
+  padding: 40px 24px;
+  border-radius: 24px;
+  background: #f5f7fa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #667085;
+}
+
+.devocional-empty p {
+  margin: 12px 0 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.devocional-empty span {
+  margin-top: 6px;
+  font-size: 13px;
+}
+
+/* ============================================================
+   FINALIZAR
+   ============================================================ */
+
+.devocional-finish {
+  width: 100%;
+  padding-top: 24px;
+  padding-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.devocional-finish-button {
+  width: 320px;
+  max-width: 100%;
+  min-height: 54px;
+  box-sizing: border-box;
+
+  border: 0;
+  border-radius: 28px;
+
+  background: #5aa8f0;
+  color: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  padding: 0 20px;
+
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.2px;
+
+  cursor: pointer;
+
+  box-shadow: 0 3px 10px rgba(16, 24, 40, 0.12);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.devocional-finish-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(16, 24, 40, 0.15);
+}
+
+.devocional-finish-button:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.devocional-finish-button:disabled {
+  cursor: default;
+}
+
+.devocional-finish-completed {
+  background: #e9f8ef;
+  color: #16834b;
+  box-shadow: none;
+  cursor: default;
+}
+
+.devocional-share-finish-button {
+  margin-top: 12px;
+  margin-bottom: 40px;
+  background: #e6f1f8;
+  color: #1a2240;
+}
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (max-width: 600px) {
+  .devocional-title-area h2 {
+    font-size: 28px;
+  }
+
+  .devocional-content {
+    width: calc(100% - 24px);
+    padding-top: 18px;
+  }
+
+  .devocional-title-area h2 {
+    font-size: 28px;
+  }
+
+  .devocional-streak {
+    margin-top: 10px;
+    font-size: 15px;
+  }
+
+  .devocional-week {
+    margin-top: 18px;
+    margin-bottom: 20px;
+  }
+
+.devocional-date {
+    margin-top: 10px;
+    font-size: 12px;
+  }
+
+.devocional-day {
+  height: 62px;
+  padding: 6px 2px;
+  border-radius: 14px;
+}
+
+.devocional-day-name {
+  font-size: 9px;
+}
+
+.devocional-day-number {
+  font-size: 18px;
+}
+
+  .devocional-day-month {
+    font-size: 8px;
+  }
+
+  .devocional-day-check {
+  width: 20px;
+  height: 20px;
+}
+
+.devocional-day-check svg {
+  width: 12px;
+  height: 12px;
+}
+
+  .devocional-theme {
+  padding: 24px 18px;
+  border-radius: 30px;
+}
+
+.devocional-theme h2 {
+  font-size: 26px;
+}
+
+.devocional-theme-verse {
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.devocional-theme-reference {
+  font-size: 17px;
+}
+
+.devocional-section {
+  margin-top: 16px;
+  padding: 18px;
+  gap: 14px;
+}
+
+.devocional-section-icon {
+  width: 54px;
+  height: 54px;
+  min-width: 54px;
+}
+
+.devocional-section-icon svg {
+  width: 27px;
+  height: 27px;
+}
+
+.devocional-section h3 {
+  font-size: 22px;
+}
+
+.devocional-text {
+  margin-top: 9px;
+}
+
+.devocional-text p {
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+  .devocional-finish {
+  padding-top: 24px;
+  padding-bottom: 32px;
+}
+
+.devocional-finish-button {
+  width: min(320px, 100%);
+  min-height: 54px;
+}
+
+.devocional-share-finish-button {
+  margin-top: 12px;
+  margin-bottom: 40px;
+}
+}
+
+@media (max-width: 380px) {
+  .devocional-content {
+    width: calc(100% - 18px);
+  }
+
+  .devocional-week {
+    gap: 3px;
+  }
+
+  .devocional-day {
+    min-height: 60px;
+  }
+
+  .devocional-day-name {
+    font-size: 8px;
+  }
+
+  .devocional-day-number {
+    font-size: 16px;
+  }
+
+  .devocional-day-month {
+    font-size: 7px;
+  }
+
+  .devocional-section {
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .devocional-section-icon {
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+  }
+
+  .devocional-section h3 {
+    font-size: 20px;
+  }
+}
+.devocional-back-button {
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+
+  background: transparent;
+  color: #042251;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.devocional-back-button:hover {
+  background: #e9eef5;
+}
+
+.devocional-back-button:active {
+  transform: scale(0.94);
+}

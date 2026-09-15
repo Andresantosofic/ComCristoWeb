@@ -1,0 +1,313 @@
+.ofertas-page {
+  width: 100%;
+  min-height: 100vh;
+  padding-bottom: 96px;
+  background: #ffffff;
+  color: #111111;
+}
+
+.ofertas-content {
+  width: min(760px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 20px 0 40px;
+}
+
+/* VOLTAR */
+
+.ofertas-back-button {
+  width: 52px;
+  height: 52px;
+  border: 0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f1f4f8;
+  color: #042251;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.ofertas-back-button:hover {
+  transform: translateY(-2px);
+  background: #e8edf4;
+}
+
+.ofertas-back-button:active {
+  transform: scale(0.95);
+}
+
+/* TÍTULO */
+
+.ofertas-intro {
+  margin-top: 40px;
+}
+
+.ofertas-intro h1 {
+  max-width: 650px;
+  margin: 0;
+  font-size: 40px;
+  line-height: 1.12;
+  font-weight: 700;
+  color: #17213f;
+}
+
+.ofertas-intro p {
+  max-width: 650px;
+  margin-top: 9px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #17213f;
+}
+
+/* CARD PRINCIPAL */
+
+.ofertas-missao-card {
+  margin-top: 26px;
+  padding: 26px;
+  display: flex;
+  align-items: flex-start;
+  gap: 22px;
+  border-radius: 28px;
+  background: #042251;
+  box-shadow:
+    0 5px 18px rgba(4, 34, 81, 0.16);
+}
+
+.ofertas-heart {
+  width: 90px;
+  min-width: 90px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+}
+
+.ofertas-missao-text {
+  flex: 1;
+}
+
+.ofertas-missao-text p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.72;
+  color: #ffffff;
+}
+
+.ofertas-missao-text p + p {
+  margin-top: 18px;
+}
+
+/* FORMAS DE APOIO */
+
+.ofertas-apoio-card {
+  margin-top: 24px;
+  padding: 24px;
+  border-radius: 28px;
+  background: #06295f;
+  box-shadow:
+    0 5px 18px rgba(28, 199, 193, 0.16);
+}
+
+.ofertas-apoio-card h2 {
+  margin: 0 0 22px;
+  text-align: center;
+  font-size: 21px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* MÉTODO */
+
+.ofertas-metodo {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.ofertas-metodo-icon {
+  width: 56px;
+  min-width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+}
+
+.ofertas-metodo-info {
+  min-width: 0;
+  flex: 1;
+}
+
+.ofertas-metodo-info h3 {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.3;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.ofertas-metodo-info p {
+  margin: 4px 0 0;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #ffffff;
+}
+
+.ofertas-pix-chave {
+  word-break: break-word;
+}
+
+/* BOTÃO */
+
+.ofertas-action-button {
+  width: 100%;
+  min-height: 50px;
+  margin-top: 14px;
+  border: 0;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #ffffff;
+  color: #17213f;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.ofertas-action-button:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.12);
+  background: #f8fafc;
+}
+
+.ofertas-action-button:active {
+  transform: scale(0.98);
+}
+
+/* DESCRIÇÃO */
+
+.ofertas-metodo-description {
+  margin: 10px 0 0;
+  font-size: 13px;
+  line-height: 1.55;
+  color: #ffffff;
+}
+
+/* DIVISOR */
+
+.ofertas-divider {
+  width: 100%;
+  height: 1px;
+  margin: 22px 0;
+  background: rgba(255, 255, 255, 0.34);
+}
+
+.ofertas-ou {
+  margin-bottom: 22px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* DIVULGAÇÃO */
+
+.ofertas-divulgacao-card {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: #f1f4f8;
+  color: #17213f;
+}
+
+.ofertas-divulgacao-card svg {
+  flex-shrink: 0;
+}
+
+.ofertas-divulgacao-card p {
+  margin: 0;
+  text-align: center;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+  .ofertas-content {
+    width: calc(100% - 32px);
+    padding-top: 16px;
+  }
+
+  .ofertas-intro {
+    margin-top: 32px;
+  }
+
+  .ofertas-intro h1 {
+    font-size: 32px;
+  }
+
+  .ofertas-intro p {
+    font-size: 15px;
+  }
+
+  .ofertas-missao-card {
+    padding: 22px;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .ofertas-heart {
+    width: 70px;
+    min-width: 70px;
+    height: 70px;
+  }
+
+  .ofertas-heart svg {
+    width: 60px;
+    height: 60px;
+  }
+
+  .ofertas-missao-text p {
+    font-size: 14px;
+    line-height: 1.68;
+  }
+
+  .ofertas-apoio-card {
+    padding: 21px;
+  }
+
+  .ofertas-metodo-info h3 {
+    font-size: 16px;
+  }
+
+  .ofertas-divulgacao-card {
+    align-items: flex-start;
+  }
+
+  .ofertas-divulgacao-card p {
+    text-align: left;
+    font-size: 14px;
+  }
+}

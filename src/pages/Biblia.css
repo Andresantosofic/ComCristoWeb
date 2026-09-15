@@ -1,0 +1,520 @@
+.biblia-page {
+  width: 100%;
+  min-height: 100vh;
+  background: #f7f9fc;
+  color: #111b4d;
+  padding: 18px 18px 140px;
+  box-sizing: border-box;
+}
+
+.biblia-container {
+  width: min(680px, 100%);
+  margin: 0 auto;
+}
+
+/* ============================================================
+   TÍTULO
+============================================================ */
+
+.biblia-list-header {
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.biblia-list-header h1 {
+  margin: 0;
+  color: #111b4d;
+  font-size: 30px;
+  line-height: 1.15;
+  font-weight: 700;
+}
+
+/* ============================================================
+   BUSCA
+============================================================ */
+
+.biblia-search {
+  width: 100%;
+  height: 58px;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 16px;
+
+  background: #ffffff;
+  border-radius: 20px;
+
+  box-shadow:
+    0 2px 6px rgba(15, 23, 42, 0.08);
+
+  color: #9ca3af;
+}
+
+.biblia-search svg {
+  flex: 0 0 auto;
+}
+
+.biblia-search input {
+  width: 100%;
+  height: 100%;
+
+  min-width: 0;
+
+  padding: 0 0 0 12px;
+
+  border: 0;
+  outline: 0;
+
+  background: transparent;
+
+  color: #111827;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 16px;
+}
+
+.biblia-search input::placeholder {
+  color: #9ca3af;
+}
+
+/* ============================================================
+   TESTAMENTOS
+============================================================ */
+
+.biblia-testamentos {
+  width: 100%;
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  margin-top: 18px;
+
+  padding: 4px;
+
+  box-sizing: border-box;
+
+  background: #eef2f7;
+
+  border-radius: 18px;
+}
+
+.biblia-testamento {
+  width: 50%;
+  height: 100%;
+
+  border: 0;
+  border-radius: 16px;
+
+  padding: 0 12px;
+
+  background: transparent;
+
+  color: #111b4d;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.12s ease;
+}
+
+.biblia-testamento.active {
+  background: #0f9db8;
+  color: #ffffff;
+
+  box-shadow:
+    0 2px 6px rgba(15, 157, 184, 0.2);
+}
+
+.biblia-testamento:active {
+  transform: scale(0.98);
+}
+
+/* ============================================================
+   TÍTULO DA LISTA
+============================================================ */
+
+.biblia-section-title {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  margin-top: 28px;
+  margin-bottom: 10px;
+}
+
+.biblia-section-title > span {
+  width: 5px;
+  height: 26px;
+
+  flex: 0 0 5px;
+
+  background: #042251;
+
+  border-radius: 3px;
+}
+
+.biblia-section-title h2 {
+  margin: 0 0 0 12px;
+
+  color: #111b4d;
+
+  font-size: 24px;
+  line-height: 1.2;
+
+  font-weight: 700;
+}
+
+/* ============================================================
+   LISTA DE LIVROS
+============================================================ */
+
+.biblia-livros {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 0;
+}
+
+/* ============================================================
+   CARD DO LIVRO
+============================================================ */
+
+.biblia-livro-card {
+  width: 100%;
+  min-height: 88px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+
+  margin: 0 0 14px;
+  padding: 18px;
+
+  border: 0;
+
+  border-radius: 22px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 2px 8px rgba(15, 23, 42, 0.08);
+
+  color: #111b4d;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    background 0.18s ease;
+}
+
+.biblia-livro-card:hover {
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 5px 14px rgba(15, 23, 42, 0.11);
+}
+
+.biblia-livro-card:active {
+  transform: scale(0.985);
+}
+
+/* ============================================================
+   ÍCONE
+============================================================ */
+
+.biblia-livro-icon {
+  width: 52px;
+  height: 52px;
+
+  flex: 0 0 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 16px;
+
+  background: #eaf8fb;
+
+  color: #042251;
+}
+
+/* ============================================================
+   TEXTOS
+============================================================ */
+
+.biblia-livro-content {
+  min-width: 0;
+
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  margin-left: 14px;
+}
+
+.biblia-livro-content strong {
+  overflow: hidden;
+
+  color: #111b4d;
+
+  font-size: 19px;
+  line-height: 1.25;
+
+  font-weight: 700;
+
+  text-overflow: ellipsis;
+}
+
+.biblia-livro-content span {
+  margin-top: 4px;
+
+  color: #7b8191;
+
+  font-size: 14px;
+  line-height: 1.3;
+}
+
+/* ============================================================
+   SETA
+============================================================ */
+
+.biblia-livro-arrow {
+  flex: 0 0 auto;
+
+  margin-left: 12px;
+
+  color: #042251;
+}
+
+/* ============================================================
+   ESTADOS
+============================================================ */
+
+.biblia-state {
+  min-height: 260px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  padding: 30px;
+
+  box-sizing: border-box;
+
+  color: #64748b;
+
+  text-align: center;
+}
+
+.biblia-state strong {
+  color: #111b4d;
+
+  font-size: 18px;
+}
+
+.biblia-state span {
+  font-size: 14px;
+}
+
+.biblia-state p {
+  max-width: 400px;
+
+  margin: 0;
+
+  line-height: 1.5;
+}
+
+.biblia-state-error {
+  color: #d32f2f;
+}
+
+.biblia-state-error button {
+  min-height: 44px;
+
+  padding: 0 20px;
+
+  border: 0;
+  border-radius: 14px;
+
+  background: #042251;
+
+  color: #ffffff;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+/* ============================================================
+   MOBILE
+============================================================ */
+
+@media (max-width: 600px) {
+  .biblia-page {
+    padding:
+      14px
+      12px
+      130px;
+  }
+
+  .biblia-list-header {
+    margin-top: 8px;
+    margin-bottom: 18px;
+  }
+
+  .biblia-list-header h1 {
+    font-size: 28px;
+  }
+
+  .biblia-search {
+    height: 56px;
+    border-radius: 19px;
+  }
+
+  .biblia-search input {
+    font-size: 15px;
+  }
+
+  .biblia-testamentos {
+    height: 56px;
+    border-radius: 17px;
+  }
+
+  .biblia-testamento {
+    border-radius: 14px;
+    font-size: 13px;
+  }
+
+  .biblia-section-title {
+    margin-top: 24px;
+  }
+
+  .biblia-section-title h2 {
+    font-size: 21px;
+  }
+
+  .biblia-livro-card {
+    min-height: 82px;
+
+    padding: 15px;
+
+    border-radius: 20px;
+
+    margin-bottom: 12px;
+  }
+
+  .biblia-livro-icon {
+    width: 48px;
+    height: 48px;
+
+    flex-basis: 48px;
+
+    border-radius: 15px;
+  }
+
+  .biblia-livro-icon svg {
+    width: 23px;
+    height: 23px;
+  }
+
+  .biblia-livro-content {
+    margin-left: 12px;
+  }
+
+  .biblia-livro-content strong {
+    font-size: 17px;
+  }
+
+  .biblia-livro-content span {
+    font-size: 13px;
+  }
+
+  .biblia-livro-arrow {
+    width: 19px;
+    height: 19px;
+  }
+}
+
+@media (max-width: 380px) {
+  .biblia-testamento {
+    padding: 0 6px;
+    font-size: 12px;
+  }
+
+  .biblia-section-title h2 {
+    font-size: 19px;
+  }
+}
+.biblia-list-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.biblia-header-back {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 50%;
+
+  background: transparent;
+  color: #042251;
+
+  cursor: pointer;
+
+  transition: background 0.2s ease;
+}
+
+.biblia-header-back:hover {
+  background: #e9eef5;
+}
+
+.biblia-header-back:active {
+  transform: translateY(-50%) scale(0.94);
+}

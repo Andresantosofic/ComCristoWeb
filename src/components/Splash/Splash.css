@@ -1,0 +1,357 @@
+/* =========================================================
+   SPLASH
+   ========================================================= */
+
+.splash {
+  position: fixed;
+  inset: 0;
+
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+
+  min-height: 0;
+
+  z-index: 99999;
+
+  overflow: hidden;
+
+  box-sizing: border-box;
+
+  background-color: #042251;
+
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  overscroll-behavior: none;
+  touch-action: none;
+}
+
+
+/* =========================================================
+   ANTES DA CONFIGURAÇÃO ESTAR PRONTA
+   ========================================================= */
+
+.splash-carregando {
+  background-color: #042251;
+}
+
+
+/* =========================================================
+   CONTEÚDO
+   ========================================================= */
+
+.splash-conteudo {
+  position: absolute;
+
+  top: 42%;
+
+  left: 50%;
+
+  width: 100%;
+
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+
+  box-sizing: border-box;
+
+  overflow: visible;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.splash-logo {
+  width: 250px;
+  height: 160px;
+
+  max-width: 70vw;
+
+  display: block;
+
+  flex: 0 0 auto;
+
+  object-fit: contain;
+
+  /*
+   * Estado inicial exatamente como Android:
+   *
+   * alpha = 0
+   * scale = 0.95
+   */
+  opacity: 0;
+
+  transform: scale(0.95);
+
+  will-change:
+    opacity,
+    transform;
+}
+
+
+/* =========================================================
+   LOGO - ANIMAÇÃO
+   ========================================================= */
+
+.splash-pronta .splash-logo {
+  animation:
+    splash-logo-entrada
+    500ms
+    cubic-bezier(
+      0.42,
+      0,
+      0.58,
+      1
+    )
+    forwards;
+}
+
+
+@keyframes splash-logo-entrada {
+
+  0% {
+    opacity: 0;
+
+    transform:
+      scale(0.95);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform:
+      scale(1);
+  }
+}
+
+
+/* =========================================================
+   ESPAÇO CAMPANHA
+   ANDROID = 90dp
+   ========================================================= */
+
+.splash-espaco-campanha {
+  width: 100%;
+  height: 90px;
+
+  flex: 0 0 90px;
+}
+
+
+/* =========================================================
+   CAMPANHA
+   ANDROID = 270 x 150
+   ========================================================= */
+
+.splash-card-campanha {
+  width: 270px;
+  height: 150px;
+
+  max-width: calc(100vw - 40px);
+
+  flex: 0 0 150px;
+
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 24px;
+
+  background: transparent;
+
+  opacity: 0;
+
+  will-change: opacity;
+}
+
+
+/* =========================================================
+   CAMPANHA - ANIMAÇÃO
+   ANDROID = 50ms DELAY
+   ========================================================= */
+
+.splash-pronta .splash-card-campanha {
+  animation:
+    splash-campanha-entrada
+    500ms
+    50ms
+    cubic-bezier(
+      0.42,
+      0,
+      0.58,
+      1
+    )
+    forwards;
+}
+
+
+@keyframes splash-campanha-entrada {
+
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
+/* =========================================================
+   IMAGEM CAMPANHA
+   ========================================================= */
+
+.splash-imagem-campanha {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: contain;
+
+  background: transparent;
+
+  /*
+   * Não usamos alt visível.
+   * A imagem já foi pré-carregada.
+   */
+  font-size: 0;
+
+  color: transparent;
+}
+
+
+/* =========================================================
+   ESPAÇO TEXTO
+   ANDROID = 14dp
+   ========================================================= */
+
+.splash-espaco-texto-campanha {
+  width: 100%;
+  height: 14px;
+
+  flex: 0 0 14px;
+}
+
+
+/* =========================================================
+   TEXTO
+   ========================================================= */
+
+.splash-texto-campanha {
+  width: auto;
+
+  max-width:
+    calc(100vw - 40px);
+
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 16px;
+
+  line-height: normal;
+
+  font-weight: 700;
+
+  text-align: center;
+
+  opacity: 0;
+
+  will-change: opacity;
+}
+
+
+/* =========================================================
+   TEXTO - ANIMAÇÃO
+   ANDROID = 100ms DELAY
+   ========================================================= */
+
+.splash-pronta .splash-texto-campanha {
+  animation:
+    splash-texto-entrada
+    500ms
+    100ms
+    cubic-bezier(
+      0.42,
+      0,
+      0.58,
+      1
+    )
+    forwards;
+}
+
+
+@keyframes splash-texto-entrada {
+
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
+/* =========================================================
+   TELAS MENORES
+   ========================================================= */
+
+@media (max-height: 700px) {
+
+  .splash-logo {
+    width: 230px;
+    height: 145px;
+  }
+
+  .splash-espaco-campanha {
+    height: 65px;
+    flex-basis: 65px;
+  }
+
+  .splash-card-campanha {
+    width: 250px;
+    height: 140px;
+    flex-basis: 140px;
+  }
+}
+
+
+/* =========================================================
+   TELAS MUITO PEQUENAS
+   ========================================================= */
+
+@media (max-height: 600px) {
+
+  .splash-logo {
+    width: 210px;
+    height: 130px;
+  }
+
+  .splash-espaco-campanha {
+    height: 40px;
+    flex-basis: 40px;
+  }
+
+  .splash-card-campanha {
+    width: 230px;
+    height: 125px;
+    flex-basis: 125px;
+  }
+
+  .splash-texto-campanha {
+    font-size: 14px;
+  }
+}

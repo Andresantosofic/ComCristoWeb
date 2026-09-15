@@ -1,0 +1,251 @@
+.document-page {
+  width: 100%;
+  min-height: 100vh;
+  padding-bottom: 96px;
+  background: #ffffff;
+  color: #17213f;
+}
+
+.document-content {
+  width: min(760px, calc(100% - 28px));
+  margin: 0 auto;
+  padding: 30px 0 45px;
+}
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+.document-header {
+  margin-bottom: 24px;
+  padding: 0 10px;
+}
+
+.document-header h1 {
+  margin: 0;
+
+  font-size: 40px;
+  line-height: 1.15;
+  font-weight: 700;
+
+  color: #111b4d;
+}
+
+.document-header p {
+  margin: 8px 0 0;
+
+  font-size: 15px;
+  line-height: 1.5;
+
+  color: #64748b;
+}
+
+/* =========================
+   ABAS
+========================= */
+
+.document-tabs {
+  width: 100%;
+
+  margin-bottom: 16px;
+
+  padding: 5px;
+
+  border-radius: 17px;
+
+  display: flex;
+  gap: 5px;
+
+  background: #f1f4f8;
+}
+
+.document-tab {
+  flex: 1;
+
+  min-height: 48px;
+
+  padding: 8px 12px;
+
+  border: 0;
+  border-radius: 13px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  background: transparent;
+  color: #667085;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.document-tab-active {
+  background: #ffffff;
+  color: #042251;
+
+  box-shadow: 0 2px 8px rgba(16, 24, 40, 0.08);
+}
+
+/* =========================
+   DOCUMENTO
+========================= */
+
+.document-card {
+  width: 100%;
+
+  padding: 26px 25px;
+
+  border: 1px solid #e3e7ed;
+  border-radius: 25px;
+
+  background: #ffffff;
+
+  box-shadow: 0 5px 16px rgba(16, 24, 40, 0.05);
+}
+
+.document-date {
+  margin-bottom: 20px;
+  padding: 10px 13px;
+
+  border-radius: 11px;
+
+  background: #f1f5f9;
+
+  color: #64748b;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.document-card > p {
+  margin: 0 0 22px;
+
+  font-size: 15px;
+  line-height: 1.75;
+
+  color: #475467;
+}
+
+/* =========================
+   SEÇÕES
+========================= */
+
+.document-section {
+  margin-top: 25px;
+  padding-top: 22px;
+
+  border-top: 1px solid #e8ecf1;
+}
+
+.document-section h2 {
+  margin: 0 0 12px;
+
+  font-size: 17px;
+  line-height: 1.4;
+  font-weight: 700;
+
+  color: #111b4d;
+}
+
+.document-section-content p {
+  margin: 0 0 13px;
+
+  font-size: 15px;
+  line-height: 1.75;
+
+  color: #475467;
+}
+
+.document-section-content p:last-child {
+  margin-bottom: 0;
+}
+
+.document-section-content a {
+  display: inline-block;
+
+  margin-top: 2px;
+
+  color: #1769aa;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  word-break: break-word;
+}
+
+.document-section-content a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  .document-content {
+    width: calc(100% - 20px);
+    padding-top: 24px;
+  }
+
+  .document-header {
+    margin-bottom: 20px;
+    padding: 0 8px;
+  }
+
+  .document-header h1 {
+    font-size: 32px;
+  }
+
+  .document-header p {
+    font-size: 14px;
+  }
+
+  .document-tabs {
+    border-radius: 15px;
+  }
+
+  .document-tab {
+    min-height: 45px;
+
+    padding: 7px 8px;
+
+    font-size: 11px;
+  }
+
+  .document-tab svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .document-card {
+    padding: 21px 16px;
+    border-radius: 21px;
+  }
+
+  .document-card > p,
+  .document-section-content p {
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  .document-section h2 {
+    font-size: 15px;
+  }
+
+  .document-date {
+    font-size: 11px;
+  }
+}

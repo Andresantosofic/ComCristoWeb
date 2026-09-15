@@ -1,0 +1,431 @@
+/* =========================================================
+   FEED
+========================================================= */
+
+.feed-page {
+  width: 100%;
+  min-height: 100vh;
+
+  box-sizing: border-box;
+
+  background: #1a2240;
+
+  padding-bottom: 90px;
+}
+
+/* =========================================================
+   CABEÇALHO
+   Android: 90dp
+========================================================= */
+
+.feed-header {
+  width: 100%;
+  height: 90px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+}
+
+.feed-logo {
+  width: 200px;
+  height: 65px;
+
+  display: block;
+
+  object-fit: contain;
+}
+
+/* =========================================================
+   CONTAINER
+   Android:
+   paddingStart = 16dp
+   paddingEnd = 16dp
+   paddingBottom = 30dp
+========================================================= */
+
+.feed-container {
+  width: 100%;
+  max-width: 900px;
+
+  margin: 0 auto;
+
+  padding: 0 16px 30px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* =========================================================
+   CARD
+   Android:
+   marginBottom = 16dp
+   radius = 22dp
+   elevation = 4dp
+   padding = 16dp
+========================================================= */
+
+.feed-card {
+  width: 100%;
+
+  margin: 0 0 16px;
+
+  padding: 16px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border-radius: 22px;
+
+  box-shadow:
+    0 3px 9px rgba(0, 0, 0, 0.18);
+}
+
+/* =========================================================
+   AUTOR
+========================================================= */
+
+.feed-author {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+/* =========================================================
+   AVATAR
+   Android: 52dp
+========================================================= */
+
+.feed-avatar {
+  width: 52px;
+  height: 52px;
+
+  flex: 0 0 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  border-radius: 50%;
+
+  background: #092b5c;
+}
+
+.feed-avatar img {
+  width: 45px;
+  height: 45px;
+
+  display: block;
+
+  object-fit: contain;
+
+  transform: translateY(1px);
+}
+
+/* =========================================================
+   INFORMAÇÕES DO AUTOR
+========================================================= */
+
+.feed-author-info {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.feed-author-info strong {
+  color: #123d67;
+
+  font-size: 15px;
+  line-height: 1.2;
+
+  font-weight: 700;
+}
+
+.feed-author-info span {
+  margin-top: 2px;
+
+  color: #68758d;
+
+  font-size: 12px;
+  line-height: 1.2;
+}
+
+/* =========================================================
+   LEGENDA
+   Android:
+   marginTop = 14dp
+   textSize = 15sp
+========================================================= */
+
+.feed-caption {
+  width: 100%;
+
+  margin: 14px 0 0;
+
+  color: #123d67;
+
+  font-size: 15px;
+
+  line-height: 1.45;
+
+  font-weight: 400;
+
+  white-space: pre-line;
+
+  overflow-wrap: anywhere;
+}
+
+/* =========================================================
+   MÍDIA
+   Android:
+   marginTop = 14dp
+   radius = 18dp
+========================================================= */
+
+.feed-media {
+  width: 100%;
+
+  position: relative;
+
+  margin-top: 14px;
+
+  overflow: hidden;
+
+  border-radius: 18px;
+
+  background: #17335f;
+}
+
+/* =========================================================
+   IMAGEM
+   Android:
+   adjustViewBounds = true
+   scaleType = fitCenter
+========================================================= */
+
+.feed-image-container {
+  background: #17335f;
+
+  line-height: 0;
+}
+
+.feed-media-image {
+  width: 100%;
+  height: auto;
+
+  display: block;
+
+  object-fit: contain;
+}
+
+/* =========================================================
+   VÍDEO NORMAL
+========================================================= */
+
+.feed-video-container {
+  width: 100%;
+
+  background: #17335f;
+
+  line-height: 0;
+}
+
+.feed-media-video {
+  width: 100%;
+  height: auto;
+
+  display: block;
+
+  background: #17335f;
+
+  object-fit: contain;
+}
+
+/* =========================================================
+   YOUTUBE
+   Android ajusta para 16:9
+========================================================= */
+
+.feed-youtube-container {
+  width: 100%;
+
+  aspect-ratio: 16 / 9;
+
+  position: relative;
+
+  background: #000000;
+
+  overflow: hidden;
+}
+
+.feed-youtube-player-host {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+}
+
+.feed-youtube-player-host iframe {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  border: 0;
+}
+
+/* =========================================================
+   CARREGAMENTO DA MÍDIA
+========================================================= */
+
+.feed-media-loading {
+  width: 100%;
+  min-height: 220px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+
+  padding: 30px;
+
+  background: #17335f;
+
+  color: #ffffff;
+
+  text-align: center;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  line-height: 1.4;
+}
+
+/* =========================================================
+   STATUS DO FEED
+========================================================= */
+
+.feed-status {
+  width: 100%;
+
+  min-height: 180px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+
+  padding: 30px;
+
+  border-radius: 22px;
+
+  background: transparent;
+
+  color: #ffffff;
+
+  font-size: 15px;
+
+  text-align: center;
+}
+
+/* =========================================================
+   TABLET / DESKTOP
+========================================================= */
+
+@media (min-width: 601px) {
+  .feed-container {
+    max-width: 900px;
+  }
+}
+
+/* =========================================================
+   CELULAR
+========================================================= */
+
+@media (max-width: 600px) {
+  .feed-page {
+    padding-bottom: 88px;
+  }
+
+  .feed-header {
+    height: 90px;
+  }
+
+  .feed-logo {
+    width: 200px;
+    height: 65px;
+  }
+
+  .feed-container {
+    width: 100%;
+
+    max-width: none;
+
+    padding: 0 16px 30px;
+  }
+
+  .feed-card {
+    padding: 16px;
+
+    border-radius: 22px;
+
+    margin-bottom: 16px;
+  }
+
+  .feed-author {
+    gap: 10px;
+  }
+
+  .feed-avatar {
+    width: 52px;
+    height: 52px;
+
+    flex-basis: 52px;
+  }
+
+  .feed-avatar img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .feed-author-info strong {
+    font-size: 15px;
+  }
+
+  .feed-author-info span {
+    font-size: 12px;
+  }
+
+  .feed-caption {
+    font-size: 15px;
+    line-height: 1.45;
+  }
+
+  .feed-media {
+    border-radius: 18px;
+  }
+}

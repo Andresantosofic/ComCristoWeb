@@ -1,0 +1,346 @@
+.wallpaper-detalhe-page {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  overflow: hidden;
+
+  background: #050505;
+
+  color: #ffffff;
+}
+
+/* =========================
+   FUNDO DESFOCADO
+   Android:
+   RenderEffect blur + alpha
+========================= */
+
+.wallpaper-detalhe-background {
+  position: fixed;
+
+  inset: -35px;
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  filter: blur(28px);
+
+  opacity: 0.38;
+
+  transform: scale(1.08);
+
+  z-index: 0;
+
+  pointer-events: none;
+}
+
+/* =========================
+   OVERLAY
+========================= */
+
+.wallpaper-detalhe-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.40);
+
+  z-index: 1;
+
+  pointer-events: none;
+}
+
+/* =========================
+   CONTEÚDO
+========================= */
+
+.wallpaper-detalhe-content {
+  position: relative;
+
+  z-index: 2;
+
+  width: min(900px, 100%);
+
+  min-height: 100vh;
+
+  margin: 0 auto;
+
+  padding: 0 20px 102px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* =========================
+   VOLTAR
+========================= */
+
+.wallpaper-detalhe-back {
+  width: fit-content;
+
+  min-height: 60px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #ffffff;
+
+  font-size: 20px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.wallpaper-detalhe-back:hover {
+  opacity: 0.8;
+
+  transform: translateX(-2px);
+}
+
+.wallpaper-detalhe-back:active {
+  transform: scale(0.97);
+}
+
+.wallpaper-detalhe-back:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.45);
+
+  outline-offset: 4px;
+
+  border-radius: 6px;
+}
+
+/* =========================
+   ÁREA DA IMAGEM
+========================= */
+
+.wallpaper-detalhe-image-wrapper {
+  flex: 1;
+
+  min-height: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px 15px 20px;
+
+  box-sizing: border-box;
+}
+
+/* =========================
+   IMAGEM
+   Android:
+   fitCenter
+========================= */
+
+.wallpaper-detalhe-image {
+  display: block;
+
+  width: auto;
+  height: auto;
+
+  max-width: 100%;
+
+  max-height: calc(100vh - 260px);
+
+  object-fit: contain;
+
+  border-radius: 22px;
+
+  box-shadow:
+    0 10px 35px rgba(0, 0, 0, 0.35);
+
+  user-select: none;
+}
+
+/* =========================
+   BOTÃO SALVAR
+   Android:
+   320 x 58
+========================= */
+
+.wallpaper-detalhe-save {
+  width: min(320px, calc(100% - 44px));
+
+  min-height: 58px;
+
+  flex-shrink: 0;
+
+  margin: 0 auto 20px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  padding: 0 18px;
+
+  box-sizing: border-box;
+
+  border: none;
+
+  border-radius: 18px;
+
+  background: #0ea5b7;
+
+  color: #ffffff;
+
+  font-size: 18px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 5px 15px rgba(0, 0, 0, 0.22);
+
+  transition:
+    transform 0.2s ease,
+    filter 0.2s ease;
+}
+
+.wallpaper-detalhe-save:hover {
+  filter: brightness(1.08);
+}
+
+.wallpaper-detalhe-save:active {
+  transform: scale(0.98);
+}
+
+.wallpaper-detalhe-save:disabled {
+  opacity: 0.65;
+
+  cursor: wait;
+}
+
+.wallpaper-detalhe-save:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.6);
+
+  outline-offset: 3px;
+}
+
+/* =========================
+   CARREGANDO
+========================= */
+
+.wallpaper-detalhe-loading {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  color: #ffffff;
+
+  text-align: center;
+}
+
+.wallpaper-detalhe-loading p {
+  margin: 0;
+
+  font-size: 15px;
+}
+
+/* =========================
+   NÃO ENCONTRADO
+========================= */
+
+.wallpaper-detalhe-not-found {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+
+  min-height: 100vh;
+
+  padding: 24px;
+
+  box-sizing: border-box;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  color: #ffffff;
+
+  text-align: center;
+}
+
+.wallpaper-detalhe-not-found h1 {
+  margin: 20px 0 8px;
+
+  font-size: 24px;
+}
+
+.wallpaper-detalhe-not-found p {
+  margin: 0;
+
+  font-size: 15px;
+
+  opacity: 0.8;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+  .wallpaper-detalhe-content {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 92px;
+  }
+
+  .wallpaper-detalhe-back {
+    min-height: 60px;
+  }
+
+  .wallpaper-detalhe-image-wrapper {
+    padding: 10px 15px 18px;
+  }
+
+  .wallpaper-detalhe-image {
+    max-width: 100%;
+
+    max-height: calc(100vh - 250px);
+
+    border-radius: 20px;
+  }
+
+  .wallpaper-detalhe-save {
+    width: calc(100% - 30px);
+
+    min-height: 58px;
+
+    margin-bottom: 18px;
+  }
+}

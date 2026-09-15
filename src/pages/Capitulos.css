@@ -1,0 +1,326 @@
+.capitulos-page {
+  width: 100%;
+  min-height: 100vh;
+
+  box-sizing: border-box;
+
+  background: #f7f8fc;
+
+  color: #111827;
+
+  padding:
+    18px
+    18px
+    140px;
+}
+
+.capitulos-container {
+  width: min(680px, 100%);
+
+  margin: 0 auto;
+}
+
+/* ============================================================
+   TOPO
+============================================================ */
+
+.capitulos-header {
+  position: relative;
+
+  width: 100%;
+
+  min-height: 74px;
+
+  display: flex;
+  align-items: center;
+
+  justify-content: center;
+
+  margin-bottom: 26px;
+}
+
+.capitulos-back {
+  position: absolute;
+
+  left: 0;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 0;
+
+  border-radius: 21px;
+
+  background: #ffffff;
+
+  color: #111b4d;
+
+  box-shadow:
+    0 2px 7px rgba(15, 23, 42, 0.08);
+
+  cursor: pointer;
+
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.capitulos-back:hover {
+  box-shadow:
+    0 4px 12px rgba(15, 23, 42, 0.12);
+}
+
+.capitulos-back:active {
+  transform:
+    translateY(-50%)
+    scale(0.94);
+}
+
+.capitulos-header-text {
+  text-align: center;
+
+  padding:
+    0 52px;
+}
+
+.capitulos-header-text h1 {
+  margin: 0;
+
+  color: #111827;
+
+  font-size: 26px;
+
+  line-height: 1.15;
+
+  font-weight: 700;
+}
+
+.capitulos-header-text p {
+  margin:
+    6px 0 0;
+
+  color: #64748b;
+
+  font-size: 14px;
+
+  line-height: 1.2;
+}
+
+/* ============================================================
+   GRID
+============================================================ */
+
+.capitulos-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 14px;
+}
+
+/* ============================================================
+   CAPÍTULO
+============================================================ */
+
+.capitulo-card {
+  width: 100%;
+
+  min-height: 82px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 1px solid #eef1f5;
+
+  border-radius: 20px;
+
+  background: #ffffff;
+
+  color: #111827;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 20px;
+
+  font-weight: 700;
+
+  box-shadow:
+    0 2px 7px rgba(15, 23, 42, 0.045);
+
+  cursor: pointer;
+
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    background 0.15s ease;
+}
+
+.capitulo-card:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 5px 14px rgba(15, 23, 42, 0.09);
+}
+
+.capitulo-card:active {
+  transform: scale(0.96);
+}
+
+/* ============================================================
+   ESTADOS
+============================================================ */
+
+.capitulos-state {
+  width: 100%;
+
+  min-height: 260px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  box-sizing: border-box;
+
+  padding: 30px;
+
+  text-align: center;
+
+  color: #64748b;
+}
+
+.capitulos-state strong {
+  color: #111b4d;
+
+  font-size: 18px;
+}
+
+.capitulos-state span {
+  font-size: 14px;
+}
+
+.capitulos-state p {
+  margin: 0;
+
+  max-width: 400px;
+
+  line-height: 1.5;
+}
+
+.capitulos-state-error {
+  color: #d32f2f;
+}
+
+.capitulos-state-error button {
+  min-height: 44px;
+
+  padding:
+    0 20px;
+
+  border: 0;
+
+  border-radius: 14px;
+
+  background: #042251;
+
+  color: #ffffff;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+/* ============================================================
+   TABLET
+============================================================ */
+
+@media (max-width: 600px) {
+  .capitulos-page {
+    padding:
+      14px
+      12px
+      130px;
+  }
+
+  .capitulos-header {
+    min-height: 68px;
+
+    margin-bottom: 22px;
+  }
+
+  .capitulos-back {
+    width: 42px;
+    height: 42px;
+  }
+
+  .capitulos-header-text h1 {
+    font-size: 24px;
+  }
+
+  .capitulos-header-text p {
+    font-size: 13px;
+  }
+
+  .capitulos-grid {
+    gap: 12px;
+  }
+
+  .capitulo-card {
+    min-height: 76px;
+
+    border-radius: 18px;
+
+    font-size: 19px;
+  }
+}
+
+/* ============================================================
+   CELULARES PEQUENOS
+============================================================ */
+
+@media (max-width: 380px) {
+  .capitulos-grid {
+    gap: 9px;
+  }
+
+  .capitulo-card {
+    min-height: 70px;
+
+    border-radius: 17px;
+
+    font-size: 18px;
+  }
+
+  .capitulos-header-text {
+    padding:
+      0 48px;
+  }
+
+  .capitulos-header-text h1 {
+    font-size: 22px;
+  }
+}

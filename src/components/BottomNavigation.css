@@ -1,0 +1,51 @@
+.bottom-navigation {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 72px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  background: #ffffff;
+
+  border-top: 1px solid #e8e8e8;
+
+  z-index: 1000;
+}
+
+.bottom-navigation-item {
+  flex: 1;
+
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+
+  text-decoration: none;
+
+  color: #777777;
+
+  font-size: 11px;
+  font-weight: 500;
+
+  transition: color 0.2s ease;
+}
+
+.bottom-navigation-item svg {
+  stroke-width: 2;
+}
+
+.bottom-navigation-item.active {
+  color: #1f5eff;
+}
+
+.bottom-navigation-item:hover {
+  color: #1f5eff;
+}

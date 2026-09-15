@@ -1,0 +1,461 @@
+.licenca-page {
+  width: 100%;
+  min-height: 100vh;
+
+  padding-bottom: 96px;
+
+  background: #ffffff;
+  color: #17213f;
+}
+
+.licenca-content {
+  width: min(760px, calc(100% - 28px));
+
+  margin: 0 auto;
+
+  padding: 30px 0 45px;
+}
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+.licenca-header {
+  padding: 0 10px;
+
+  text-align: center;
+}
+
+.licenca-header-icon {
+  width: 58px;
+  height: 58px;
+
+  margin: 0 auto 14px;
+
+  border-radius: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #e9f8f7;
+  color: #168f8a;
+}
+
+.licenca-header h1 {
+  margin: 0;
+
+  font-size: 40px;
+  line-height: 1.15;
+  font-weight: 700;
+
+  color: #111b4d;
+}
+
+.licenca-header p {
+  max-width: 570px;
+
+  margin: 9px auto 0;
+
+  font-size: 15px;
+  line-height: 1.55;
+
+  color: #64748b;
+}
+
+/* =========================
+   CARD PRINCIPAL
+========================= */
+
+.licenca-card {
+  width: 100%;
+
+  margin-top: 25px;
+
+  padding: 25px;
+
+  border: 1px solid #e2e7ed;
+  border-radius: 25px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 5px 16px rgba(16, 24, 40, 0.05);
+}
+
+/* =========================
+   INTRODUÇÃO
+========================= */
+
+.licenca-intro {
+  padding: 15px;
+
+  border-radius: 16px;
+
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  background: #eef4fb;
+
+  color: #042251;
+}
+
+.licenca-intro svg {
+  flex-shrink: 0;
+}
+
+.licenca-intro div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.licenca-intro strong {
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.licenca-intro span {
+  font-size: 11px;
+  line-height: 1.4;
+
+  color: #64748b;
+}
+
+/* =========================
+   VERSÕES
+========================= */
+
+.licenca-versao {
+  margin-top: 25px;
+
+  padding-top: 24px;
+
+  border-top: 1px solid #e8ecf1;
+}
+
+.licenca-versao-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.licenca-sigla {
+  width: 50px;
+  height: 50px;
+
+  flex-shrink: 0;
+
+  border-radius: 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #042251;
+  color: #1cc7c1;
+
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+}
+
+.licenca-versao-header h2 {
+  margin: 0;
+
+  font-size: 18px;
+  line-height: 1.35;
+
+  color: #111b4d;
+}
+
+.licenca-versao-content {
+  margin-top: 15px;
+
+  padding-left: 62px;
+}
+
+.licenca-versao-content p {
+  margin: 0 0 11px;
+
+  font-size: 14px;
+  line-height: 1.7;
+
+  color: #52657d;
+}
+
+.licenca-versao-content p:last-child {
+  margin-bottom: 0;
+}
+
+.licenca-versao-content strong {
+  color: #17213f;
+}
+
+/* =========================
+   DIREITOS
+========================= */
+
+.licenca-info {
+  margin-top: 26px;
+
+  padding: 19px;
+
+  border-radius: 18px;
+
+  background: #f5f7fa;
+}
+
+.licenca-info-title {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  color: #042251;
+}
+
+.licenca-info-title h2 {
+  margin: 0;
+
+  font-size: 17px;
+
+  color: #111b4d;
+}
+
+.licenca-info > p {
+  margin: 12px 0 0;
+
+  font-size: 13px;
+  line-height: 1.65;
+
+  color: #52657d;
+}
+
+/* =========================
+   CONTATO
+========================= */
+
+.licenca-contato {
+  margin-top: 17px;
+
+  padding: 19px;
+
+  border-radius: 18px;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+
+  background: #e9f8f7;
+}
+
+.licenca-contato-icon {
+  width: 43px;
+  height: 43px;
+
+  flex-shrink: 0;
+
+  border-radius: 13px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #d6f2f0;
+  color: #168f8a;
+}
+
+.licenca-contato h2 {
+  margin: 0;
+
+  font-size: 16px;
+  color: #111b4d;
+}
+
+.licenca-contato p {
+  margin: 7px 0 0;
+
+  font-size: 13px;
+  line-height: 1.6;
+
+  color: #52657d;
+}
+
+.licenca-contato a {
+  display: inline-block;
+
+  margin-top: 9px;
+
+  color: #1769aa;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  text-decoration: none;
+
+  word-break: break-word;
+}
+
+.licenca-contato a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   FINAL
+========================= */
+
+.licenca-final {
+  margin-top: 25px;
+
+  padding-top: 24px;
+
+  border-top: 1px solid #e8ecf1;
+}
+
+.licenca-final h2 {
+  margin: 0;
+
+  font-size: 17px;
+  color: #111b4d;
+}
+
+.licenca-final > p {
+  margin: 10px 0 0;
+
+  font-size: 13px;
+  line-height: 1.65;
+
+  color: #52657d;
+}
+
+.licenca-final-verse {
+  margin-top: 20px;
+
+  padding: 20px;
+
+  border-radius: 18px;
+
+  background: #042251;
+
+  text-align: center;
+}
+
+.licenca-final-verse p {
+  margin: 0;
+
+  font-size: 15px;
+  line-height: 1.65;
+
+  font-style: italic;
+
+  color: #ffffff;
+}
+
+.licenca-final-verse strong {
+  display: block;
+
+  margin-top: 9px;
+
+  font-size: 13px;
+
+  color: #1cc7c1;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  .licenca-content {
+    width: calc(100% - 20px);
+
+    padding-top: 24px;
+  }
+
+  .licenca-header {
+    padding: 0 8px;
+  }
+
+  .licenca-header-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 16px;
+  }
+
+  .licenca-header h1 {
+    font-size: 32px;
+  }
+
+  .licenca-header p {
+    font-size: 13px;
+  }
+
+  .licenca-card {
+    margin-top: 20px;
+
+    padding: 17px;
+
+    border-radius: 21px;
+  }
+
+  .licenca-intro {
+    padding: 13px;
+  }
+
+  .licenca-intro strong {
+    font-size: 10px;
+  }
+
+  .licenca-intro span {
+    font-size: 10px;
+  }
+
+  .licenca-versao {
+    margin-top: 22px;
+    padding-top: 21px;
+  }
+
+  .licenca-sigla {
+    width: 46px;
+    height: 46px;
+    border-radius: 14px;
+
+    font-size: 12px;
+  }
+
+  .licenca-versao-header h2 {
+    font-size: 16px;
+  }
+
+  .licenca-versao-content {
+    padding-left: 0;
+    margin-top: 13px;
+  }
+
+  .licenca-versao-content p {
+    font-size: 12px;
+    line-height: 1.65;
+  }
+
+  .licenca-info,
+  .licenca-contato {
+    padding: 15px;
+    border-radius: 16px;
+  }
+
+  .licenca-info > p,
+  .licenca-contato p,
+  .licenca-final > p {
+    font-size: 12px;
+  }
+
+  .licenca-final-verse {
+    padding: 17px;
+  }
+
+  .licenca-final-verse p {
+    font-size: 13px;
+  }
+}
