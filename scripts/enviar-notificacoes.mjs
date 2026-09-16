@@ -73,7 +73,6 @@ function obterDataHoraNoTimezone(
     if (parte.type !== 'literal') {
       valores[parte.type] =
         parte.value
-    }
   }
 
   const ano = valores.year
@@ -378,12 +377,39 @@ async function executar() {
       minutosAgora -
       horario.totalMinutos
 
+    /*
+     * O GitHub Actions pode atrasar a execução
+     * do workflow agendado.
+     *
+     * Por isso, permitimos que a notificação
+     * seja enviada até 60 minutos depois
+     * do horário configurado pelo usuário.
+     *
+     * Exemplo:
+     *
+     * Horário configurado: 06:25
+     *
+     * 06:25 → envia
+     * 06:30 → envia
+     * 06:45 → envia
+     * 07:25 → envia
+     * 07:26 → fora da janela
+     *
+     * O campo ultimoEnvioData continua impedindo
+     * que o mesmo dispositivo receba mais de
+     * uma notificação no mesmo dia.
+     */
+
+    const JANELA_ATRASO_MINUTOS =
+      60
+
     if (
       diferenca < 0 ||
-      diferenca > 10
+      diferenca >
+        JANELA_ATRASO_MINUTOS
     ) {
       console.log(
-        `[IGNORADO] ${documento.id} | horário configurado: ${dados.horario} | horário local atual: ${dataAtual.horaMinuto} | timezone: ${timezone} | fora da janela`,
+        `[IGNORADO] ${documento.id} | horário configurado: ${dados.horario} | horário local atual: ${dataAtual.horaMinuto} | timezone: ${timezone} | diferença: ${diferenca} min | fora da janela de ${JANELA_ATRASO_MINUTOS} min`,
       )
 
       ignorados++
@@ -400,6 +426,10 @@ async function executar() {
       dados.ultimoEnvioData ===
       dataCompleta
     ) {
+      console.log(
+        `[IGNORADO] ${documento.id} | notificação já enviada hoje (${dataCompleta}).`,
+      )
+
       ignorados++
       continue
     }
@@ -429,7 +459,7 @@ async function executar() {
     }
 
     console.log(
-      `[ENVIO] ${documento.id} | ${timezone} | ${dataAtual.horaMinuto} | ${conteudo.referencia}`,
+      `[ENVIO] ${documento.id} | ${timezone} | horário configurado: ${dados.horario} | horário atual: ${dataAtual.horaMinuto} | atraso: ${diferenca} min | ${conteudo.referencia}`,
     )
 
     try {
@@ -531,3 +561,4 @@ executar().catch(
     process.exit(1)
   },
 )
+}
