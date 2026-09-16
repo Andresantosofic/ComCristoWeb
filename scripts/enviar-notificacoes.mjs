@@ -247,8 +247,7 @@ async function enviarParaDispositivo(
         body:
           `${referencia}\n${texto}`,
 
-        icon:
-          '/images/logo_app.png',
+        icon: `${origem}/images/icone_notificacao.png`,
 
         badge:
           '/images/logo_app.png',
