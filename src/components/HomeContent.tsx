@@ -173,7 +173,7 @@ useEffect(() => {
     setNomeUsuario(
       localStorage.getItem(
         'comcristo_nome_usuario',
-      ) || 'André Santos',
+      ) || 'Filho(a) de Deus',
     )
   }
 
