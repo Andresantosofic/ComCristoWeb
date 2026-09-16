@@ -170,11 +170,15 @@ useEffect(() => {
       ),
     )
 
-    setNomeUsuario(
-      localStorage.getItem(
-        'comcristo_nome_usuario',
-      ) || 'Filho(a) de Deus',
-    )
+    const nomeSalvo = localStorage.getItem(
+  'comcristo_nome_usuario',
+)
+
+setNomeUsuario(
+  nomeSalvo === 'André Santos' || !nomeSalvo
+    ? 'Filho de Deus'
+    : nomeSalvo,
+)
   }
 
   window.addEventListener(
@@ -382,11 +386,13 @@ useEffect(() => {
 
   const [nomeUsuario, setNomeUsuario] =
   useState<string>(() => {
-    return (
-      localStorage.getItem(
-        'comcristo_nome_usuario',
-      ) || 'André Santos'
+    const nomeSalvo = localStorage.getItem(
+      'comcristo_nome_usuario',
     )
+
+    return nomeSalvo === 'André Santos' || !nomeSalvo
+      ? 'Filho(a) de Deus'
+      : nomeSalvo
   })
 
   /* =========================================

@@ -277,8 +277,7 @@ function MeuPerfil() {
 
   function salvarPerfil() {
     const novoNome =
-      nomeEditado.trim() ||
-      'Filho(a) de Deus'
+  nomeEditado.trim() || 'Filho(a) de Deus'
 
     const novaIdade =
       idadeEditada.trim()
