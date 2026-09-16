@@ -35,6 +35,7 @@ import Leitura from './pages/Leitura'
 import BottomNavigation from './components/BottomNavigation'
 import Splash from './components/Splash/Splash'
 import ScrollToTop from './components/ScrollToTop'
+import IOSInstallPrompt from './components/IOSInstallPrompt'
 
 function App() {
   const [
@@ -175,6 +176,7 @@ function App() {
         </Routes>
 
         <BottomNavigation />
+        <IOSInstallPrompt />
       </BrowserRouter>
     </>
   )
