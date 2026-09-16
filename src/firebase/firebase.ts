@@ -5,6 +5,10 @@ import {
   getMessaging,
   isSupported,
 } from 'firebase/messaging'
+import {
+  getAnalytics,
+  isSupported as isAnalyticsSupported,
+} from 'firebase/analytics'
 
 const firebaseConfig = {
   apiKey: 'AIzaSyDFl7VkqkpT4M-QOCKqNGYJOwlqjOKhdzI',
@@ -17,6 +21,19 @@ const firebaseConfig = {
 }
 
 const app = initializeApp(firebaseConfig)
+export const analyticsPromise =
+  isAnalyticsSupported()
+    .then((suportado) => {
+      if (!suportado) return null
+      return getAnalytics(app)
+    })
+    .catch((erro) => {
+      console.error(
+        'Firebase Analytics não disponível:',
+        erro,
+      )
+      return null
+    })
 
 export const db = getFirestore(app)
 
