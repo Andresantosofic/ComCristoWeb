@@ -1,5 +1,13 @@
-import { useCallback, useState } from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import {
+  useCallback,
+  useState,
+} from 'react'
+
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from 'react-router-dom'
 
 import Home from './pages/Home'
 import Biblia from './pages/Biblia'
@@ -29,35 +37,30 @@ import Splash from './components/Splash/Splash'
 import ScrollToTop from './components/ScrollToTop'
 
 function App() {
-  const [splashAtiva, setSplashAtiva] = useState(true)
+  const [
+    splashAtiva,
+    setSplashAtiva,
+  ] = useState(true)
 
-  const finalizarSplash = useCallback(() => {
-    setSplashAtiva(false)
-  }, [])
+  const finalizarSplash =
+    useCallback(() => {
+      setSplashAtiva(false)
+    }, [])
 
   return (
     <>
       {splashAtiva && (
-        <Splash onFinish={finalizarSplash} />
+        <Splash
+          onFinish={
+            finalizarSplash
+          }
+        />
       )}
 
-<BrowserRouter>
-  <ScrollToTop />
-
-  <Routes>
-    ...
-  </Routes>
-
-  <BottomNavigation />
-</BrowserRouter>
-
       <BrowserRouter>
+        <ScrollToTop />
+
         <Routes>
-
-          {/* =========================
-              PÁGINAS PRINCIPAIS
-          ========================= */}
-
           <Route
             path="/"
             element={<Home />}
@@ -108,11 +111,6 @@ function App() {
             element={<Leitura />}
           />
 
-
-          {/* =========================
-              WALLPAPERS
-          ========================= */}
-
           <Route
             path="/wallpapers"
             element={<Wallpapers />}
@@ -120,18 +118,17 @@ function App() {
 
           <Route
             path="/wallpapers/categoria/:categoriaId"
-            element={<WallpapersCategoria />}
+            element={
+              <WallpapersCategoria />
+            }
           />
 
           <Route
             path="/wallpapers/:wallpaperId"
-            element={<WallpaperDetalhe />}
+            element={
+              <WallpaperDetalhe />
+            }
           />
-
-
-          {/* =========================
-              MENU
-          ========================= */}
 
           <Route
             path="/perfil"
@@ -140,12 +137,16 @@ function App() {
 
           <Route
             path="/configuracoes"
-            element={<Configuracoes />}
+            element={
+              <Configuracoes />
+            }
           />
 
           <Route
             path="/redes-sociais"
-            element={<RedesSociais />}
+            element={
+              <RedesSociais />
+            }
           />
 
           <Route
@@ -158,25 +159,22 @@ function App() {
             element={<Sobre />}
           />
 
-
-          {/* =========================
-              SOBRE
-          ========================= */}
-
           <Route
             path="/termos-privacidade"
-            element={<TermosPrivacidade />}
+            element={
+              <TermosPrivacidade />
+            }
           />
 
           <Route
             path="/licenca-biblia"
-            element={<LicencaBiblia />}
+            element={
+              <LicencaBiblia />
+            }
           />
-
         </Routes>
 
         <BottomNavigation />
-
       </BrowserRouter>
     </>
   )

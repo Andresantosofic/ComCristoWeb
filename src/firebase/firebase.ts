@@ -1,10 +1,13 @@
 import { initializeApp } from 'firebase/app'
 import { getFirestore } from 'firebase/firestore'
 import { getStorage } from 'firebase/storage'
-import { getMessaging, isSupported } from 'firebase/messaging'
+import {
+  getMessaging,
+  isSupported,
+} from 'firebase/messaging'
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyA_tHTdiiRYMHi71kbUERtPt5FjjTzRU0g',
+  apiKey: 'AIzaSyA_tHTdiiRYHi71kbUERtPt5FjjTzRU0g',
   authDomain: 'com-cristo-app.firebaseapp.com',
   projectId: 'com-cristo-app',
   storageBucket: 'com-cristo-app.firebasestorage.app',
@@ -19,20 +22,13 @@ export const db = getFirestore(app)
 
 export const storage = getStorage(app)
 
-/*
- * Firebase Cloud Messaging
- *
- * O Messaging só é inicializado quando o navegador
- * realmente suporta notificações via FCM.
- */
-export const messagingPromise = isSupported().then(
-  (suportado) => {
+export const messagingPromise =
+  isSupported().then((suportado) => {
     if (!suportado) {
       return null
     }
 
     return getMessaging(app)
-  },
-)
+  })
 
 export default app

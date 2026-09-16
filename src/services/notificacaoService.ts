@@ -408,7 +408,7 @@ export async function iniciarNotificacoesEmPrimeiroPlano(
           titulo,
           {
             body: corpo,
-            icon: '/icons/icon-192.png',
+            icon: '/images/logo_app.png',
           },
         )
       }
