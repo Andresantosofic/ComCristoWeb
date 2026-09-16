@@ -51,7 +51,7 @@ try {
   )
 
   firebase.initializeApp({
-    apiKey: 'AIzaSyA_tHTdiiRYHi71kbUERtPt5FjjTzRU0g',
+    apiKey: 'AIzaSyDFl7VkqkpT4M-QOCKqNGYJOwlqjOKhdzI',
     authDomain: 'com-cristo-app.firebaseapp.com',
     projectId: 'com-cristo-app',
     storageBucket: 'com-cristo-app.firebasestorage.app',
