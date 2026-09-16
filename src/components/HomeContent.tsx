@@ -176,7 +176,7 @@ useEffect(() => {
 
 setNomeUsuario(
   nomeSalvo === 'André Santos' || !nomeSalvo
-    ? 'Filho de Deus'
+    ? 'Filho(a) de Deus'
     : nomeSalvo,
 )
   }
