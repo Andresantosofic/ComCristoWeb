@@ -37,7 +37,17 @@ jobs:
         run: npm ci --prefix scripts
 
       - name: Enviar notificações
-        run: node scripts/enviar-notificacoes.mjs
-        env:
-          FIREBASE_SERVICE_ACCOUNT_JSON: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_JSON }}
-          FORCAR_ENVIO: ${{ inputs.forcar_envio }}
+  run: |
+    echo "=========================================="
+    echo "INICIANDO SCRIPT DE NOTIFICAÇÕES"
+    echo "FORCAR_ENVIO=$FORCAR_ENVIO"
+    echo "=========================================="
+
+    node scripts/enviar-notificacoes.mjs
+
+    echo "=========================================="
+    echo "SCRIPT FINALIZADO"
+    echo "=========================================="
+  env:
+    FIREBASE_SERVICE_ACCOUNT_JSON: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_JSON }}
+    FORCAR_ENVIO: ${{ inputs.forcar_envio }}
