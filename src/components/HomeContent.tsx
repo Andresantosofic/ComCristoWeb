@@ -175,7 +175,7 @@ useEffect(() => {
 )
 
 setNomeUsuario(
-  nomeSalvo === 'André Santos' || !nomeSalvo
+  !nomeSalvo
     ? 'Filho(a) de Deus'
     : nomeSalvo,
 )
@@ -390,9 +390,9 @@ useEffect(() => {
       'comcristo_nome_usuario',
     )
 
-    return nomeSalvo === 'André Santos' || !nomeSalvo
-      ? 'Filho(a) de Deus'
-      : nomeSalvo
+    return !nomeSalvo
+  ? 'Filho(a) de Deus'
+  : nomeSalvo
   })
 
   /* =========================================
