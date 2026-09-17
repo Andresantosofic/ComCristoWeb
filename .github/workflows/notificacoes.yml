@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
     inputs:
       forcar_envio:
-        description: "Forçar envio mesmo se já houver envio hoje"
+        description: "Forcar envio mesmo se ja houver envio hoje"
         required: false
         type: boolean
         default: false
@@ -23,7 +23,7 @@ jobs:
     timeout-minutes: 5
 
     steps:
-      - name: Baixar código
+      - name: Baixar codigo
         uses: actions/checkout@v4
 
       - name: Configurar Node.js
@@ -33,31 +33,11 @@ jobs:
           cache: npm
           cache-dependency-path: scripts/package-lock.json
 
-      - name: Instalar dependências
+      - name: Instalar dependencias
         run: npm ci --prefix scripts
 
-            - name: Enviar notificações
-        run: |
-          echo "=========================================="
-          echo "INICIANDO SCRIPT DE NOTIFICAÇÕES"
-          echo "FORCAR_ENVIO=$FORCAR_ENVIO"
-          echo "=========================================="
-
-          echo "TESTE 1 - Node:"
-          node --version
-
-          echo "TESTE 2 - Arquivo:"
-          ls -l scripts/enviar-notificacoes.mjs
-
-          echo "TESTE 3 - Sintaxe:"
-          node --check scripts/enviar-notificacoes.mjs
-
-          echo "TESTE 4 - EXECUÇÃO:"
-          node scripts/enviar-notificacoes.mjs
-
-          echo "=========================================="
-          echo "SCRIPT FINALIZADO"
-          echo "=========================================="
+      - name: Enviar notificacoes
+        run: node scripts/enviar-notificacoes.mjs
         env:
           FIREBASE_SERVICE_ACCOUNT_JSON: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_JSON }}
           FORCAR_ENVIO: ${{ inputs.forcar_envio }}
