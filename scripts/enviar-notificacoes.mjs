@@ -19,6 +19,9 @@ const COLLECTION_DISPOSITIVOS =
 const COLLECTION_CONTEUDO =
   'conteudo_diario'
 
+  const FORCAR_ENVIO =
+  process.env.FORCAR_ENVIO === 'true'
+
 const secret =
   process.env.FIREBASE_SERVICE_ACCOUNT_JSON
 
@@ -47,7 +50,7 @@ if (getApps().length === 0) {
 
 const db = getFirestore()
 const messaging = getMessaging()
-
+  
 function obterDataHoraNoTimezone(
   timezone,
 ) {
@@ -283,6 +286,10 @@ async function executar() {
     '==========================================',
   )
 
+  console.log(
+  `[CONFIG] FORCAR_ENVIO=${FORCAR_ENVIO}`,
+)
+
   const dispositivosSnapshot =
     await db
       .collection(
@@ -373,9 +380,12 @@ async function executar() {
         60 +
       Number(dataAtual.minuto)
 
-    const diferenca =
-      minutosAgora -
-      horario.totalMinutos
+    let diferenca =
+  minutosAgora - horario.totalMinutos
+
+if (diferenca < 0) {
+  diferenca += 24 * 60
+}s
 
     /*
      * O GitHub Actions pode atrasar a execução
@@ -423,9 +433,9 @@ async function executar() {
       dataAtual.dataKey
 
     if (
-      dados.ultimoEnvioData ===
-      dataCompleta
-    ) {
+  dados.ultimoEnvioData === dataCompleta &&
+  !FORCAR_ENVIO
+) {
       console.log(
         `[IGNORADO] ${documento.id} | notificação já enviada hoje (${dataCompleta}).`,
       )
