@@ -63,9 +63,14 @@ function MeuPerfil() {
     const avatarSalvo =
       localStorage.getItem(AVATAR_KEY)
 
-    if (nomeSalvo) {
-      setNome(nomeSalvo)
-    }
+    const nomeFinal =
+  nomeSalvo === 'André Santos' ||
+  nomeSalvo === 'Filho de Deus' ||
+  !nomeSalvo
+    ? 'Filho(a) de Deus'
+    : nomeSalvo
+
+setNome(nomeFinal)
 
     if (
       sexoSalvo === 'Masculino' ||
