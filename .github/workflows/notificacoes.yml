@@ -36,13 +36,23 @@ jobs:
       - name: Instalar dependências
         run: npm ci --prefix scripts
 
-      - name: Enviar notificações
+            - name: Enviar notificações
         run: |
           echo "=========================================="
           echo "INICIANDO SCRIPT DE NOTIFICAÇÕES"
           echo "FORCAR_ENVIO=$FORCAR_ENVIO"
           echo "=========================================="
 
+          echo "TESTE 1 - Node:"
+          node --version
+
+          echo "TESTE 2 - Arquivo:"
+          ls -l scripts/enviar-notificacoes.mjs
+
+          echo "TESTE 3 - Sintaxe:"
+          node --check scripts/enviar-notificacoes.mjs
+
+          echo "TESTE 4 - EXECUÇÃO:"
           node scripts/enviar-notificacoes.mjs
 
           echo "=========================================="
