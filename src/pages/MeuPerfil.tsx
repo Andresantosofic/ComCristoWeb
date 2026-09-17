@@ -64,11 +64,7 @@ function MeuPerfil() {
       localStorage.getItem(AVATAR_KEY)
 
     const nomeFinal =
-  nomeSalvo === 'André Santos' ||
-  nomeSalvo === 'Filho de Deus' ||
-  !nomeSalvo
-    ? 'Filho(a) de Deus'
-    : nomeSalvo
+  nomeSalvo || 'Filho(a) de Deus'
 
 setNome(nomeFinal)
 
