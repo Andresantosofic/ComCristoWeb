@@ -2,10 +2,6 @@ import { initializeApp } from 'firebase/app'
 import { getFirestore } from 'firebase/firestore'
 import { getStorage } from 'firebase/storage'
 import {
-  getMessaging,
-  isSupported,
-} from 'firebase/messaging'
-import {
   getAnalytics,
   isSupported as isAnalyticsSupported,
 } from 'firebase/analytics'
@@ -21,10 +17,18 @@ const firebaseConfig = {
 }
 
 const app = initializeApp(firebaseConfig)
+
+export const db = getFirestore(app)
+
+export const storage = getStorage(app)
+
 export const analyticsPromise =
   isAnalyticsSupported()
     .then((suportado) => {
-      if (!suportado) return null
+      if (!suportado) {
+        return null
+      }
+
       return getAnalytics(app)
     })
     .catch((erro) => {
@@ -32,20 +36,8 @@ export const analyticsPromise =
         'Firebase Analytics não disponível:',
         erro,
       )
+
       return null
     })
-
-export const db = getFirestore(app)
-
-export const storage = getStorage(app)
-
-export const messagingPromise =
-  isSupported().then((suportado) => {
-    if (!suportado) {
-      return null
-    }
-
-    return getMessaging(app)
-  })
 
 export default app
