@@ -3059,39 +3059,6 @@
 }
 
 /* ============================================================
-   VOLTAR AO TOPO
-   ============================================================ */
-
-.leitura-voltar-topo {
-  position: fixed;
-
-  right: 18px;
-  bottom: 22px;
-
-  z-index: 2000;
-
-  width: 44px;
-  height: 44px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 0;
-
-  border: 0;
-  border-radius: 50%;
-
-  background: #1a2240;
-  color: #ffffff;
-
-  box-shadow:
-    0 4px 12px rgba(26, 34, 64, 0.22);
-
-  cursor: pointer;
-}
-
-/* ============================================================
    LOADING / ERRO
    ============================================================ */
 

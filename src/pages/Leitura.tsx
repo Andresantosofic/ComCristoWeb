@@ -1639,17 +1639,6 @@ export default function Leitura() {
   }
 
   /* ==========================================================
-     VOLTAR AO TOPO
-  ========================================================== */
-
-  function voltarAoTopo() {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    })
-  }
-
-  /* ==========================================================
      ESTADOS DERIVADOS
   ========================================================== */
 
@@ -3138,27 +3127,6 @@ export default function Leitura() {
           </div>
         </div>
       )}
-
-      {/* ======================================================
-          BOTÃO VOLTAR AO TOPO
-      ====================================================== */}
-
-      <button
-        type="button"
-        className="leitura-voltar-topo"
-        onClick={
-          voltarAoTopo
-        }
-        aria-label="Voltar ao topo"
-      >
-        <ChevronLeft
-          size={20}
-          style={{
-            transform:
-              'rotate(90deg)',
-          }}
-        />
-      </button>
     </main>
   )
 }
