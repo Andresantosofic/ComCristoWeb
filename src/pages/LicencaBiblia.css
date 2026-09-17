@@ -459,3 +459,48 @@
     font-size: 13px;
   }
 }
+.licenca-header {
+  position: relative;
+}
+
+.licenca-back-button {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  border: 0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eef2f7;
+  color: #042251;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  transition:
+    transform 0.15s ease,
+    background 0.15s ease;
+}
+
+.licenca-back-button:hover {
+  background: #e5ebf3;
+  transform: translateX(-1px);
+}
+
+.licenca-back-button:active {
+  transform: scale(0.94);
+}
+
+.licenca-back-button:focus-visible {
+  outline: 3px solid rgba(4, 34, 81, 0.15);
+  outline-offset: 2px;
+}
+
+@media (max-width: 700px) {
+  .licenca-back-button {
+    left: 8px;
+  }
+}

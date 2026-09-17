@@ -1,4 +1,5 @@
-import { ChevronRight, Heart } from 'lucide-react'
+import { useNavigate } from 'react-router-dom'
+import { ArrowLeft, ChevronRight, Heart } from 'lucide-react'
 
 import './RedesSociais.css'
 
@@ -18,6 +19,8 @@ function abrirInstagram(username: string) {
 }
 
 function RedesSociais() {
+  const navigate = useNavigate()
+
   return (
     <main className="social-page">
       <section className="social-content">
@@ -27,14 +30,32 @@ function RedesSociais() {
         ========================= */}
 
         <header className="social-header">
-          <h1>Redes Sociais</h1>
 
-          <p>
-            Conecte-se conosco e fique por dentro de
-            conteúdos, mensagens e novidades dos nossos
-            aplicativos.
-          </p>
-        </header>
+  <div className="social-header-top">
+
+    <button
+      type="button"
+      className="social-back-button"
+      onClick={() => navigate(-1)}
+      aria-label="Voltar"
+    >
+      <ArrowLeft
+        size={21}
+        strokeWidth={2}
+      />
+    </button>
+
+    <h1>Redes Sociais</h1>
+
+  </div>
+
+  <p>
+    Conecte-se conosco e fique por dentro de
+    conteúdos, mensagens e novidades dos nossos
+    aplicativos.
+  </p>
+
+</header>
 
         {/* =========================
             CARD DO CRIADOR

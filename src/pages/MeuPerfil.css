@@ -31,8 +31,8 @@
   top: 12px;
   left: max(14px, calc(50% - 340px));
 
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
 
   padding: 0;
 
@@ -43,16 +43,33 @@
   align-items: center;
   justify-content: center;
 
-  background: transparent;
+  background: #eef2f7;
   color: #042251;
 
   cursor: pointer;
 
   z-index: 10;
 
+  appearance: none;
+  -webkit-appearance: none;
+
   transition:
-    background 0.2s ease,
-    transform 0.2s ease;
+    transform 0.15s ease,
+    background 0.15s ease;
+}
+
+.perfil-back-button:hover {
+  background: #e5ebf3;
+  transform: translateX(-1px);
+}
+
+.perfil-back-button:active {
+  transform: scale(0.94);
+}
+
+.perfil-back-button:focus-visible {
+  outline: 3px solid rgba(4, 34, 81, 0.15);
+  outline-offset: 2px;
 }
 
 .perfil-back-button:hover {

@@ -1,9 +1,11 @@
 import {
+  ArrowLeft,
   BookOpen,
   CheckCircle2,
   FileText,
   Mail,
 } from 'lucide-react'
+import { useNavigate } from 'react-router-dom'
 import './LicencaBiblia.css'
 
 type LicencaProps = {
@@ -41,24 +43,32 @@ function Licenca({
 }
 
 function LicencaBiblia() {
+  const navigate = useNavigate()
   return (
     <main className="licenca-page">
       <section className="licenca-content">
 
         <header className="licenca-header">
+  <button
+    type="button"
+    className="licenca-back-button"
+    onClick={() => navigate(-1)}
+    aria-label="Voltar"
+  >
+    <ArrowLeft size={21} strokeWidth={2} />
+  </button>
 
-          <div className="licenca-header-icon">
-            <BookOpen size={28} />
-          </div>
+  <div className="licenca-header-icon">
+    <BookOpen size={28} />
+  </div>
 
-          <h1>Licença da Bíblia</h1>
+  <h1>Licença da Bíblia</h1>
 
-          <p>
-            Licença e créditos das versões bíblicas
-            disponibilizadas no Com Cristo.
-          </p>
-
-        </header>
+  <p>
+    Licença e créditos das versões bíblicas
+    disponibilizadas no Com Cristo.
+  </p>
+</header>
 
         <article className="licenca-card">
 

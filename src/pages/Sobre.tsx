@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import {
+  ArrowLeft,
   BookOpen,
   ChevronRight,
   FileText,
@@ -16,12 +17,30 @@ function Sobre() {
       <section className="sobre-content">
 
         <header className="sobre-header">
-          <h1>Sobre</h1>
 
-          <p>
-            Saiba mais sobre o aplicativo Com Cristo.
-          </p>
-        </header>
+  <div className="sobre-header-top">
+
+    <button
+      type="button"
+      className="sobre-back-button"
+      onClick={() => navigate(-1)}
+      aria-label="Voltar"
+    >
+      <ArrowLeft
+        size={21}
+        strokeWidth={2}
+      />
+    </button>
+
+    <h1>Sobre</h1>
+
+  </div>
+
+  <p>
+    Saiba mais sobre o aplicativo Com Cristo.
+  </p>
+
+</header>
 
         {/* =========================
             SOBRE O APLICATIVO

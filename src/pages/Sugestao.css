@@ -240,3 +240,55 @@
     padding-right: 10px;
   }
 }
+/* =========================================================
+   BOTÃO VOLTAR
+========================================================= */
+
+.feedback-header-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.feedback-back-button {
+  width: 40px;
+  height: 40px;
+
+  flex: 0 0 40px;
+
+  border: 0;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #ffffff;
+  color: #042251;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 3px 10px rgba(16, 24, 40, 0.08);
+
+  appearance: none;
+  -webkit-appearance: none;
+
+  transition:
+    transform 0.15s ease,
+    background 0.15s ease;
+}
+
+.feedback-back-button:hover {
+  background: #f7f9fc;
+  transform: translateX(-1px);
+}
+
+.feedback-back-button:active {
+  transform: scale(0.94);
+}
+
+.feedback-back-button:focus-visible {
+  outline: 3px solid rgba(4, 34, 81, 0.15);
+  outline-offset: 2px;
+}

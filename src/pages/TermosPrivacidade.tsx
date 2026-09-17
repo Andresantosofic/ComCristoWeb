@@ -1,11 +1,14 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import {
   FileText,
   ShieldCheck,
+  ArrowLeft,
 } from 'lucide-react'
 import './TermosPrivacidade.css'
 
 function TermosPrivacidade() {
+  const navigate = useNavigate()
   const [abaAtiva, setAbaAtiva] = useState<
     'termos' | 'privacidade'
   >('termos')
@@ -15,11 +18,24 @@ function TermosPrivacidade() {
       <section className="document-content">
 
         <header className="document-header">
-          <h1>
-            {abaAtiva === 'termos'
-              ? 'Termos e Condições'
-              : 'Política de Privacidade'}
-          </h1>
+
+  <div className="document-header-top">
+
+    <button
+      type="button"
+      className="document-back-button"
+      onClick={() => navigate(-1)}
+      aria-label="Voltar"
+    >
+      <ArrowLeft
+        size={21}
+        strokeWidth={2}
+      />
+    </button>
+
+    <h1>Termos e Privacidade</h1>
+
+  </div>
 
           <p>
             {abaAtiva === 'termos'

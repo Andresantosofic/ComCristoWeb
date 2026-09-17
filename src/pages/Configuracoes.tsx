@@ -1,4 +1,5 @@
 import {
+  ArrowLeft,
   BookOpen,
   Minus,
   Plus,
@@ -7,6 +8,7 @@ import {
   useEffect,
   useState,
 } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 import './Configuracoes.css'
 
@@ -62,6 +64,7 @@ function lerNumero(
    ========================================================= */
 
 export default function Configuracoes() {
+  const navigate = useNavigate()
   /* -----------------------------------------
      FONTE
      ----------------------------------------- */
@@ -140,13 +143,31 @@ export default function Configuracoes() {
             ================================================= */}
 
         <header className="configuracoes-header">
-          <h1>Configurações</h1>
 
-          <p>
-            Personalize sua experiência
-            no aplicativo.
-          </p>
-        </header>
+  <div className="configuracoes-header-top">
+
+    <button
+      type="button"
+      className="configuracoes-back-button"
+      onClick={() => navigate(-1)}
+      aria-label="Voltar"
+    >
+      <ArrowLeft
+        size={21}
+        strokeWidth={2}
+      />
+    </button>
+
+    <h1>Configurações</h1>
+
+  </div>
+
+  <p>
+    Personalize sua experiência
+    no aplicativo.
+  </p>
+
+</header>
 
         {/* =================================================
             LEITURA BÍBLICA

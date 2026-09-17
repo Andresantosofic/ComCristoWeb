@@ -1,8 +1,11 @@
 import { useState } from 'react'
-import { Mail, Send } from 'lucide-react'
+import { useNavigate } from 'react-router-dom'
+import { ArrowLeft, Mail, Send } from 'lucide-react'
 import './Sugestao.css'
 
 function Feedback() {
+  const navigate = useNavigate()
+
   const [mensagem, setMensagem] = useState('')
 
   function enviarFeedback() {
@@ -42,8 +45,26 @@ Enviado pelo app Com Cristo`
       <section className="feedback-content">
 
         <header className="feedback-header">
-          <h1>Enviar Feedback</h1>
-        </header>
+
+  <div className="feedback-header-top">
+
+    <button
+      type="button"
+      className="feedback-back-button"
+      onClick={() => navigate(-1)}
+      aria-label="Voltar"
+    >
+      <ArrowLeft
+        size={21}
+        strokeWidth={2}
+      />
+    </button>
+
+    <h1>Enviar Feedback</h1>
+
+  </div>
+
+</header>
 
         <section className="feedback-card">
 
