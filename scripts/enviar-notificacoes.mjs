@@ -385,7 +385,7 @@ async function executar() {
 
 if (diferenca < 0) {
   diferenca += 24 * 60
-}s
+}
 
     /*
      * O GitHub Actions pode atrasar a execução
