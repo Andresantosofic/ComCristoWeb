@@ -1,5 +1,6 @@
 import {
   ArrowLeft,
+  Bell,
   BookOpen,
   Minus,
   Plus,
@@ -11,6 +12,7 @@ import {
 import { useNavigate } from 'react-router-dom'
 
 import './Configuracoes.css'
+import { registrarNotificacaoWeb } from '../services/notificacaoWebService'
 
 /* =========================================================
    CHAVES DO LOCALSTORAGE
@@ -65,6 +67,33 @@ function lerNumero(
 
 export default function Configuracoes() {
   const navigate = useNavigate()
+
+  const [notificacoesAtivas, setNotificacoesAtivas] =
+  useState(
+    typeof Notification !== 'undefined' &&
+    Notification.permission === 'granted',
+  )
+
+const [ativandoNotificacoes, setAtivandoNotificacoes] =
+  useState(false)
+
+const ativarNotificacoes = async () => {
+  if (ativandoNotificacoes) return
+
+  setAtivandoNotificacoes(true)
+
+  try {
+    await registrarNotificacaoWeb()
+
+    const ativas =
+      typeof Notification !== 'undefined' &&
+      Notification.permission === 'granted'
+
+    setNotificacoesAtivas(ativas)
+  } finally {
+    setAtivandoNotificacoes(false)
+  }
+}
   /* -----------------------------------------
      FONTE
      ----------------------------------------- */
@@ -296,7 +325,69 @@ export default function Configuracoes() {
           </div>
 
         </section>
+        {/* =================================================
+            NOTIFICAÇÕES
+            ================================================= */}
 
+        <section className="config-card">
+
+          <div className="config-section-header">
+
+            <div className="config-icon config-icon-blue">
+              <Bell
+                size={21}
+                strokeWidth={2}
+              />
+            </div>
+
+            <div>
+              <h2>
+                Notificações
+              </h2>
+
+              <p>
+                Receba lembretes e o
+                versículo do dia.
+              </p>
+            </div>
+
+          </div>
+
+          <div className="config-divider" />
+
+          <div className="notificacoes-controle">
+
+            <div>
+              <strong>
+                Notificações do Com Cristo
+              </strong>
+
+              <p>
+                {notificacoesAtivas
+                  ? 'As notificações estão ativadas neste navegador.'
+                  : 'Ative para receber novidades e lembretes.'}
+              </p>
+            </div>
+
+            <button
+              type="button"
+              className="notificacoes-button"
+              onClick={ativarNotificacoes}
+              disabled={
+                ativandoNotificacoes ||
+                notificacoesAtivas
+              }
+            >
+              {ativandoNotificacoes
+                ? 'Ativando...'
+                : notificacoesAtivas
+                  ? 'Ativadas'
+                  : 'Ativar'}
+            </button>
+
+          </div>
+
+        </section>
       </div>
     </main>
   )
