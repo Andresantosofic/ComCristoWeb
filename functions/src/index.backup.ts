@@ -10,7 +10,6 @@ const db = getFirestore();
 const messaging = getMessaging();
 
 const COLECAO_DISPOSITIVOS = "notificacoes_dispositivos";
-const COLECAO_TOKENS_WEB = "tokens_web";
 const COLECAO_CONTEUDO = "conteudo_diario";
 
 type Dispositivo = {
@@ -19,11 +18,6 @@ type Dispositivo = {
   horario?: string
   timezone?: string
   ultimoEnvioData?: string
-}
-
-type TokenWeb = {
-  token?: string
-  ativo?: boolean
 }
 
 type ConteudoDiario = {
@@ -157,210 +151,6 @@ async function enviarParaDispositivo(
   });
 }
 
-/**
- * Envia o versículo do dia para um token Web.
- * @param {string} token Token FCM Web.
- * @param {string} referencia Referência bíblica.
- * @param {string} texto Texto do versículo.
- * @return {Promise<void>} Conclusão do envio.
- */
-async function enviarVersiculoWeb(
-  token: string,
-  referencia: string,
-  texto: string,
-) {
-  await messaging.send({
-    token,
-
-    notification: {
-      title: "Versículo do dia",
-      body: `${referencia}\n${texto}`,
-    },
-
-    data: {
-      tipo: "versiculo_diario_web",
-      referencia,
-      texto,
-      url: "/devocional",
-    },
-
-    webpush: {
-      notification: {
-        icon: "/icons/icon-192.png",
-        badge: "/icons/icon-192.png",
-        tag: "comcristo-versiculo-diario",
-      },
-      fcmOptions: {
-        link: "https://comcristoweb.pages.dev/devocional",
-      },
-    },
-  });
-}
-
-/**
- * Envia o lembrete do devocional para um token Web.
- * @param {string} token Token FCM Web.
- * @return {Promise<void>} Conclusão do envio.
- */
-async function enviarLembreteWeb(token: string) {
-  await messaging.send({
-    token,
-
-    notification: {
-      title: "Com Cristo",
-      body:
-  "Não deixe o dia terminar sem estar com Cristo. " +
-  "Acesse seu devocional de hoje.",
-    },
-
-    data: {
-      tipo: "lembrete_devocional_web",
-      url: "/devocional",
-    },
-
-    webpush: {
-      notification: {
-        icon: "/icons/icon-192.png",
-        badge: "/icons/icon-192.png",
-        tag: "comcristo-lembrete-devocional",
-      },
-      fcmOptions: {
-        link: "https://comcristoweb.pages.dev/devocional",
-      },
-    },
-  });
-}
-
-/**
- * Envia as notificações Web programadas.
- *
- * 08:00 = Versículo do dia.
- * 20:00 = Lembrete do devocional.
- *
- * @param {string} hora Hora atual no formato HH:mm.
- * @param {string} dataKey Data atual no formato MM-DD.
- */
-async function processarNotificacoesWeb(
-  hora: string,
-  dataKey: string,
-) {
-  const horariosPermitidos = ["08:00", "20:00"];
-
-  if (!horariosPermitidos.includes(hora)) {
-    return;
-  }
-
-  const snapshot = await db
-    .collection(COLECAO_TOKENS_WEB)
-    .where("ativo", "==", true)
-    .get();
-
-  if (snapshot.empty) {
-    logger.info(
-      `Nenhum token Web ativo encontrado para ${hora}.`,
-    );
-    return;
-  }
-
-  logger.info(
-    `Processando ${snapshot.size} token(s) Web para ${hora}.`,
-  );
-
-  const conteudo =
-    hora === "08:00" ?
-      await obterConteudoDoDia(dataKey) :
-      null;
-
-  const versiculo =
-    conteudo?.versiculoDoDia;
-
-  if (
-    hora === "08:00" &&
-    (
-      !versiculo?.texto ||
-      !versiculo?.referencia
-    )
-  ) {
-    logger.warn(
-      `Versículo do dia incompleto para ${dataKey}.`,
-    );
-    return;
-  }
-
-  for (const documento of snapshot.docs) {
-    const tokenWeb =
-      documento.data() as TokenWeb;
-
-    const token = tokenWeb.token;
-
-    if (!token) {
-      logger.warn(
-        `Token Web ${documento.id} não possui token.`,
-      );
-      continue;
-    }
-
-    try {
-      if (hora === "08:00") {
-        await enviarVersiculoWeb(
-          token,
-          versiculo!.referencia!,
-          versiculo!.texto!,
-        );
-
-        logger.info(
-          `Versículo Web enviado para ${documento.id}.`,
-        );
-      }
-
-      if (hora === "20:00") {
-        await enviarLembreteWeb(token);
-
-        logger.info(
-          `Lembrete Web enviado para ${documento.id}.`,
-        );
-      }
-    } catch (erro: unknown) {
-      logger.error(
-        `Erro ao enviar notificação Web para ${
-          documento.id
-        }.`,
-        erro,
-      );
-
-      const mensagem =
-        erro instanceof Error ?
-          erro.message :
-          String(erro);
-
-      if (
-        mensagem.includes(
-          "registration-token-not-registered",
-        ) ||
-        mensagem.includes(
-          "invalid-registration-token",
-        ) ||
-        mensagem.includes(
-          "messaging/registration-token-not-registered",
-        ) ||
-        mensagem.includes(
-          "messaging/invalid-registration-token",
-        )
-      ) {
-        await documento.ref.update({
-          ativo: false,
-          atualizadoEm:
-            FieldValue.serverTimestamp(),
-        });
-
-        logger.warn(
-          `Token Web ${documento.id} desativado por token inválido.`,
-        );
-      }
-    }
-  }
-}
-
 export const enviarVersiculoDiario = onSchedule(
   {
     schedule: "* * * * *",
@@ -374,46 +164,6 @@ export const enviarVersiculoDiario = onSchedule(
       "Iniciando verificação de notificações diárias.",
     );
 
-    /*
-     * ======================================================
-     * NOTIFICAÇÕES WEB
-     * ======================================================
-     *
-     * A rotina roda a cada minuto, mas só envia:
-     *
-     * 08:00 -> Versículo do dia
-     * 20:00 -> Lembrete do devocional
-     *
-     * Horário de Brasília.
-     */
-    const dataHoraWeb =
-      obterDataHoraNoTimezone("America/Sao_Paulo");
-
-    const horaWeb =
-      `${dataHoraWeb.hora}:${dataHoraWeb.minuto}`;
-
-    const dataKeyWeb =
-      `${dataHoraWeb.mes}-${dataHoraWeb.dia}`;
-
-    try {
-      await processarNotificacoesWeb(
-        horaWeb,
-        dataKeyWeb,
-      );
-    } catch (erro) {
-      logger.error(
-        "Erro ao processar notificações Web.",
-        erro,
-      );
-    }
-
-    /*
-     * ======================================================
-     * NOTIFICAÇÕES ANDROID
-     * ======================================================
-     *
-     * Mantida a lógica existente.
-     */
     const snapshot = await db
       .collection(COLECAO_DISPOSITIVOS)
       .where("ativo", "==", true)
@@ -421,13 +171,8 @@ export const enviarVersiculoDiario = onSchedule(
 
     if (snapshot.empty) {
       logger.info(
-        "Nenhum dispositivo Android ativo encontrado.",
+        "Nenhum dispositivo ativo encontrado.",
       );
-
-      logger.info(
-        "Verificação de notificações concluída.",
-      );
-
       return;
     }
 
@@ -436,15 +181,12 @@ export const enviarVersiculoDiario = onSchedule(
     );
 
     for (const documento of snapshot.docs) {
-      const dispositivo =
-        documento.data() as Dispositivo;
+      const dispositivo = documento.data() as Dispositivo;
 
       const token = dispositivo.token;
-      const horario =
-        normalizarHora(dispositivo.horario);
+      const horario = normalizarHora(dispositivo.horario);
       const timezone =
-        dispositivo.timezone ||
-        "America/Sao_Paulo";
+        dispositivo.timezone || "America/Sao_Paulo";
 
       if (!token) {
         logger.warn(
@@ -462,14 +204,10 @@ export const enviarVersiculoDiario = onSchedule(
         continue;
       }
 
-      let dataHora:
-        ReturnType<
-          typeof obterDataHoraNoTimezone
-        >;
+      let dataHora: ReturnType<typeof obterDataHoraNoTimezone>;
 
       try {
-        dataHora =
-          obterDataHoraNoTimezone(timezone);
+        dataHora = obterDataHoraNoTimezone(timezone);
       } catch (erro) {
         logger.error(
           `Timezone inválido no dispositivo ${documento.id}: ${
@@ -490,10 +228,7 @@ export const enviarVersiculoDiario = onSchedule(
       const dataKey =
         `${dataHora.mes}-${dataHora.dia}`;
 
-      if (
-        dispositivo.ultimoEnvioData ===
-        dataKey
-      ) {
+      if (dispositivo.ultimoEnvioData === dataKey) {
         logger.info(
           `Notificação de ${dataKey} já enviada para ${
             documento.id
@@ -555,6 +290,10 @@ export const enviarVersiculoDiario = onSchedule(
             erro.message :
             String(erro);
 
+        /*
+         * Tokens inválidos/expirados não devem continuar
+         * sendo utilizados.
+         */
         if (
           mensagem.includes(
             "registration-token-not-registered",
@@ -576,7 +315,8 @@ export const enviarVersiculoDiario = onSchedule(
           });
 
           logger.warn(
-            `Dispositivo ${documento.id} desativado por token inválido.`,
+            `Dispositivo ${documento.id} desativado por ` +
+            "token inválido.",
           );
         }
       }
