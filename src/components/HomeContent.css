@@ -625,18 +625,16 @@
   content: "";
 
   position: absolute;
+  inset: 0;
 
-  width: 400px;
-  height: 500px;
-
-  top: -90px;
-  left: -70px;
-
-  background: rgba(0, 0, 150, 0.90);
-
-  filter: blur(50px);
-
-  border-radius: 100%;
+  background:
+    radial-gradient(
+      circle at 0% 0%,
+      rgba(30, 91, 255, 0.72) 0%,
+      rgba(30, 91, 255, 0.48) 22%,
+      rgba(30, 91, 255, 0.20) 42%,
+      transparent 65%
+    );
 
   pointer-events: none;
 
@@ -658,18 +656,15 @@
 
 .devotional-overlay {
   position: absolute;
-
   inset: 0;
-
-  background:
-    linear-gradient(
-      0deg,
-      rgba(0, 0, 0, 0.72) 0%,
-      rgba(0, 0, 0, 0.38) 45%,
-      rgba(0, 0, 0, 0.05) 100%
-    );
-
-  z-index: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 31, 92, 1) 0%,
+    rgba(0, 31, 92, 0.9) 50%,
+    rgba(0, 31, 92, 0) 100%
+  );
+  border-radius: 30px;
+  pointer-events: none;
 }
 
 .devotional-content {
