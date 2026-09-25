@@ -1,43 +1,125 @@
+/* ============================================================
+   COM CRISTO — BÍBLIA
+   Referência: XML Android enviado
+============================================================ */
+
 .biblia-page {
   width: 100%;
   min-height: 100vh;
-  background: #f7f9fc;
-  color: #111b4d;
+
+  background: #EAEDFE;
+  color: #363B6C;
+
   padding: 18px 18px 140px;
+
   box-sizing: border-box;
 }
 
+/* ============================================================
+   CONTAINER
+   Android ocupa toda a largura disponível
+============================================================ */
+
 .biblia-container {
-  width: min(680px, 100%);
+  width: 100%;
+  max-width: none;
+
   margin: 0 auto;
 }
 
 /* ============================================================
    TÍTULO
+   Android:
+   30sp
+   bold
+   marginTop = 10dp
+   marginBottom = 20dp
 ============================================================ */
 
 .biblia-list-header {
+  position: relative;
+
   width: 100%;
+
   margin-top: 10px;
   margin-bottom: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   text-align: center;
 }
 
 .biblia-list-header h1 {
   margin: 0;
-  color: #111b4d;
+
+  color: #363B6C;
+
   font-size: 30px;
   line-height: 1.15;
+
   font-weight: 700;
 }
 
 /* ============================================================
+   BOTÃO VOLTAR
+============================================================ */
+
+.biblia-header-back {
+  position: absolute;
+
+  left: 0;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 50%;
+
+  background: transparent;
+
+  color: #363B6C;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.biblia-header-back:hover {
+  background: #C6C9E7;
+}
+
+.biblia-header-back:active {
+  transform: translateY(-50%) scale(0.94);
+}
+
+.biblia-header-back:focus-visible {
+  outline: 3px solid rgba(54, 59, 108, 0.3);
+  outline-offset: 3px;
+}
+
+/* ============================================================
    BUSCA
+   Android:
+   height = 58dp
+   radius = 20dp
+   background = superficie
 ============================================================ */
 
 .biblia-search {
   width: 100%;
   height: 58px;
+
   box-sizing: border-box;
 
   display: flex;
@@ -45,17 +127,20 @@
 
   padding: 0 16px;
 
-  background: #ffffff;
+  background: #C6C9E7;
+
   border-radius: 20px;
 
   box-shadow:
     0 2px 6px rgba(15, 23, 42, 0.08);
 
-  color: #9ca3af;
+  color: #363B6C;
 }
 
 .biblia-search svg {
   flex: 0 0 auto;
+
+  color: #363B6C;
 }
 
 .biblia-search input {
@@ -71,7 +156,7 @@
 
   background: transparent;
 
-  color: #111827;
+  color: #363B6C;
 
   font-family:
     Arial,
@@ -82,11 +167,18 @@
 }
 
 .biblia-search input::placeholder {
-  color: #9ca3af;
+  color: #5F6385;
+
+  opacity: 1;
 }
 
 /* ============================================================
    TESTAMENTOS
+   Android:
+   height = 58dp
+   marginTop = 18dp
+   padding = 4dp
+   fundo = fundo_principal
 ============================================================ */
 
 .biblia-testamentos {
@@ -104,23 +196,28 @@
 
   box-sizing: border-box;
 
-  background: #eef2f7;
+  background: #EAEDFE;
 
   border-radius: 18px;
 }
+
+/* ============================================================
+   BOTÃO TESTAMENTO
+============================================================ */
 
 .biblia-testamento {
   width: 50%;
   height: 100%;
 
   border: 0;
+
   border-radius: 16px;
 
   padding: 0 12px;
 
-  background: transparent;
+  background: #C6C9E7;
 
-  color: #111b4d;
+  color: #363B6C;
 
   font-family:
     Arial,
@@ -128,6 +225,7 @@
     sans-serif;
 
   font-size: 14px;
+
   font-weight: 700;
 
   cursor: pointer;
@@ -138,12 +236,20 @@
     transform 0.12s ease;
 }
 
+/* ============================================================
+   ANTIGO TESTAMENTO — ATIVO
+   Android:
+   backgroundTint = cor_primaria
+   textColor = fundo_principal
+============================================================ */
+
 .biblia-testamento.active {
-  background: #0f9db8;
-  color: #ffffff;
+  background: #363B6C;
+
+  color: #EAEDFE;
 
   box-shadow:
-    0 2px 6px rgba(15, 157, 184, 0.2);
+    0 2px 6px rgba(54, 59, 108, 0.20);
 }
 
 .biblia-testamento:active {
@@ -152,6 +258,9 @@
 
 /* ============================================================
    TÍTULO DA LISTA
+   Android:
+   marginTop = 28dp
+   marginBottom = 10dp
 ============================================================ */
 
 .biblia-section-title {
@@ -170,7 +279,7 @@
 
   flex: 0 0 5px;
 
-  background: #042251;
+  background: #363B6C;
 
   border-radius: 3px;
 }
@@ -178,7 +287,7 @@
 .biblia-section-title h2 {
   margin: 0 0 0 12px;
 
-  color: #111b4d;
+  color: #363B6C;
 
   font-size: 24px;
   line-height: 1.2;
@@ -201,10 +310,17 @@
 
 /* ============================================================
    CARD DO LIVRO
+   Android:
+   margin = 8dp
+   radius = 22dp
+   elevation = 2dp
+   background = superficie
+   padding = 18dp
 ============================================================ */
 
 .biblia-livro-card {
   width: 100%;
+
   min-height: 88px;
 
   box-sizing: border-box;
@@ -212,19 +328,20 @@
   display: flex;
   align-items: center;
 
-  margin: 0 0 14px;
+  margin: 8px 0;
+
   padding: 18px;
 
   border: 0;
 
   border-radius: 22px;
 
-  background: #ffffff;
+  background: #C6C9E7;
 
   box-shadow:
-    0 2px 8px rgba(15, 23, 42, 0.08);
+    0 2px 7px rgba(15, 23, 42, 0.10);
 
-  color: #111b4d;
+  color: #363B6C;
 
   text-align: left;
 
@@ -240,15 +357,25 @@
   transform: translateY(-1px);
 
   box-shadow:
-    0 5px 14px rgba(15, 23, 42, 0.11);
+    0 4px 10px rgba(15, 23, 42, 0.13);
 }
 
 .biblia-livro-card:active {
   transform: scale(0.985);
 }
 
+.biblia-livro-card:focus-visible {
+  outline: 3px solid rgba(54, 59, 108, 0.30);
+
+  outline-offset: 3px;
+}
+
 /* ============================================================
    ÍCONE
+   Android:
+   52dp x 52dp
+   radius = 16dp
+   fundo = fundo_principal
 ============================================================ */
 
 .biblia-livro-icon {
@@ -263,9 +390,16 @@
 
   border-radius: 16px;
 
-  background: #eaf8fb;
+  background: #EAEDFE;
 
-  color: #042251;
+  color: #363B6C;
+}
+
+.biblia-livro-icon svg {
+  width: 26px;
+  height: 26px;
+
+  color: #363B6C;
 }
 
 /* ============================================================
@@ -286,7 +420,7 @@
 .biblia-livro-content strong {
   overflow: hidden;
 
-  color: #111b4d;
+  color: #363B6C;
 
   font-size: 19px;
   line-height: 1.25;
@@ -299,14 +433,18 @@
 .biblia-livro-content span {
   margin-top: 4px;
 
-  color: #7b8191;
+  color: #5F6385;
 
   font-size: 14px;
+
   line-height: 1.3;
 }
 
 /* ============================================================
    SETA
+   Android:
+   20dp
+   cor_primaria
 ============================================================ */
 
 .biblia-livro-arrow {
@@ -314,7 +452,7 @@
 
   margin-left: 12px;
 
-  color: #042251;
+  color: #363B6C;
 }
 
 /* ============================================================
@@ -336,13 +474,13 @@
 
   box-sizing: border-box;
 
-  color: #64748b;
+  color: #5F6385;
 
   text-align: center;
 }
 
 .biblia-state strong {
-  color: #111b4d;
+  color: #363B6C;
 
   font-size: 18px;
 }
@@ -369,9 +507,10 @@
   padding: 0 20px;
 
   border: 0;
+
   border-radius: 14px;
 
-  background: #042251;
+  background: #363B6C;
 
   color: #ffffff;
 
@@ -385,6 +524,7 @@
 ============================================================ */
 
 @media (max-width: 600px) {
+
   .biblia-page {
     padding:
       14px
@@ -403,6 +543,7 @@
 
   .biblia-search {
     height: 56px;
+
     border-radius: 19px;
   }
 
@@ -412,11 +553,13 @@
 
   .biblia-testamentos {
     height: 56px;
+
     border-radius: 17px;
   }
 
   .biblia-testamento {
     border-radius: 14px;
+
     font-size: 13px;
   }
 
@@ -435,7 +578,7 @@
 
     border-radius: 20px;
 
-    margin-bottom: 12px;
+    margin: 6px 0;
   }
 
   .biblia-livro-icon {
@@ -468,53 +611,26 @@
     width: 19px;
     height: 19px;
   }
+
+  .biblia-header-back {
+    width: 42px;
+    height: 42px;
+  }
 }
 
+/* ============================================================
+   TELAS MUITO PEQUENAS
+============================================================ */
+
 @media (max-width: 380px) {
+
   .biblia-testamento {
     padding: 0 6px;
+
     font-size: 12px;
   }
 
   .biblia-section-title h2 {
     font-size: 19px;
   }
-}
-.biblia-list-header {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.biblia-header-back {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-
-  width: 44px;
-  height: 44px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border: none;
-  border-radius: 50%;
-
-  background: transparent;
-  color: #042251;
-
-  cursor: pointer;
-
-  transition: background 0.2s ease;
-}
-
-.biblia-header-back:hover {
-  background: #e9eef5;
-}
-
-.biblia-header-back:active {
-  transform: translateY(-50%) scale(0.94);
 }

@@ -1,56 +1,64 @@
+/* =========================================================
+   COM CRISTO — REDES SOCIAIS
+   AJUSTADO PARA A REFERÊNCIA ANDROID
+========================================================= */
+
 .social-page {
   width: 100%;
   min-height: 100vh;
-  padding-bottom: 96px;
-  background: #ffffff;
-  color: #111b4d;
+  padding-bottom: 140px;
+  background: #EAEDFE;
+  color: #363B6C;
+  box-sizing: border-box;
 }
 
 .social-content {
-  width: min(680px, calc(100% - 28px));
-  margin: 0 auto;
-  padding: 22px 0 40px;
+  width: 100%;
+  margin: 0;
+  padding: 22px 18px 40px;
+  box-sizing: border-box;
 }
 
-/* =========================
+/* =========================================================
    CABEÇALHO
-========================= */
+========================================================= */
 
 .social-header {
   margin-bottom: 28px;
-  padding: 0 10px;
+  padding: 0;
 }
 
 .social-header h1 {
   margin: 0;
-  color: #111b4d;
+  color: #363B6C;
   font-size: 34px;
   line-height: 1.15;
   font-weight: 700;
-  letter-spacing: -0.7px;
+  letter-spacing: 0;
 }
 
 .social-header p {
-  max-width: 620px;
+  width: 100%;
+  max-width: none;
   margin: 12px 0 0;
-  color: #334155;
+  color: #363B6C;
   font-size: 18px;
   line-height: 1.5;
   font-weight: 400;
 }
 
-/* =========================
+/* =========================================================
    CARD WRAPPER
-========================= */
+========================================================= */
 
 .social-card-wrapper {
   width: 100%;
-  margin: 0 0 28px;
+  margin: 0 0 4px;
 }
 
-/* =========================
+/* =========================================================
    CARD
-========================= */
+========================================================= */
 
 .social-card {
   width: 100%;
@@ -58,18 +66,13 @@
   border: 0;
   border-radius: 28px;
   overflow: hidden;
-
-  background: #f5f7fa;
-  color: #111b4d;
-
+  background: #C6C9E7;
+  color: #363B6C;
   text-align: left;
   cursor: pointer;
-
-  box-shadow: 0 5px 16px rgba(16, 24, 40, 0.08);
-
+  box-shadow: 0 5px 16px rgba(54, 59, 108, 0.14);
   appearance: none;
   -webkit-appearance: none;
-
   transition:
     transform 0.18s ease,
     box-shadow 0.18s ease,
@@ -78,10 +81,8 @@
 
 .social-card:hover {
   transform: translateY(-2px);
-  background: #f7f8fa;
-
-  box-shadow:
-    0 8px 20px rgba(16, 24, 40, 0.11);
+  background: #C6C9E7;
+  box-shadow: 0 8px 20px rgba(54, 59, 108, 0.18);
 }
 
 .social-card:active {
@@ -89,58 +90,58 @@
 }
 
 .social-card:focus-visible {
-  outline: 3px solid rgba(4, 34, 81, 0.18);
+  outline: 3px solid rgba(54, 59, 108, 0.18);
   outline-offset: 3px;
 }
 
-/* =========================
+/* =========================================================
    PARTE SUPERIOR
-========================= */
+========================================================= */
 
 .social-card-main {
   min-height: 126px;
   padding: 22px;
-
   display: flex;
   align-items: center;
-
   gap: 18px;
 }
 
-/* =========================
+/* =========================================================
    ÍCONE
-========================= */
+========================================================= */
 
 .social-icon {
   width: 82px;
   height: 82px;
+  min-width: 82px;
   flex-shrink: 0;
-
   border-radius: 20px;
-
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .social-icon-instagram {
-  background: #f1e7f7;
-  color: #8d42b8;
+  background: #EAEDFE;
+  color: #363B6C;
 }
 
 .social-icon-app {
-  background: #e8eef8;
-  color: #042251;
+  background: #EAEDFE;
+  color: #363B6C;
 }
 
-/* =========================
+.social-icon svg {
+  color: #363B6C;
+}
+
+/* =========================================================
    CONTEÚDO
-========================= */
+========================================================= */
 
 .social-card-content {
   min-width: 0;
   flex: 1;
-
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -149,14 +150,10 @@
 .social-badge {
   display: inline-flex;
   align-items: center;
-
   padding: 6px 12px;
-
   border-radius: 7px;
-
-  background: #e9dff0;
-  color: #8d42b8;
-
+  background: #A8A3E3;
+  color: #363B6C;
   font-size: 12px;
   line-height: 1;
   font-weight: 800;
@@ -164,102 +161,94 @@
 }
 
 .social-card-content strong {
-  margin-top: 11px;
-
-  color: #111b4d;
-
+  margin-top: 12px;
+  color: #363B6C;
   font-size: 20px;
   line-height: 1.2;
   font-weight: 700;
-
   word-break: break-word;
 }
 
 .social-card-content p {
-  margin: 9px 0 0;
-
-  color: #334155;
-
+  margin: 10px 0 0;
+  color: #363B6C;
   font-size: 16px;
   line-height: 1.45;
   font-weight: 400;
 }
 
-/* =========================
+/* =========================================================
    SETA
-========================= */
+========================================================= */
 
 .social-arrow {
   flex-shrink: 0;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
-  color: #042251;
+  color: #363B6C;
 }
 
-/* =========================
+.social-arrow svg {
+  color: #363B6C;
+}
+
+/* =========================================================
    DIVISOR
-========================= */
+========================================================= */
 
 .social-divider {
   width: 100%;
   height: 1px;
-  background: #ececec;
+  background: #A8A3E3;
 }
 
-/* =========================
+/* =========================================================
    RODAPÉ DO CARD
-========================= */
+========================================================= */
 
 .social-card-footer {
   min-height: 58px;
-
   padding: 16px 18px;
-
   display: flex;
   align-items: center;
-
   gap: 14px;
-
-  color: #042251;
+  color: #363B6C;
 }
 
 .social-card-footer svg {
   flex-shrink: 0;
+  color: #363B6C;
 }
 
 .social-card-footer span {
-  color: #334155;
-
+  color: #363B6C;
   font-size: 15px;
   line-height: 1.4;
   font-weight: 400;
 }
 
-/* =========================
+/* =========================================================
    RODAPÉ DA PÁGINA
-========================= */
+========================================================= */
 
 .social-footer {
   margin-top: 4px;
   padding: 12px 15px 10px;
-
   display: flex;
   flex-direction: column;
   align-items: center;
-
   text-align: center;
+  color: #363B6C;
+}
 
-  color: #042251;
+.social-footer svg {
+  color: #363B6C;
 }
 
 .social-footer p {
   margin: 10px 0 0;
-
-  color: #64748b;
-
+  color: #5F6385;
   font-size: 14px;
   line-height: 1.5;
   font-weight: 600;
@@ -267,180 +256,22 @@
 
 .social-footer span {
   margin-top: 4px;
-
-  color: #94a3b8;
-
+  color: #5F6385;
   font-size: 14px;
   line-height: 1.5;
 }
 
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 600px) {
-
-  .social-content {
-    width: calc(100% - 20px);
-    padding-top: 22px;
-  }
-
-  .social-header {
-    margin-bottom: 24px;
-    padding: 0 8px;
-  }
-
-  .social-header h1 {
-    font-size: 34px;
-    letter-spacing: -0.6px;
-  }
-
-  .social-header p {
-    margin-top: 12px;
-    font-size: 17px;
-    line-height: 1.5;
-  }
-
-  .social-card-wrapper {
-    margin-bottom: 24px;
-  }
-
-  .social-card {
-    border-radius: 26px;
-  }
-
-  .social-card-main {
-    min-height: 112px;
-    padding: 18px;
-    gap: 14px;
-  }
-
-  .social-icon {
-    width: 68px;
-    height: 68px;
-    border-radius: 18px;
-  }
-
-  .social-icon svg {
-    width: 27px;
-    height: 27px;
-  }
-
-  .social-badge {
-    padding: 5px 9px;
-    font-size: 10px;
-  }
-
-  .social-card-content strong {
-    margin-top: 8px;
-    font-size: 17px;
-  }
-
-  .social-card-content p {
-    margin-top: 6px;
-    font-size: 13px;
-    line-height: 1.4;
-  }
-
-  .social-arrow svg {
-    width: 22px;
-    height: 22px;
-  }
-
-  .social-card-footer {
-    min-height: 52px;
-    padding: 14px 16px;
-    gap: 12px;
-  }
-
-  .social-card-footer svg {
-    width: 19px;
-    height: 19px;
-  }
-
-  .social-card-footer span {
-    font-size: 13px;
-    line-height: 1.35;
-  }
-
-  .social-footer {
-    padding-top: 8px;
-  }
-
-  .social-footer p {
-    font-size: 13px;
-  }
-
-  .social-footer span {
-    font-size: 13px;
-  }
-}
-
-/* =========================
-   TELAS MUITO PEQUENAS
-========================= */
-
-@media (max-width: 380px) {
-
-  .social-card-main {
-    padding: 15px;
-    gap: 11px;
-  }
-
-  .social-icon {
-    width: 58px;
-    height: 58px;
-    border-radius: 16px;
-  }
-
-  .social-icon svg {
-    width: 24px;
-    height: 24px;
-  }
-
-  .social-card-content strong {
-    font-size: 15px;
-  }
-
-  .social-card-content p {
-    font-size: 12px;
-  }
-
-  .social-card-footer {
-    padding: 12px 14px;
-  }
-
-  .social-card-footer span {
-    font-size: 12px;
-  }
-}
-.instagram-logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  font-size: 58px;
-  font-weight: 700;
-  line-height: 1;
-  color: #042251;
-}
-.social-icon {
-  width: 82px;
-  height: 82px;
-  min-width: 82px;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #042251;
-}
+/* =========================================================
+   LOGO INSTAGRAM
+========================================================= */
 
 .instagram-logo {
   width: 58px;
   height: 58px;
   display: block;
+  color: #363B6C;
 }
+
 /* =========================================================
    BOTÃO VOLTAR
 ========================================================= */
@@ -454,31 +285,24 @@
 .social-back-button {
   width: 40px;
   height: 40px;
-
   flex: 0 0 40px;
-
   border: 0;
   border-radius: 50%;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
-  background: #eef2f7;
-  color: #042251;
-
+  background: #C6C9E7;
+  color: #363B6C;
   cursor: pointer;
-
   appearance: none;
   -webkit-appearance: none;
-
   transition:
     transform 0.15s ease,
     background 0.15s ease;
 }
 
 .social-back-button:hover {
-  background: #e5ebf3;
+  background: #C6C9E7;
   transform: translateX(-1px);
 }
 
@@ -487,6 +311,143 @@
 }
 
 .social-back-button:focus-visible {
-  outline: 3px solid rgba(4, 34, 81, 0.15);
+  outline: 3px solid rgba(54, 59, 108, 0.15);
   outline-offset: 2px;
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+  .social-content {
+    width: 100%;
+    padding: 22px 18px 40px;
+  }
+
+  .social-header {
+    margin-bottom: 28px;
+    padding: 0;
+  }
+
+  .social-header h1 {
+    font-size: 34px;
+  }
+
+  .social-header p {
+    margin-top: 12px;
+    font-size: 18px;
+    line-height: 1.5;
+  }
+
+  .social-card-wrapper {
+    margin-bottom: 4px;
+  }
+
+  .social-card {
+    border-radius: 28px;
+  }
+
+  .social-card-main {
+    min-height: 126px;
+    padding: 22px;
+    gap: 18px;
+  }
+
+  .social-icon {
+    width: 82px;
+    height: 82px;
+    min-width: 82px;
+    border-radius: 20px;
+  }
+
+  .social-icon svg {
+    width: 27px;
+    height: 27px;
+  }
+
+  .social-badge {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  .social-card-content strong {
+    margin-top: 12px;
+    font-size: 20px;
+  }
+
+  .social-card-content p {
+    margin-top: 10px;
+    font-size: 16px;
+    line-height: 1.45;
+  }
+
+  .social-arrow svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .social-card-footer {
+    min-height: 58px;
+    padding: 16px 18px;
+    gap: 14px;
+  }
+
+  .social-card-footer svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .social-card-footer span {
+    font-size: 15px;
+    line-height: 1.4;
+  }
+
+  .social-footer {
+    padding-top: 12px;
+  }
+
+  .social-footer p,
+  .social-footer span {
+    font-size: 14px;
+  }
+}
+
+/* =========================================================
+   TELAS MUITO PEQUENAS
+========================================================= */
+
+@media (max-width: 380px) {
+  .social-card-main {
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .social-icon {
+    width: 62px;
+    height: 62px;
+    min-width: 62px;
+    border-radius: 17px;
+  }
+
+  .social-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .social-card-content strong {
+    font-size: 16px;
+  }
+
+  .social-card-content p {
+    font-size: 13px;
+  }
+
+  .social-card-footer {
+    padding: 14px 16px;
+  }
+
+  .social-card-footer span {
+    font-size: 13px;
+  }
 }

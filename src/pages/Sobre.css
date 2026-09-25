@@ -1,59 +1,69 @@
+/* =========================================================
+   SOBRE — WEB ALINHADO AO XML ANDROID
+   Paleta principal:
+   #363B6C  primária
+   #EAEDFE  fundo
+   #A8A3E3  secundária
+   #C6C9E7  superfície
+   #5F6385  texto secundário
+========================================================= */
+
 .sobre-page {
   width: 100%;
   min-height: 100vh;
-  padding-bottom: 96px;
-  background: #ffffff;
-  color: #111b4d;
+  padding-bottom: 140px;
+  background: #EAEDFE;
+  color: #363B6C;
 }
 
 .sobre-content {
-  width: min(680px, calc(100% - 28px));
+  width: 100%;
   margin: 0 auto;
-  padding: 30px 0 40px;
+  padding: 22px 18px 40px;
+  box-sizing: border-box;
 }
 
-/* =========================
+/* =========================================================
    CABEÇALHO
-========================= */
+   O XML Android apresentado inicia diretamente no card.
+   Estes estilos são mantidos para compatibilidade com o TSX.
+========================================================= */
 
 .sobre-header {
-  margin-bottom: 26px;
-  padding: 0 10px;
+  margin-bottom: 18px;
+  padding: 0 6px;
 }
 
 .sobre-header h1 {
   margin: 0;
-
-  font-size: 40px;
-  line-height: 1.12;
+  font-size: 34px;
+  line-height: 1.15;
   font-weight: 700;
-
-  color: #111b4d;
+  color: #363B6C;
 }
 
 .sobre-header p {
   margin: 8px 0 0;
-
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.5;
-
-  color: #64748b;
+  color: #5F6385;
 }
 
-/* =========================
+/* =========================================================
    CARD SOBRE
-========================= */
+========================================================= */
 
 .sobre-card {
-  width: 100%;
+  width: calc(100% - 12px);
+  margin: 0 6px 18px;
+  padding: 22px;
+  box-sizing: border-box;
 
-  padding: 22px 20px;
+  border-radius: 32px;
+  background: #C6C9E7;
 
-  border-radius: 25px;
-
-  background: #f5f7fa;
-
-  box-shadow: 0 4px 14px rgba(16, 24, 40, 0.06);
+  box-shadow:
+    0 6px 16px rgba(54, 59, 108, 0.18);
 }
 
 .sobre-card-heading {
@@ -65,7 +75,6 @@
 .sobre-heading-icon {
   width: 48px;
   height: 48px;
-
   flex-shrink: 0;
 
   border-radius: 15px;
@@ -74,195 +83,318 @@
   align-items: center;
   justify-content: center;
 
-  background: #e9f8f7;
-  color: #168f8a;
+  background: #EAEDFE;
+  color: #363B6C;
 }
 
 .sobre-card-heading h2 {
   margin: 0;
-
-  font-size: 19px;
+  font-size: 22px;
   line-height: 1.3;
   font-weight: 700;
-
-  color: #111b4d;
+  color: #363B6C;
 }
 
+/* =========================================================
+   TÍTULO DO CARD / DIVISOR
+========================================================= */
+
+.sobre-card > div:first-child h2,
+.sobre-card-heading + h2 {
+  color: #363B6C;
+}
+
+.sobre-card-divider {
+  width: 62px;
+  height: 4px;
+  margin-top: 12px;
+  margin-bottom: 26px;
+
+  border-radius: 2px;
+  background: #363B6C;
+}
+
+/* =========================================================
+   TEXTO
+========================================================= */
+
 .sobre-text {
-  margin-top: 19px;
+  margin-top: 0;
 }
 
 .sobre-text p {
-  margin: 0 0 14px;
+  margin: 0 0 28px;
 
-  font-size: 15px;
-  line-height: 1.7;
+  font-size: 17px;
+  line-height: 1.72;
 
-  color: #52657d;
+  color: #363B6C;
 }
 
 .sobre-text p:last-child {
   margin-bottom: 0;
 }
 
-/* =========================
+/* Compatibilidade caso os parágrafos sejam elementos diretos
+   dentro do card, como no XML Android. */
+.sobre-card > p {
+  margin: 28px 0 0;
+  font-size: 17px;
+  line-height: 1.72;
+  color: #363B6C;
+}
+
+/* =========================================================
    VERSÍCULO
-========================= */
+   No Android ele fica dentro do card SOBRE, com uma barra
+   vertical branca à esquerda.
+========================================================= */
 
 .sobre-versiculo-card {
   width: 100%;
+  margin-top: 34px;
+  padding: 0 0 0 20px;
+  box-sizing: border-box;
 
-  margin-top: 17px;
+  border-radius: 0;
 
-  padding: 24px 20px;
+  background: transparent;
+  color: #FFFFFF;
 
-  border-radius: 25px;
+  text-align: left;
 
-  background: #042251;
-  color: #ffffff;
+  box-shadow: none;
 
-  text-align: center;
-
-  box-shadow:
-    0 7px 18px rgba(4, 34, 81, 0.15);
+  border-left: 4px solid #FFFFFF;
 }
 
 .sobre-versiculo-icon {
-  color: #1cc7c1;
+  color: #FFFFFF;
 }
 
 .sobre-versiculo-card p {
-  margin: 13px 0 0;
-
-  font-size: 17px;
+  margin: 0;
+  font-size: 18px;
   line-height: 1.65;
-
   font-style: italic;
+  color: #FFFFFF;
 }
 
 .sobre-versiculo-card strong {
   display: block;
-
-  margin-top: 12px;
-
-  font-size: 13px;
+  margin-top: 10px;
+  font-size: 16px;
+  line-height: 1.4;
   font-weight: 700;
-
-  color: #1cc7c1;
+  color: #FFFFFF;
 }
 
-/* =========================
-   VERSÃO
-========================= */
+/* =========================================================
+   CASO O TSX USE UMA ÁREA ESPECÍFICA PARA O VERSÍCULO
+========================================================= */
+
+.sobre-versiculo {
+  margin-top: 34px;
+  padding-left: 20px;
+  border-left: 4px solid #FFFFFF;
+}
+
+.sobre-versiculo p {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.65;
+  font-style: italic;
+  color: #FFFFFF;
+}
+
+.sobre-versiculo strong {
+  display: block;
+  margin-top: 10px;
+  font-size: 16px;
+  color: #FFFFFF;
+}
+
+/* =========================================================
+   CARD DA VERSÃO
+========================================================= */
 
 .sobre-versao-card {
-  width: 100%;
+  width: calc(100% - 12px);
+  margin: 0 6px 18px;
+  padding: 20px;
+  box-sizing: border-box;
 
-  margin-top: 17px;
-
-  padding: 18px 20px;
-
-  border-radius: 21px;
+  border-radius: 28px;
 
   display: flex;
   align-items: center;
-  gap: 13px;
+  gap: 18px;
 
-  background: #eef4fb;
+  background: #F5F7FA;
 
-  border: 1px solid #e1e9f3;
+  box-shadow:
+    0 5px 14px rgba(54, 59, 108, 0.14);
 }
 
 .sobre-versao-logo {
-  width: 45px;
-  height: 45px;
-
+  width: 62px;
+  height: 62px;
   flex-shrink: 0;
 
-  border-radius: 14px;
+  border-radius: 31px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  background: #042251;
-  color: #1cc7c1;
+  background: #EAEDFE;
+  color: #363B6C;
+}
+
+.sobre-versao-logo svg {
+  width: 30px;
+  height: 30px;
+  color: #363B6C;
 }
 
 .sobre-versao-card > div:last-child {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
 }
 
 .sobre-versao-card strong {
-  font-size: 14px;
-  color: #111b4d;
+  font-size: 21px;
+  line-height: 1.3;
+  color: #363B6C;
 }
 
 .sobre-versao-card span {
-  font-size: 12px;
-  color: #64748b;
+  font-size: 17px;
+  line-height: 1.4;
+  color: #5F6385;
 }
 
-/* =========================
-   DOCUMENTOS
-========================= */
+/* =========================================================
+   CARD DE AÇÕES
+========================================================= */
 
-.sobre-documentos {
-  margin-top: 17px;
+.sobre-acoes {
+  width: calc(100% - 12px);
+  margin: 0 6px 28px;
+  padding: 20px;
+  box-sizing: border-box;
 
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  border-radius: 28px;
+
+  background: #C6C9E7;
+
+  box-shadow:
+    0 7px 18px rgba(54, 59, 108, 0.18);
 }
 
-.sobre-documento {
-  width: 100%;
-  min-height: 76px;
+.sobre-acoes button {
+  width: calc(100% - 12px);
+  margin-left: 6px;
+  margin-right: 6px;
 
-  padding: 11px 15px;
-
-  border: 1px solid #e4e8ee;
+  border: 0;
   border-radius: 20px;
 
   display: flex;
   align-items: center;
-  gap: 13px;
+  justify-content: center;
 
-  background: #ffffff;
-  color: #111b4d;
+  background: #363B6C;
+  color: #FFFFFF;
 
-  text-align: left;
+  font-family: inherit;
+  font-weight: 700;
 
   cursor: pointer;
+}
+
+.sobre-acoes button:first-child {
+  min-height: 64px;
+  margin-bottom: 16px;
+  font-size: 15px;
+}
+
+.sobre-acoes button:last-child {
+  min-height: 58px;
+  font-size: 16px;
+}
+
+.sobre-acoes button:hover {
+  filter: brightness(1.05);
+}
+
+.sobre-acoes button:active {
+  transform: scale(0.985);
+}
+
+/* Compatibilidade com os nomes mais prováveis usados no TSX */
+.sobre-documentos {
+  width: calc(100% - 12px);
+  margin: 0 6px 28px;
+  padding: 20px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  border-radius: 28px;
+  background: #C6C9E7;
 
   box-shadow:
-    0 3px 11px rgba(16, 24, 40, 0.05);
+    0 7px 18px rgba(54, 59, 108, 0.18);
+}
 
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease,
-    border-color 0.2s ease;
+.sobre-documento {
+  width: calc(100% - 12px);
+  min-height: 58px;
+  margin: 0 6px;
+
+  padding: 0 20px;
+
+  border: 0;
+  border-radius: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #363B6C;
+  color: #FFFFFF;
+
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 700;
+
+  text-align: center;
+  cursor: pointer;
+
+  box-shadow: none;
 }
 
 .sobre-documento:hover {
-  transform: translateY(-2px);
-
-  border-color: #d5deea;
-
-  box-shadow:
-    0 6px 16px rgba(16, 24, 40, 0.09);
+  filter: brightness(1.05);
 }
 
 .sobre-documento:active {
   transform: scale(0.985);
 }
 
+/* =========================================================
+   ÍCONES DOS DOCUMENTOS
+   Mantidos para compatibilidade com versões anteriores.
+========================================================= */
+
 .sobre-documento-icon {
   width: 47px;
   height: 47px;
-
   flex-shrink: 0;
 
   border-radius: 14px;
@@ -273,13 +405,13 @@
 }
 
 .sobre-termos-icon {
-  background: #e8eef8;
-  color: #042251;
+  background: #EAEDFE;
+  color: #363B6C;
 }
 
 .sobre-licenca-icon {
-  background: #e9f8f7;
-  color: #168f8a;
+  background: #A8A3E3;
+  color: #363B6C;
 }
 
 .sobre-documento-content {
@@ -294,101 +426,20 @@
 .sobre-documento-content strong {
   font-size: 15px;
   font-weight: 700;
-
-  color: #111b4d;
+  color: #363B6C;
 }
 
 .sobre-documento-content span {
   font-size: 12px;
   line-height: 1.4;
-
-  color: #64748b;
+  color: #5F6385;
 }
 
 .sobre-documento-arrow {
   flex-shrink: 0;
-
-  color: #94a3b8;
+  color: #363B6C;
 }
 
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 600px) {
-
-  .sobre-content {
-    width: calc(100% - 20px);
-    padding-top: 24px;
-  }
-
-  .sobre-header {
-    margin-bottom: 22px;
-    padding: 0 8px;
-  }
-
-  .sobre-header h1 {
-    font-size: 34px;
-  }
-
-  .sobre-header p {
-    font-size: 14px;
-  }
-
-  .sobre-card {
-    padding: 19px 16px;
-    border-radius: 21px;
-  }
-
-  .sobre-heading-icon {
-    width: 44px;
-    height: 44px;
-    border-radius: 14px;
-  }
-
-  .sobre-card-heading h2 {
-    font-size: 16px;
-  }
-
-  .sobre-text p {
-    font-size: 13px;
-    line-height: 1.65;
-  }
-
-  .sobre-versiculo-card {
-    padding: 21px 16px;
-    border-radius: 21px;
-  }
-
-  .sobre-versiculo-card p {
-    font-size: 15px;
-  }
-
-  .sobre-versao-card {
-    padding: 15px;
-    border-radius: 19px;
-  }
-
-  .sobre-documento {
-    min-height: 70px;
-    padding: 10px 12px;
-    border-radius: 18px;
-  }
-
-  .sobre-documento-icon {
-    width: 43px;
-    height: 43px;
-    border-radius: 13px;
-  }
-
-  .sobre-documento-content strong {
-    font-size: 14px;
-  }
-
-  .sobre-documento-content span {
-    font-size: 11px;
-  }
-}
 /* =========================================================
    BOTÃO VOLTAR
 ========================================================= */
@@ -402,7 +453,6 @@
 .sobre-back-button {
   width: 40px;
   height: 40px;
-
   flex: 0 0 40px;
 
   border: 0;
@@ -412,13 +462,16 @@
   align-items: center;
   justify-content: center;
 
-  background: #eef2f7;
-  color: #042251;
+  background: #C6C9E7;
+  color: #363B6C;
 
   cursor: pointer;
 
   appearance: none;
   -webkit-appearance: none;
+
+  box-shadow:
+    0 2px 7px rgba(54, 59, 108, 0.14);
 
   transition:
     transform 0.15s ease,
@@ -426,7 +479,7 @@
 }
 
 .sobre-back-button:hover {
-  background: #e5ebf3;
+  background: #A8A3E3;
   transform: translateX(-1px);
 }
 
@@ -435,6 +488,97 @@
 }
 
 .sobre-back-button:focus-visible {
-  outline: 3px solid rgba(4, 34, 81, 0.15);
+  outline: 3px solid rgba(168, 163, 227, 0.65);
   outline-offset: 2px;
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+  .sobre-page {
+    padding-bottom: 140px;
+  }
+
+  .sobre-content {
+    width: 100%;
+    padding: 22px 18px 40px;
+  }
+
+  .sobre-header {
+    margin-bottom: 18px;
+    padding: 0 6px;
+  }
+
+  .sobre-header h1 {
+    font-size: 34px;
+  }
+
+  .sobre-header p {
+    font-size: 16px;
+  }
+
+  .sobre-card,
+  .sobre-versao-card,
+  .sobre-acoes,
+  .sobre-documentos {
+    width: calc(100% - 12px);
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+
+  .sobre-card {
+    padding: 22px;
+    border-radius: 32px;
+  }
+
+  .sobre-card-heading h2 {
+    font-size: 22px;
+  }
+
+  .sobre-text p,
+  .sobre-card > p {
+    font-size: 17px;
+    line-height: 1.72;
+  }
+
+  .sobre-versiculo-card {
+    margin-top: 34px;
+    padding-left: 20px;
+  }
+
+  .sobre-versiculo-card p,
+  .sobre-versiculo p {
+    font-size: 18px;
+  }
+
+  .sobre-versao-card {
+    padding: 20px;
+    border-radius: 28px;
+  }
+
+  .sobre-versao-logo {
+    width: 62px;
+    height: 62px;
+    border-radius: 31px;
+  }
+
+  .sobre-versao-card strong {
+    font-size: 21px;
+  }
+
+  .sobre-versao-card span {
+    font-size: 17px;
+  }
+
+  .sobre-acoes,
+  .sobre-documentos {
+    padding: 20px;
+    border-radius: 28px;
+  }
+}
+.sobre-acao-icon,
+.sobre-documento-icon {
+  display: none;
 }

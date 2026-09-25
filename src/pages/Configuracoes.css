@@ -821,3 +821,359 @@
     min-width: 86px;
   }
 }
+
+/* =========================================================
+   COM CRISTO — CONFIGURAÇÕES
+   AJUSTE VISUAL PARA A REFERÊNCIA ANDROID
+
+   Paleta principal:
+   fundo_principal  #EAEDFE
+   cor_primaria    #363B6C
+   cor_secundaria  #A8A3E3
+   superficie      #C6C9E7
+   texto_principal #363B6C
+   texto_secundario#5F6385
+========================================================= */
+
+
+/* =========================================================
+   PÁGINA
+========================================================= */
+
+.configuracoes-page {
+  background: #EAEDFE;
+  color: #363B6C;
+}
+
+
+/* =========================================================
+   CONTAINER / CABEÇALHO
+========================================================= */
+
+.configuracoes-container {
+  max-width: none;
+}
+
+.configuracoes-header h1 {
+  color: #363B6C;
+  font-size: 40px;
+  letter-spacing: 0;
+}
+
+.configuracoes-header p {
+  color: #5F6385;
+  font-size: 16px;
+}
+
+
+/* =========================================================
+   CARDS PRINCIPAIS
+========================================================= */
+
+.config-card {
+  background: #C6C9E7;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+
+  border-radius: 24px;
+
+  padding: 22px;
+
+  box-shadow:
+    0 2px 7px rgba(54, 59, 108, 0.12);
+}
+
+
+/* =========================================================
+   CABEÇALHO DAS SEÇÕES
+========================================================= */
+
+.config-section-header {
+  gap: 16px;
+}
+
+.config-icon {
+  width: 58px;
+  height: 58px;
+
+  flex-basis: 58px;
+
+  border-radius: 29px;
+
+  background: #EAEDFE;
+  color: #363B6C;
+}
+
+.config-icon-blue,
+.config-icon-teal {
+  background: #EAEDFE;
+  color: #363B6C;
+}
+
+.config-section-header h2 {
+  color: #363B6C;
+  font-size: 18px;
+}
+
+.config-section-header p {
+  color: #5F6385;
+}
+
+
+/* =========================================================
+   DIVISOR
+========================================================= */
+
+.config-divider {
+  background: #A8A3E3;
+}
+
+
+/* =========================================================
+   CONTROLE DA FONTE
+========================================================= */
+
+.fonte-label-row span {
+  color: #5F6385;
+}
+
+.fonte-label-row strong {
+  color: #363B6C;
+}
+
+
+/* =========================================================
+   BOTÕES DE TAMANHO
+========================================================= */
+
+.fonte-button {
+  background: #EAEDFE;
+  color: #363B6C;
+
+  box-shadow:
+    0 2px 5px rgba(54, 59, 108, 0.08);
+}
+
+.fonte-button:hover:not(:disabled) {
+  background: #EAEDFE;
+  color: #363B6C;
+}
+
+
+/* =========================================================
+   SLIDER
+========================================================= */
+
+.fonte-range {
+  background: #A8A3E3;
+}
+
+.fonte-range::-webkit-slider-runnable-track {
+  background: #A8A3E3;
+}
+
+.fonte-range::-webkit-slider-thumb {
+  background: #363B6C;
+}
+
+.fonte-range::-moz-range-track {
+  background: #A8A3E3;
+}
+
+.fonte-range::-moz-range-thumb {
+  background: #363B6C;
+}
+
+
+/* =========================================================
+   PRÉ-VISUALIZAÇÃO
+========================================================= */
+
+.fonte-preview {
+  background: #EAEDFE;
+  border: 0;
+  border-radius: 18px;
+}
+
+.fonte-preview-label {
+  color: #5F6385;
+}
+
+.fonte-preview-text {
+  color: #363B6C;
+}
+
+.fonte-preview-reference {
+  color: #5F6385;
+}
+
+
+/* =========================================================
+   STATUS DAS NOTIFICAÇÕES
+========================================================= */
+
+.notificacao-status.ativa {
+  background: #A8A3E3;
+  color: #363B6C;
+}
+
+.notificacao-status.desativada {
+  background: #EAEDFE;
+  color: #5F6385;
+}
+
+
+/* =========================================================
+   LINHA DO SWITCH
+========================================================= */
+
+.notificacao-titulo {
+  color: #363B6C;
+}
+
+.notificacao-subtitulo {
+  color: #5F6385;
+}
+
+
+/* =========================================================
+   SWITCH
+========================================================= */
+
+.config-switch {
+  background: #A8A3E3;
+}
+
+.config-switch.ativo {
+  background: #363B6C;
+}
+
+
+/* =========================================================
+   CARD / HORÁRIO
+   Android usa card_claro no interior do card.
+========================================================= */
+
+.horario-card {
+  padding: 18px;
+
+  border-radius: 22px;
+
+  background: #EAEDFE;
+
+  box-sizing: border-box;
+}
+
+.horario-icon {
+  width: 48px;
+  height: 48px;
+
+  flex-basis: 48px;
+
+  border-radius: 24px;
+
+  background: #FFFFFF;
+  color: #363B6C;
+}
+
+.horario-textos span {
+  color: #5F6385;
+  font-size: 14px;
+}
+
+.horario-textos strong {
+  color: #363B6C;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.horario-arrow {
+  color: #363B6C;
+}
+
+
+/* =========================================================
+   BOTÃO VOLTAR
+========================================================= */
+
+.configuracoes-back-button {
+  background: #C6C9E7;
+  color: #363B6C;
+}
+
+.configuracoes-back-button:hover {
+  background: #C6C9E7;
+}
+
+
+/* =========================================================
+   CONTROLE DE NOTIFICAÇÕES WEB
+========================================================= */
+
+.notificacoes-controle strong {
+  color: #363B6C;
+}
+
+.notificacoes-controle p {
+  color: #5F6385;
+}
+
+.notificacoes-button {
+  background: #363B6C;
+  color: #FFFFFF;
+}
+
+.notificacoes-button:hover:not(:disabled) {
+  background: #363B6C;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .configuracoes-page {
+    padding:
+      24px
+      20px
+      120px;
+  }
+
+  .configuracoes-container {
+    max-width: none;
+  }
+
+  .configuracoes-header {
+    margin-bottom: 28px;
+  }
+
+  .configuracoes-header h1 {
+    font-size: 40px;
+  }
+
+  .configuracoes-header p {
+    font-size: 16px;
+  }
+
+  .config-card {
+    border-radius: 24px;
+    padding: 22px;
+  }
+
+  .config-section-header {
+    gap: 16px;
+  }
+
+  .config-icon {
+    width: 58px;
+    height: 58px;
+    flex-basis: 58px;
+    border-radius: 29px;
+  }
+
+  .horario-card {
+    border-radius: 22px;
+    padding: 18px;
+  }
+}

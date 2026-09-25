@@ -727,4 +727,380 @@
   .explorar-news-content p {
     font-size: 15px;
   }
+}/*
+ * Com Cristo — Web
+ * Tela individual corrigida com base na referência Android.
+ * Paleta:
+ * #EAEDFE fundo | #363B6C primária | #C6C9E7 superfície
+ * #A8A3E3 secundária | #5F6385 texto secundário
+ */
+
+/* ============================================================
+   COM CRISTO — WALLPAPERS / EXPLORAR
+   Identidade visual alinhada ao Android
+   ============================================================ */
+
+/* ============================================================
+   EXPLORAR
+   Referência Android:
+   fundo #EAEDFE
+   primária #363B6C
+   superfície #C6C9E7
+   secundária #A8A3E3
+   ============================================================ */
+
+.explorar-page{
+  width: 100%;
+  min-height: 100vh;
+  padding-bottom: 96px;
+  box-sizing: border-box;
+  background: #EAEDFE;
+  color: #363B6C;
+}
+
+.explorar-content{
+  width: min(900px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 20px 0 30px;
+  box-sizing: border-box;
+}
+
+.explorar-content > h1{
+  margin: 0 0 20px;
+  font-family: Arial, sans-serif;
+  font-size: 32px;
+  line-height: 1.15;
+  font-weight: 900;
+  color: #363B6C;
+}
+
+/* CARD WALLPAPERS */
+
+.explorar-wallpapers-card{
+  position: relative;
+  width: 100%;
+  height: 230px;
+  display: block;
+  padding: 22px;
+  overflow: hidden;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 30px;
+  background: #363B6C;
+  color: #FFFFFF;
+  text-align: left;
+  cursor: pointer;
+  appearance: none;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.18);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.explorar-wallpapers-card:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.22);
+}
+
+.explorar-wallpapers-card:active{
+  transform: scale(0.99);
+}
+
+.explorar-wallpapers-card:focus-visible{
+  outline: 3px solid rgba(54, 59, 108, 0.30);
+  outline-offset: 3px;
+}
+
+.explorar-wallpapers-info{
+  position: relative;
+  z-index: 5;
+  width: 48%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.explorar-wallpapers-icon{
+  width: 52px;
+  height: 52px;
+  flex: 0 0 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.19);
+  color: #FFFFFF;
+}
+
+.explorar-wallpapers-text h2{
+  margin: 14px 0 0;
+  font-size: 20px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.explorar-wallpapers-text p{
+  margin: 8px 0 0;
+  font-size: 15px;
+  line-height: 1.45;
+  font-weight: 500;
+  color: #F2F3FA;
+}
+
+/* PREVIEWS */
+
+.explorar-wallpapers-preview{
+  position: absolute;
+  top: 0;
+  right: 20px;
+  width: 200px;
+  height: 230px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.explorar-preview{
+  position: absolute;
+  overflow: hidden;
+  background: #C6C9E7;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.28);
+}
+
+.explorar-preview img{
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  user-select: none;
+}
+
+.explorar-preview-1{
+  width: 72px;
+  height: 140px;
+  right: 0;
+  top: 45px;
+  border-radius: 16px;
+  z-index: 1;
+}
+
+.explorar-preview-2{
+  width: 80px;
+  height: 150px;
+  right: 35px;
+  top: 40px;
+  border-radius: 16px;
+  z-index: 2;
+}
+
+.explorar-preview-3{
+  width: 90px;
+  height: 170px;
+  right: 85px;
+  top: 30px;
+  border-radius: 20px;
+  z-index: 3;
+}
+
+.explorar-wallpapers-arrow{
+  display: none;
+}
+
+/* NOVIDADES */
+
+.explorar-news-card{
+  width: 100%;
+  min-height: 150px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 22px;
+  padding: 24px;
+  box-sizing: border-box;
+  border-radius: 28px;
+  background: #C6C9E7;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.10);
+}
+
+.explorar-news-icon{
+  width: 95px;
+  height: 95px;
+  flex: 0 0 95px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #363B6C;
+}
+
+.explorar-news-content{
+  min-width: 0;
+}
+
+.explorar-news-content h2{
+  margin: 0;
+  font-size: 24px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: #363B6C;
+}
+
+.explorar-news-content p{
+  margin: 8px 0 0;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #5F6385;
+}
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (max-width: 600px){
+  .explorar-content,
+  .wallpapers-content,
+  .wallpapers-categoria-content {
+    width: calc(100% - 24px);
+    padding-top: 12px;
+  }
+
+  .explorar-content > h1 {
+    margin-bottom: 20px;
+    font-size: 32px;
+  }
+
+  .explorar-wallpapers-card {
+    height: 230px;
+    padding: 22px;
+    border-radius: 30px;
+  }
+
+  .explorar-wallpapers-info {
+    width: 58%;
+  }
+
+  .explorar-wallpapers-preview {
+    right: -30px;
+    transform: scale(0.85);
+    transform-origin: right center;
+  }
+
+  .explorar-news-card {
+    min-height: 0;
+    gap: 14px;
+    margin-top: 22px;
+    padding: 20px;
+    border-radius: 24px;
+  }
+
+  .explorar-news-icon {
+    width: 72px;
+    height: 72px;
+    flex-basis: 72px;
+  }
+
+  .explorar-news-content h2 {
+    font-size: 20px;
+  }
+
+  .explorar-news-content p {
+    font-size: 15px;
+  }
+
+  .wallpapers-back-container {
+    height: 52px;
+    margin-bottom: 8px;
+  }
+
+  .wallpaper-category {
+    margin-bottom: 24px;
+  }
+
+  .wallpaper-category-header {
+    margin-bottom: 10px;
+  }
+
+  .wallpaper-category-header h2 {
+    font-size: 20px;
+  }
+
+  .wallpaper-see-all {
+    font-size: 13px;
+  }
+
+  .wallpaper-horizontal-list {
+    gap: 12px;
+  }
+
+  .wallpaper-item {
+    width: 135px;
+    height: 180px;
+    flex-basis: 135px;
+    border-radius: 22px;
+  }
+
+  .wallpapers-coming-soon {
+    gap: 14px;
+    margin-top: 8px;
+    padding: 20px;
+    border-radius: 24px;
+  }
+
+  .wallpapers-coming-icon {
+    width: 72px;
+    height: 72px;
+    flex-basis: 72px;
+  }
+
+  .wallpapers-coming-content h2 {
+    font-size: 20px;
+  }
+
+  .wallpapers-coming-content p {
+    font-size: 15px;
+  }
+
+  .wallpapers-categoria-header {
+    height: 52px;
+    margin-bottom: 8px;
+  }
+
+  .wallpapers-categoria-header h1 {
+    font-size: 24px;
+  }
+
+  .wallpapers-categoria-grid {
+    gap: 10px;
+  }
+
+  .wallpapers-categoria-item {
+    border-radius: 18px;
+  }
+
+  .wallpaper-detalhe-content {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 92px;
+  }
+
+  .wallpaper-detalhe-back {
+    min-height: 60px;
+  }
+
+  .wallpaper-detalhe-image-wrapper {
+    padding: 10px 15px 18px;
+  }
+
+  .wallpaper-detalhe-image {
+    max-width: 100%;
+    max-height: calc(100vh - 250px);
+    border-radius: 20px;
+  }
+
+  .wallpaper-detalhe-save {
+    width: calc(100% - 30px);
+    min-height: 58px;
+    margin-bottom: 18px;
+  }
 }

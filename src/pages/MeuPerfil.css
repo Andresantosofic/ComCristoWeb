@@ -204,7 +204,7 @@
   width: 250px;
   height: 56px;
 
-  margin-top: 20px;
+  margin-top: px;
 
   border: 0;
   border-radius: 17px;
@@ -723,3 +723,355 @@
     top: 8px;
     left: 10px;
   }
+
+/* =========================================================
+   COM CRISTO — PERFIL
+   AJUSTE VISUAL BASEADO NO XML ANDROID
+   Paleta:
+   fundo_principal  #EAEDFE
+   cor_primaria    #363B6C
+   cor_secundaria  #A8A3E3
+   superficie      #C6C9E7
+   texto_principal #363B6C
+   texto_secundario#5F6385
+========================================================= */
+
+/* PÁGINA */
+.perfil-page {
+  width: 100%;
+  min-height: 100vh;
+  padding-bottom: 96px;
+  background: #EAEDFE;
+  color: #363B6C;
+  box-sizing: border-box;
+}
+
+/* CONTEÚDO */
+.perfil-content {
+  width: 100%;
+  margin: 0;
+  padding: 24px 24px 96px;
+  box-sizing: border-box;
+}
+
+/* BOTÃO VOLTAR */
+.perfil-back-button {
+  top: 12px;
+  left: 14px;
+  background: transparent;
+  color: #363B6C;
+}
+
+.perfil-back-button:hover {
+  background: rgba(168, 163, 227, 0.25);
+}
+
+/* AVATAR */
+.perfil-avatar-wrapper {
+  width: 170px;
+  height: 170px;
+  margin: 10px auto 20px;
+}
+
+.perfil-avatar-ring {
+  width: 170px;
+  height: 170px;
+  padding: 0;
+  background: #A8A3E3;
+  box-sizing: border-box;
+}
+
+.perfil-avatar,
+.perfil-avatar-placeholder {
+  width: 150px;
+  height: 150px;
+}
+
+.perfil-avatar-placeholder {
+  background: #C6C9E7;
+  color: #363B6C;
+}
+
+.perfil-camera-button {
+  right: -1px;
+  bottom: 0;
+  width: 54px;
+  height: 54px;
+  border: 0;
+  background: #363B6C;
+  color: #FFFFFF;
+  box-shadow: 0 4px 10px rgba(54, 59, 108, 0.20);
+}
+
+/* IDENTIDADE */
+.perfil-identidade {
+  margin-top: 0;
+}
+
+.perfil-identidade h1 {
+  color: #363B6C;
+  font-size: 28px;
+  line-height: 1.2;
+}
+
+.perfil-identidade p {
+  margin-top: 8px;
+  color: #5F6385;
+  font-size: 16px;
+  line-height: 1.45;
+}
+
+/* BOTÃO EDITAR */
+.perfil-editar-button {
+  width: 250px;
+  height: 56px;
+  margin-top: 14px;
+  margin-bottom: 28px;
+  border-radius: 18px;
+  background: #363B6C;
+  color: #FFFFFF;
+  font-size: 18px;
+  font-weight: 700;
+  box-shadow: 0 5px 14px rgba(54, 59, 108, 0.18);
+}
+
+/* CARDS */
+.perfil-card {
+  width: 100%;
+  margin-top: 0;
+  margin-bottom: 20px;
+  border-radius: 30px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* TÍTULOS DOS CARDS */
+.perfil-card-title h2 {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.25;
+  font-weight: 700;
+}
+
+.perfil-card-title > span {
+  width: 55px;
+  height: 3px;
+  margin-top: 8px;
+  border-radius: 0;
+  background: #A8A3E3;
+}
+
+/* PROGRESSO ESPIRITUAL */
+.perfil-progresso-card {
+  padding: 24px;
+  background: #363B6C;
+  color: #FFFFFF;
+  border-radius: 30px;
+  box-shadow: 0 5px 14px rgba(54, 59, 108, 0.18);
+}
+
+.perfil-progresso-card .perfil-card-title h2 {
+  color: #FFFFFF;
+}
+
+/* ESTATÍSTICAS */
+.perfil-estatisticas {
+  margin-top: 24px;
+}
+
+.perfil-estatistica strong {
+  color: #A8A3E3;
+  font-size: 24px;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.perfil-estatistica span {
+  margin-top: 10px;
+  color: #FFFFFF;
+  font-size: 14px;
+  line-height: 1.35;
+  opacity: 1;
+}
+
+.perfil-divisor {
+  width: 1px;
+  height: 90px;
+  background: #A8A3E3;
+}
+
+/* INFORMAÇÕES */
+.perfil-info-card {
+  margin-left: 4px;
+  margin-right: 4px;
+  padding: 20px;
+  background: #C6C9E7;
+  border-radius: 30px;
+  box-shadow: 0 2px 6px rgba(54, 59, 108, 0.12);
+}
+
+.perfil-info-card .perfil-card-title h2 {
+  color: #363B6C;
+}
+
+.perfil-info-list {
+  margin-top: 18px;
+}
+
+.perfil-info-row {
+  min-height: 55px;
+  padding: 13px 0;
+  gap: 20px;
+  border-bottom: 1px solid #C6C9E7;
+}
+
+.perfil-info-row span {
+  color: #5F6385;
+  font-size: 13px;
+}
+
+.perfil-info-row strong {
+  color: #363B6C;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+/* MODAL */
+.perfil-modal-overlay {
+  background: rgba(54, 59, 108, 0.48);
+}
+
+.perfil-modal {
+  background: #EAEDFE;
+}
+
+.perfil-modal-header h2 {
+  color: #363B6C;
+}
+
+.perfil-modal-header p {
+  color: #5F6385;
+}
+
+.perfil-modal-close {
+  background: #C6C9E7;
+  color: #363B6C;
+}
+
+/* FORMULÁRIO */
+.perfil-form label > span {
+  color: #363B6C;
+}
+
+.perfil-form input,
+.perfil-form select {
+  background: #C6C9E7;
+  color: #363B6C;
+}
+
+.perfil-form input:focus,
+.perfil-form select:focus {
+  background: #C6C9E7;
+  box-shadow: 0 0 0 3px rgba(168, 163, 227, 0.35);
+}
+
+.perfil-select-wrapper svg {
+  color: #5F6385;
+}
+
+/* BOTÕES DO MODAL */
+.perfil-cancelar {
+  background: #C6C9E7;
+  color: #363B6C;
+}
+
+.perfil-salvar {
+  background: #363B6C;
+  color: #FFFFFF;
+}
+
+/* MOBILE — mantém a estrutura do Android */
+@media (max-width: 600px) {
+  .perfil-content {
+    width: 100%;
+    padding: 24px 24px 96px;
+  }
+
+  .perfil-avatar-wrapper,
+  .perfil-avatar-ring {
+    width: 170px;
+    height: 170px;
+  }
+
+  .perfil-avatar,
+  .perfil-avatar-placeholder {
+    width: 150px;
+    height: 150px;
+  }
+
+  .perfil-camera-button {
+    width: 54px;
+    height: 54px;
+  }
+
+  .perfil-identidade h1 {
+    font-size: 28px;
+  }
+
+  .perfil-identidade p {
+    font-size: 16px;
+  }
+
+  .perfil-editar-button {
+    width: 250px;
+    height: 56px;
+    margin-bottom: 28px;
+    border-radius: 18px;
+    font-size: 18px;
+  }
+
+  .perfil-card {
+    border-radius: 30px;
+    margin-bottom: 20px;
+  }
+
+  .perfil-progresso-card {
+    padding: 24px;
+  }
+
+  .perfil-info-card {
+    padding: 20px;
+    margin-left: 4px;
+    margin-right: 4px;
+  }
+
+  .perfil-estatistica strong {
+    font-size: 24px;
+  }
+
+  .perfil-estatistica span {
+    font-size: 14px;
+  }
+
+  .perfil-info-row span {
+    font-size: 13px;
+  }
+
+  .perfil-info-row strong {
+    font-size: 17px;
+  }
+}
+/* =========================================================
+   MODAL EDITAR PERFIL — FICA ACIMA DA BOTTOM NAVIGATION
+========================================================= */
+
+.perfil-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+}
+
+.perfil-modal {
+  position: relative;
+  z-index: 10000;
+}

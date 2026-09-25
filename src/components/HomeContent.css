@@ -2,6 +2,12 @@
    HOME
 ========================================= */
 
+.home-page {
+  width: 100%;
+  min-height: 100vh;
+  background: #EAEDFE;
+}
+
 .home-content {
   width: 100%;
   max-width: 600px;
@@ -15,7 +21,6 @@
 
   box-sizing: border-box;
 }
-
 
 /* =========================================
    HEADER
@@ -43,9 +48,9 @@
 }
 
 .home-logo {
-  width: min(190px, 100%);
+  width: min(180px, 90%);
   height: auto;
-  max-height: 62px;
+  max-height: 68px;
 
   display: block;
   object-fit: contain;
@@ -80,7 +85,7 @@
   align-items: center;
   justify-content: center;
 
-  color: #1a2240;
+  color: #363B6C;
 
   cursor: pointer;
 
@@ -92,7 +97,7 @@
 
   border-radius: 50%;
 
-  background: #f0f2f6;
+  background: #C6C9E7;
 }
 
 .notification-dot {
@@ -209,12 +214,12 @@
 
   border-radius: 28px;
 
-  background: #1a2240;
+  background: #363B6C;
 
   box-shadow:
     0 3px 9px rgba(0, 0, 0, 0.16);
 
-  color: #e6f1f8;
+  color: #EAEDFE;
 
   box-sizing: border-box;
 }
@@ -230,7 +235,7 @@
 
   width: 4px;
 
-  background: #1677ff;
+  background: #A8A3E3;
 }
 
 .verse-header {
@@ -251,13 +256,13 @@
 
   border-radius: 50%;
 
-  background: #e6f1f8;
+  background: #EAEDFE;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  color: #1a2240;
+  color: #363B6C;
 
   flex-shrink: 0;
 }
@@ -312,7 +317,7 @@
   align-items: center;
   justify-content: center;
 
-  color: #1677ff;
+  color: #A8A3E3;
 
   cursor: pointer;
 
@@ -333,7 +338,7 @@
 }
 
 .verse-action-active {
-  background: #e8f0ff !important;
+  background: #EAEDFE !important;
 }
 
 .verse-share-feedback {
@@ -363,7 +368,7 @@
 
   border-radius: 28px;
 
-  background: #f5f7fa;
+  background: #EAEDFE;
 
   box-shadow:
     0 3px 9px rgba(0, 0, 0, 0.12);
@@ -383,13 +388,13 @@
   font-size: 12px;
   font-weight: 600;
 
-  color: #7b8492;
+  color: #5F6385;
 }
 
 .home-feelings-section h2 {
   margin: 0;
 
-  color: #0f172a;
+  color: #363B6C;
 
   font-size: 16px;
   font-weight: 700;
@@ -478,7 +483,7 @@
   box-shadow:
     0 0 0 3px rgba(31, 94, 255, 0.18);
 
-  border-color: #1f5eff;
+  border-color: #A8A3E3;
 }
 
 
@@ -495,7 +500,7 @@
 
   padding: 18px 48px 18px 18px;
 
-  border: 1px solid #e4e8f0;
+  border: 1px solid #C6C9E7;
   border-radius: 18px;
 
   background: #ffffff;
@@ -516,7 +521,7 @@
   font-size: 11px;
   font-weight: 700;
 
-  color: #1f5eff;
+  color: #A8A3E3;
 
   text-transform: uppercase;
 }
@@ -528,7 +533,7 @@
   line-height: 1.3;
   font-weight: 700;
 
-  color: #111827;
+  color: #363B6C;
 }
 
 .feeling-response p {
@@ -537,7 +542,7 @@
   font-size: 14px;
   line-height: 1.45;
 
-  color: #4b5563;
+  color: #5F6385;
 }
 
 .feeling-response strong {
@@ -547,7 +552,7 @@
 
   font-size: 13px;
 
-  color: #1f5eff;
+  color: #A8A3E3;
 }
 
 .feeling-response-close {
@@ -564,13 +569,13 @@
   border: none;
   border-radius: 50%;
 
-  background: #f1f3f7;
+  background: #EAEDFE;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  color: #6b7280;
+  color: #5F6385;
 
   cursor: pointer;
 
@@ -582,7 +587,7 @@
 
 .feeling-response-close:hover {
   background: #e8ecf3;
-  color: #111827;
+  color: #363B6C;
 }
 
 .feeling-response-close:active {
@@ -615,7 +620,7 @@
 
   border-radius: 30px;
 
-  background: #1a2240;
+  background: #363B6C;
 
   box-shadow:
     0 4px 12px rgba(0, 0, 0, 0.16);
@@ -630,9 +635,9 @@
   background:
     radial-gradient(
       circle at 0% 0%,
-      rgba(30, 91, 255, 0.72) 0%,
-      rgba(30, 91, 255, 0.48) 22%,
-      rgba(30, 91, 255, 0.20) 42%,
+      rgba(168, 163, 227, 0.72) 0%,
+      rgba(168, 163, 227, 0.48) 22%,
+      rgba(168, 163, 227, 0.20) 42%,
       transparent 65%
     );
 
@@ -659,9 +664,9 @@
   inset: 0;
   background: linear-gradient(
     90deg,
-    rgba(0, 31, 92, 1) 0%,
-    rgba(0, 31, 92, 0.9) 50%,
-    rgba(0, 31, 92, 0) 100%
+    rgba(54, 59, 108, 1) 0%,
+    rgba(54, 59, 108, 0.9) 50%,
+    rgba(54, 59, 108, 0) 100%
   );
   border-radius: 30px;
   pointer-events: none;
@@ -741,7 +746,7 @@
 
   background: white;
 
-  color: #1677ff;
+  color: #A8A3E3;
 
   display: flex;
   align-items: center;
@@ -801,11 +806,11 @@
 }
 
 .home-dark-card {
-  background: #1a2240;
+  background: #363B6C;
 }
 
 .home-offers-card {
-  background: #1cc7c1;
+  background: #A8A3E3;
 }
 
 .home-dark-card:hover,
@@ -923,7 +928,7 @@
 
   padding: 22px 20px;
 
-  border-bottom: 1px solid #edf0f5;
+  border-bottom: 1px solid #C6C9E7;
 }
 
 .notifications-eyebrow {
@@ -934,7 +939,7 @@
   font-size: 13px;
   font-weight: 600;
 
-  color: #6b7280;
+  color: #5F6385;
 }
 
 .notifications-header h2 {
@@ -943,7 +948,7 @@
   font-size: 21px;
   font-weight: 700;
 
-  color: #111827;
+  color: #363B6C;
 }
 
 .notifications-close {
@@ -959,9 +964,9 @@
   border: none;
   border-radius: 50%;
 
-  background: #f5f7fa;
+  background: #EAEDFE;
 
-  color: #4b5563;
+  color: #5F6385;
 
   cursor: pointer;
 
@@ -971,8 +976,8 @@
 }
 
 .notifications-close:hover {
-  background: #e9edf3;
-  color: #111827;
+  background: #DDE1F4;
+  color: #363B6C;
 }
 
 
@@ -994,9 +999,9 @@
   border: none;
   border-radius: 10px;
 
-  background: #f1f5ff;
+  background: #EAEDFE;
 
-  color: #1f5eff;
+  color: #A8A3E3;
 
   font-family: inherit;
   font-size: 13px;
@@ -1010,7 +1015,7 @@
 }
 
 .notifications-read-all:hover {
-  background: #e6edff;
+  background: #E1E5FB;
 }
 
 .notifications-read-all:active {
@@ -1045,7 +1050,7 @@
 
   overflow: hidden;
 
-  border: 1px solid #e1e6ef;
+  border: 1px solid #C6C9E7;
   border-radius: 22px;
 
   background: #ffffff;
@@ -1085,7 +1090,7 @@
 
   overflow: hidden;
 
-  background: #eef2f7;
+  background: #EAEDFE;
 }
 
 .notification-banner {
@@ -1135,7 +1140,7 @@
 
   border-radius: 999px;
 
-  background: #1db0b8;
+  background: #A8A3E3;
 
   color: #ffffff;
 
@@ -1190,7 +1195,7 @@
 
   margin: 0;
 
-  color: #17213b;
+  color: #363B6C;
 
   font-size: 22px;
 
@@ -1210,7 +1215,7 @@
 
   border-radius: 50%;
 
-  background: #2864ff;
+  background: #A8A3E3;
 }
 
 
@@ -1220,7 +1225,7 @@
 
 .notification-message {
   margin: 0;
-  color: #667085;
+  color: #5F6385;
   font-size: 15px;
   line-height: 1.55;
   white-space: pre-line;
@@ -1244,7 +1249,7 @@
 
   margin-top: 16px;
 
-  color: #8a94a6;
+  color: #777C9D;
 
   font-size: 12px;
 
@@ -1273,7 +1278,7 @@
 
   border-radius: 10px;
 
-  background: #092d63;
+  background: #363B6C;
 
   color: #ffffff;
 
@@ -1289,7 +1294,7 @@
 }
 
 .notification-button:hover {
-  background: #073a82;
+  background: #2C315C;
 
   transform: translateY(-1px);
 }
@@ -1398,4 +1403,13 @@
   object-fit: cover;
 
   display: block;
+}
+/* =========================================================
+   FUNDO GERAL DA HOME
+========================================================= */
+
+html:has(.home-content),
+body:has(.home-content),
+#root:has(.home-content) {
+  background: #EAEDFE;
 }

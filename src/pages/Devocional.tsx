@@ -57,67 +57,67 @@ const CONFIG_PADRAO: ConfiguracaoDevocional = {
     'COMPARTILHAR DEVOCIONAL',
 
   corFundo:
-    '#FFFFFF',
+    '#EAEDFE',
 
   corTituloTela:
-    '#1A2240',
+    '#363B6C',
 
   corStreak:
-    '#5E6A82',
+    '#5F6385',
 
   corCardTema:
-    '#1A2240',
+    '#363B6C',
 
   corTituloTema:
-    '#FFFFFF',
+    '#EAEDFE',
 
   corTema:
-    '#FFFFFF',
+    '#EAEDFE',
 
   corVersiculo:
-    '#FFFFFF',
+    '#EAEDFE',
 
   corReferencia:
-    '#FFFFFF',
+    '#EAEDFE',
 
   corDivisorTema:
-    '#FFFFFF',
+    '#A8A3E3',
 
   corCardEstudo:
-    '#F5F7FA',
+    '#C6C9E7',
 
   corIconeEstudo:
-    '#1A2240',
+    '#363B6C',
 
   corTituloEstudo:
-    '#1A2240',
+    '#363B6C',
 
   corTextoEstudo:
-    '#2A3342',
+    '#363B6C',
 
   corCardReflexao:
-    '#F5F7FA',
+    '#C6C9E7',
 
   corIconeReflexao:
-    '#1A2240',
+    '#363B6C',
 
   corTituloReflexao:
-    '#1A2240',
+    '#363B6C',
 
   corTextoReflexao:
-    '#2A3342',
+    '#363B6C',
 
   corBotaoFinalizar:
-    '#5AA8F0',
+    '#363B6C',
 
   corTextoBotaoFinalizar:
     '#FFFFFF',
 
   corBotaoCompartilhar:
-    '#E6F1F8',
+    '#A8A3E3',
 
   corTextoBotaoCompartilhar:
-    '#1A2240',
+    '#363B6C',
 }
 
 function obterDataHoje(): Date {

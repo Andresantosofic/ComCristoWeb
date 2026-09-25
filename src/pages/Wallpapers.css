@@ -1,57 +1,64 @@
+/* =========================================================
+   COM CRISTO — WALLPAPERS / CATEGORIAS
+   Web ajustado conforme a referência Android enviada
+   ========================================================= */
+
 .wallpapers-page {
   width: 100%;
   min-height: 100vh;
   padding-bottom: 96px;
   box-sizing: border-box;
-  background: #ffffff;
-  color: #123d67;
+
+  background: #EAEDFE;
+  color: #363B6C;
 }
 
-/* =========================
+/* =========================================================
    CONTEÚDO
-========================= */
+   Android: 20dp nas laterais
+   ========================================================= */
 
 .wallpapers-content {
-  width: min(900px, calc(100% - 40px));
-  margin: 0 auto;
-  padding: 20px 0 30px;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 20px 20px 30px;
   box-sizing: border-box;
 }
 
-/* =========================
+/* =========================================================
    VOLTAR
-========================= */
+   Mantido apenas se existir na implementação Web
+   ========================================================= */
 
 .wallpapers-back-container {
   width: 100%;
-  height: 60px;
+  height: auto;
 
   display: flex;
   align-items: center;
 
-  margin-bottom: 10px;
+  margin-bottom: 16px;
 }
 
 .wallpapers-back {
-  height: 42px;
+  min-height: 42px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
   gap: 8px;
-
   padding: 0 12px;
 
   border: none;
   border-radius: 21px;
 
-  background: #f1f4f8;
-
-  color: #123a63;
+  background: #C6C9E7;
+  color: #363B6C;
 
   font-size: 15px;
-  font-weight: 600;
+  font-weight: 700;
 
   cursor: pointer;
 
@@ -61,7 +68,7 @@
 }
 
 .wallpapers-back:hover {
-  background: #e5eaf0;
+  background: #A8A3E3;
   transform: translateX(-2px);
 }
 
@@ -69,18 +76,18 @@
   transform: scale(0.97);
 }
 
-/* =========================
+/* =========================================================
    CATEGORIA
-========================= */
+   ========================================================= */
 
 .wallpaper-category {
   width: 100%;
   margin-bottom: 26px;
 }
 
-/* =========================
-   CABEÇALHO
-========================= */
+/* =========================================================
+   CABEÇALHO DA CATEGORIA
+   ========================================================= */
 
 .wallpaper-category-header {
   width: 100%;
@@ -100,12 +107,12 @@
 
   font-weight: 700;
 
-  color: #123d67;
+  color: #363B6C;
 }
 
-/* =========================
+/* =========================================================
    VER TUDO
-========================= */
+   ========================================================= */
 
 .wallpaper-see-all {
   display: flex;
@@ -119,7 +126,7 @@
   border: none;
   background: transparent;
 
-  color: #123d67;
+  color: #363B6C;
 
   font-size: 14px;
   font-weight: 700;
@@ -142,15 +149,14 @@
   transform: scale(0.97);
 }
 
-/* =========================
+/* =========================================================
    LISTA HORIZONTAL
-========================= */
+   ========================================================= */
 
 .wallpaper-horizontal-list {
   width: 100%;
 
   display: flex;
-
   gap: 12px;
 
   overflow-x: auto;
@@ -159,7 +165,6 @@
   padding: 2px 0 6px;
 
   scroll-behavior: smooth;
-
   scrollbar-width: none;
 }
 
@@ -167,15 +172,17 @@
   display: none;
 }
 
-/* =========================
-   ITEM WALLPAPER
-   Android: 135 x 180
-========================= */
+/* =========================================================
+   WALLPAPER
+   Android: 135dp x 180dp
+   Radius: 22dp
+   ========================================================= */
 
 .wallpaper-item {
   width: 135px;
   height: 180px;
 
+  min-width: 135px;
   flex: 0 0 135px;
 
   padding: 0;
@@ -185,12 +192,11 @@
   border: none;
   border-radius: 22px;
 
-  background: #e8edf3;
+  background: transparent;
 
   cursor: pointer;
 
-  box-shadow:
-    0 2px 7px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.12);
 
   transition:
     transform 0.2s ease,
@@ -198,21 +204,13 @@
 }
 
 .wallpaper-item:hover {
-  transform: translateY(-3px);
+  transform: translateY(-2px);
 
-  box-shadow:
-    0 6px 14px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.16);
 }
 
 .wallpaper-item:active {
   transform: scale(0.97);
-}
-
-.wallpaper-item:focus-visible,
-.wallpaper-see-all:focus-visible,
-.wallpapers-back:focus-visible {
-  outline: 3px solid rgba(18, 58, 99, 0.3);
-  outline-offset: 3px;
 }
 
 .wallpaper-item img {
@@ -226,10 +224,10 @@
   user-select: none;
 }
 
-/* =========================
-   CARD FINAL
-   Android
-========================= */
+/* =========================================================
+   CARD FINAL / NOVIDADES
+   Superfície Android: #C6C9E7
+   ========================================================= */
 
 .wallpapers-coming-soon {
   width: 100%;
@@ -248,10 +246,9 @@
 
   border-radius: 24px;
 
-  background: #ffffff;
+  background: #C6C9E7;
 
-  box-shadow:
-    0 3px 10px rgba(0, 0, 0, 0.10);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.10);
 }
 
 .wallpapers-coming-icon {
@@ -264,7 +261,7 @@
   align-items: center;
   justify-content: center;
 
-  color: #123d67;
+  color: #363B6C;
 }
 
 .wallpapers-coming-content {
@@ -279,7 +276,7 @@
 
   font-weight: 700;
 
-  color: #123d67;
+  color: #363B6C;
 }
 
 .wallpapers-coming-content p {
@@ -288,12 +285,12 @@
   font-size: 14px;
   line-height: 1.45;
 
-  color: #7d8799;
+  color: #5F6385;
 }
 
-/* =========================
+/* =========================================================
    CARREGANDO
-========================= */
+   ========================================================= */
 
 .wallpapers-loading {
   width: 100%;
@@ -311,22 +308,33 @@
 
   font-size: 15px;
 
-  color: #68758d;
+  color: #5F6385;
 }
 
-/* =========================
+/* =========================================================
+   FOCO ACESSÍVEL
+   ========================================================= */
+
+.wallpaper-item:focus-visible,
+.wallpaper-see-all:focus-visible,
+.wallpapers-back:focus-visible {
+  outline: 3px solid rgba(54, 59, 108, 0.30);
+  outline-offset: 3px;
+}
+
+/* =========================================================
    MOBILE
-========================= */
+   Android continua usando 20dp nas laterais
+   ========================================================= */
 
 @media (max-width: 600px) {
   .wallpapers-content {
-    width: calc(100% - 24px);
-    padding: 12px 0 30px;
+    width: 100%;
+    padding: 20px 20px 30px;
   }
 
   .wallpapers-back-container {
-    height: 52px;
-    margin-bottom: 8px;
+    margin-bottom: 16px;
   }
 
   .wallpaper-category {
@@ -352,6 +360,7 @@
   .wallpaper-item {
     width: 135px;
     height: 180px;
+    min-width: 135px;
     flex-basis: 135px;
 
     border-radius: 22px;

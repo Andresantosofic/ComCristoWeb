@@ -1073,3 +1073,328 @@
     font-size: 15px;
   }
 }
+
+/* =========================================================
+   COM CRISTO — FAVORITOS
+   AJUSTE VISUAL PARA A REFERÊNCIA ANDROID
+   Paleta:
+   fundo_principal  #EAEDFE
+   cor_primaria    #363B6C
+   cor_secundaria  #A8A3E3
+   superficie      #C6C9E7
+   texto_principal #363B6C
+   texto_secundario#5F6385
+
+   Os filtros de marcação permanecem com suas cores próprias.
+========================================================= */
+
+.favoritos-page {
+  background: #EAEDFE;
+  color: #363B6C;
+}
+
+.favoritos-header {
+  max-width: none;
+}
+
+.favoritos-back {
+  background: #C6C9E7;
+  color: #363B6C;
+  box-shadow: 0 2px 7px rgba(54, 59, 108, 0.10);
+}
+
+.favoritos-back:hover {
+  background: #C6C9E7;
+}
+
+.favoritos-header-icon {
+  background: #C6C9E7;
+  color: #363B6C;
+}
+
+.favoritos-header-info h1 {
+  color: #363B6C;
+}
+
+.favoritos-header-info span {
+  color: #5F6385;
+}
+
+
+/* =========================================================
+   BUSCA
+========================================================= */
+
+.favoritos-search {
+  max-width: none;
+  background: #C6C9E7;
+  color: #5F6385;
+  box-shadow: 0 2px 8px rgba(54, 59, 108, 0.08);
+}
+
+.favoritos-search input {
+  color: #363B6C;
+}
+
+.favoritos-search input::placeholder {
+  color: #5F6385;
+}
+
+.favoritos-search-clear {
+  background: #EAEDFE;
+  color: #5F6385;
+}
+
+
+/* =========================================================
+   FILTROS
+========================================================= */
+
+.favoritos-filtros-cores {
+  max-width: none;
+}
+
+.favoritos-filtro {
+  border-color: #C6C9E7;
+  background: #C6C9E7;
+  color: #363B6C;
+}
+
+.favoritos-filtro.active {
+  border-color: #363B6C;
+  background: #363B6C;
+  color: #FFFFFF;
+}
+
+
+/* =========================================================
+   CONTEÚDO / LISTA
+========================================================= */
+
+.favoritos-content {
+  max-width: none;
+}
+
+.favoritos-list {
+  gap: 12px;
+}
+
+
+/* =========================================================
+   CARD DO FAVORITO
+   XML Android:
+   radius 18dp
+   padding 16dp
+========================================================= */
+
+.favoritos-card {
+  padding: 16px;
+
+  border-radius: 18px;
+
+  background: #363B6C;
+  color: #FFFFFF;
+
+  box-shadow:
+    0 2px 6px rgba(54, 59, 108, 0.14);
+}
+
+.favoritos-card:hover {
+  background: #363B6C;
+
+  box-shadow:
+    0 4px 10px rgba(54, 59, 108, 0.18);
+}
+
+
+/* =========================================================
+   REFERÊNCIA
+========================================================= */
+
+.favoritos-reference {
+  color: #FFFFFF;
+}
+
+
+/* =========================================================
+   VERSÃO
+========================================================= */
+
+.favoritos-version {
+  background: #A8A3E3;
+  color: #363B6C;
+}
+
+
+/* =========================================================
+   TEXTO DO VERSÍCULO
+========================================================= */
+
+.favoritos-card-text {
+  color: #FFFFFF;
+
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+
+/* =========================================================
+   RODAPÉ
+========================================================= */
+
+.favoritos-card-bottom {
+  color: #A8A3E3;
+}
+
+
+/* =========================================================
+   ESTADO VAZIO
+========================================================= */
+
+.favoritos-empty {
+  background: #C6C9E7;
+  color: #363B6C;
+
+  box-shadow:
+    0 3px 10px rgba(54, 59, 108, 0.10);
+}
+
+.favoritos-empty-icon {
+  background: #EAEDFE;
+  color: #363B6C;
+}
+
+.favoritos-empty h2 {
+  color: #363B6C;
+}
+
+.favoritos-empty p {
+  color: #5F6385;
+}
+
+.favoritos-empty button {
+  background: #363B6C;
+  color: #FFFFFF;
+}
+
+
+/* =========================================================
+   BOTTOM SHEET
+========================================================= */
+
+.favoritos-bottom-sheet {
+  background: #EAEDFE;
+
+  box-shadow:
+    0 -8px 30px rgba(54, 59, 108, 0.18);
+}
+
+.favoritos-sheet-handle {
+  background: #A8A3E3;
+}
+
+.favoritos-sheet-version {
+  background: #C6C9E7;
+  color: #363B6C;
+}
+
+.favoritos-sheet-header h2 {
+  color: #363B6C;
+}
+
+.favoritos-sheet-close {
+  background: #C6C9E7;
+  color: #363B6C;
+}
+
+.favoritos-sheet-color-info {
+  color: #5F6385;
+}
+
+
+/* =========================================================
+   TEXTO DO BOTTOM SHEET
+========================================================= */
+
+.favoritos-sheet-text {
+  background: #C6C9E7;
+}
+
+.favoritos-sheet-text p {
+  color: #363B6C;
+}
+
+.favoritos-sheet-text p + p {
+  border-top-color: #A8A3E3;
+}
+
+.favoritos-sheet-text strong {
+  color: #363B6C;
+}
+
+
+/* =========================================================
+   BOTÕES
+========================================================= */
+
+.favoritos-button-primary {
+  background: #363B6C;
+  color: #FFFFFF;
+}
+
+.favoritos-button-danger {
+  border-color: #C6C9E7;
+  background: #EAEDFE;
+}
+
+
+/* =========================================================
+   MOBILE — MANTÉM AS PROPORÇÕES DO ANDROID
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .favoritos-page {
+    padding:
+      20px 20px 130px;
+  }
+
+  .favoritos-header {
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+
+  .favoritos-header-icon {
+    width: 58px;
+    height: 58px;
+    flex-basis: 58px;
+  }
+
+  .favoritos-header-info h1 {
+    font-size: 22px;
+  }
+
+  .favoritos-header-info span {
+    font-size: 14px;
+  }
+
+  .favoritos-search {
+    height: 56px;
+    border-radius: 24px;
+    margin-bottom: 16px;
+  }
+
+  .favoritos-card {
+    padding: 16px;
+    border-radius: 18px;
+  }
+
+  .favoritos-reference {
+    font-size: 14px;
+  }
+
+  .favoritos-card-text {
+    font-size: 15px;
+    line-height: 1.55;
+  }
+}

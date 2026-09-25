@@ -1,15 +1,26 @@
+/* =========================================================
+   FEEDBACK — WEB ALINHADO AO ANDROID
+   Paleta:
+   primária      #363B6C
+   fundo         #EAEDFE
+   secundária    #A8A3E3
+   superfície    #C6C9E7
+   texto princ.  #363B6C
+   texto sec.    #5F6385
+========================================================= */
+
 .feedback-page {
   width: 100%;
   min-height: 100vh;
-  padding-bottom: 96px;
-  background: #eaf4ff;
-  color: #111b4d;
+  padding-bottom: 90px;
+  background: #EAEDFE;
+  color: #363B6C;
 }
 
 .feedback-content {
-  width: min(680px, calc(100% - 28px));
+  width: 100%;
   margin: 0 auto;
-  padding: 30px 0 40px;
+  padding: 22px 30px 40px;
 }
 
 /* =========================
@@ -17,52 +28,90 @@
 ========================= */
 
 .feedback-header {
-  margin-bottom: 22px;
-  padding: 0 6px;
+  margin-bottom: 28px;
+  padding: 0;
 }
 
 .feedback-header h1 {
   margin: 0;
-  font-size: 36px;
-  line-height: 1.12;
+  font-size: 34px;
+  line-height: 1.15;
   font-weight: 700;
-  color: #111b4d;
+  color: #363B6C;
+}
+
+.feedback-header p {
+  margin: 8px 0 0;
+  margin-bottom: 0;
+  font-size: 18px;
+  line-height: 1.45;
+  color: #5F6385;
 }
 
 /* =========================
-   CARD PRINCIPAL
+   CARD INFORMATIVO
 ========================= */
 
 .feedback-card {
   width: 100%;
-  padding: 26px 22px 22px;
-  border-radius: 28px;
-  background: #ffffff;
+  margin: 0 4px 24px;
+  padding: 22px;
+  box-sizing: border-box;
+
+  border-radius: 30px;
+  background: #C6C9E7;
+
   box-shadow:
-    0 5px 18px rgba(16, 24, 40, 0.08);
+    0 2px 8px rgba(54, 59, 108, 0.14);
 }
 
 .feedback-card-content {
-  margin-bottom: 25px;
+  margin-bottom: 0;
 }
 
 .feedback-card-content h2 {
   margin: 0;
-  font-size: 22px;
+  font-size: 20px;
   line-height: 1.3;
   font-weight: 700;
-  color: #111b4d;
+  color: #363B6C;
 }
 
 .feedback-card-content p {
   margin: 12px 0 0;
-  font-size: 15px;
-  line-height: 1.6;
-  color: #52657d;
+  font-size: 16px;
+  line-height: 1.55;
+  color: #363B6C;
+}
+
+/* Ícone/imagem do card informativo.
+   Mantém o seletor compatível caso o TSX use uma imagem separada. */
+.feedback-card-image {
+  width: 90px;
+  height: 90px;
+  flex: 0 0 90px;
+  object-fit: contain;
+  margin-right: 18px;
+}
+
+/* Caso o conteúdo interno seja estruturado em linha,
+   como no Android. */
+.feedback-card:first-of-type {
+  display: block;
+}
+
+.feedback-card-info {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.feedback-card-info .feedback-card-image {
+  margin-right: 0;
 }
 
 /* =========================
-   CAMPO
+   CAMPO DE MENSAGEM
 ========================= */
 
 .feedback-label {
@@ -70,51 +119,84 @@
   margin-bottom: 9px;
   font-size: 14px;
   font-weight: 700;
-  color: #344054;
+  color: #363B6C;
 }
 
 .feedback-card textarea {
   display: block;
   width: 100%;
   min-height: 190px;
-  padding: 15px;
+  height: 190px;
+  box-sizing: border-box;
 
-  border: 1px solid #d9dee7;
-  border-radius: 16px;
+  padding: 0;
+
+  border: 0;
+  border-radius: 0;
   outline: none;
 
-  resize: vertical;
+  resize: none;
 
-  background: #f8fafc;
-  color: #17213f;
+  background: transparent;
+  color: #363B6C;
 
   font-family: inherit;
-  font-size: 14px;
-  line-height: 1.55;
-
-  transition:
-    border-color 0.2s ease,
-    box-shadow 0.2s ease,
-    background 0.2s ease;
+  font-size: 21px;
+  line-height: 1.45;
 }
 
 .feedback-card textarea::placeholder {
-  color: #98a2b3;
+  color: #5F6385;
+  opacity: 1;
 }
 
 .feedback-card textarea:focus {
-  border-color: #1769aa;
-  background: #ffffff;
+  border: 0;
+  outline: none;
+  background: transparent;
 
-  box-shadow:
-    0 0 0 3px rgba(23, 105, 170, 0.1);
+  box-shadow: none;
 }
 
 .feedback-counter {
   margin-top: 6px;
   text-align: right;
   font-size: 11px;
-  color: #98a2b3;
+  color: #5F6385;
+}
+
+/* =========================
+   CARD DA MENSAGEM
+========================= */
+
+.feedback-message-card {
+  width: 100%;
+  margin: 0 4px 22px;
+  padding: 22px;
+  box-sizing: border-box;
+
+  border-radius: 30px;
+  background: #C6C9E7;
+
+  box-shadow:
+    0 2px 8px rgba(54, 59, 108, 0.14);
+}
+
+/* Quando o textarea estiver dentro de .feedback-message-card */
+.feedback-message-card textarea {
+  width: 100%;
+  min-height: 190px;
+  height: 190px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: #363B6C;
+  font-size: 21px;
+  line-height: 1.45;
+  resize: none;
+  outline: none;
+  box-shadow: none;
 }
 
 /* =========================
@@ -124,44 +206,50 @@
 .feedback-submit {
   width: 100%;
   min-height: 58px;
-  margin-top: 17px;
+  margin-top: 0;
 
   border: 0;
-  border-radius: 16px;
+  border-radius: 29px;
 
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 9px;
+  gap: 10px;
 
-  background: #042251;
-  color: #ffffff;
+  background: #363B6C;
+  color: #FFFFFF;
 
-  font-size: 14px;
-  font-weight: 800;
-  letter-spacing: 0.3px;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0;
 
   cursor: pointer;
 
   box-shadow:
-    0 5px 14px rgba(4, 34, 81, 0.18);
+    0 4px 10px rgba(54, 59, 108, 0.20);
 
   transition:
-    transform 0.2s ease,
-    filter 0.2s ease,
-    box-shadow 0.2s ease;
+    transform 0.15s ease,
+    filter 0.15s ease,
+    box-shadow 0.15s ease;
 }
 
 .feedback-submit:hover {
-  transform: translateY(-2px);
-  filter: brightness(1.08);
+  transform: translateY(-1px);
+  filter: brightness(1.04);
 
   box-shadow:
-    0 7px 18px rgba(4, 34, 81, 0.23);
+    0 5px 12px rgba(54, 59, 108, 0.24);
 }
 
 .feedback-submit:active {
   transform: scale(0.985);
+}
+
+.feedback-submit:focus-visible {
+  outline: 3px solid rgba(168, 163, 227, 0.65);
+  outline-offset: 2px;
 }
 
 /* =========================
@@ -169,8 +257,8 @@
 ========================= */
 
 .feedback-footer {
-  margin-top: 25px;
-  padding: 18px 15px;
+  margin-top: 28px;
+  padding: 12px 0 0;
 
   display: flex;
   flex-direction: column;
@@ -178,71 +266,22 @@
 
   text-align: center;
 
-  color: #94a3b8;
+  color: #5F6385;
 }
 
 .feedback-footer p {
+  width: 100%;
   max-width: 500px;
-  margin: 9px 0 0;
+  margin: 12px 0 0;
 
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.55;
+  color: #5F6385;
 }
 
 /* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 600px) {
-  .feedback-content {
-    width: calc(100% - 20px);
-    padding-top: 24px;
-  }
-
-  .feedback-header {
-    margin-bottom: 18px;
-    padding: 0 5px;
-  }
-
-  .feedback-header h1 {
-    font-size: 32px;
-  }
-
-  .feedback-card {
-    padding: 22px 16px 17px;
-    border-radius: 24px;
-  }
-
-  .feedback-card-content {
-    margin-bottom: 22px;
-  }
-
-  .feedback-card-content h2 {
-    font-size: 19px;
-  }
-
-  .feedback-card-content p {
-    font-size: 13px;
-    line-height: 1.55;
-  }
-
-  .feedback-card textarea {
-    min-height: 175px;
-    padding: 14px;
-  }
-
-  .feedback-submit {
-    min-height: 56px;
-  }
-
-  .feedback-footer {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-}
-/* =========================================================
    BOTÃO VOLTAR
-========================================================= */
+========================= */
 
 .feedback-header-top {
   display: flex;
@@ -263,13 +302,13 @@
   align-items: center;
   justify-content: center;
 
-  background: #ffffff;
-  color: #042251;
+  background: #C6C9E7;
+  color: #363B6C;
 
   cursor: pointer;
 
   box-shadow:
-    0 3px 10px rgba(16, 24, 40, 0.08);
+    0 2px 7px rgba(54, 59, 108, 0.14);
 
   appearance: none;
   -webkit-appearance: none;
@@ -280,7 +319,7 @@
 }
 
 .feedback-back-button:hover {
-  background: #f7f9fc;
+  background: #A8A3E3;
   transform: translateX(-1px);
 }
 
@@ -289,6 +328,95 @@
 }
 
 .feedback-back-button:focus-visible {
-  outline: 3px solid rgba(4, 34, 81, 0.15);
+  outline: 3px solid rgba(168, 163, 227, 0.65);
   outline-offset: 2px;
+}
+
+/* =========================
+   ESTRUTURA INTERNA DO CARD
+   Compatibilidade com diferentes TSX
+========================= */
+
+.feedback-card > div {
+  box-sizing: border-box;
+}
+
+.feedback-card > div[style*="display"] {
+  color: #363B6C;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+  .feedback-page {
+    padding-bottom: 90px;
+  }
+
+  .feedback-content {
+    width: 100%;
+    padding: 22px 30px 40px;
+  }
+
+  .feedback-header {
+    margin-bottom: 28px;
+  }
+
+  .feedback-header h1 {
+    font-size: 34px;
+  }
+
+  .feedback-header p {
+    font-size: 18px;
+  }
+
+  .feedback-card,
+  .feedback-message-card {
+    margin-left: 4px;
+    margin-right: 4px;
+    width: calc(100% - 8px);
+    padding: 22px;
+    border-radius: 30px;
+  }
+
+  .feedback-card-info {
+    align-items: flex-start;
+  }
+
+  .feedback-card-image {
+    width: 90px;
+    height: 90px;
+    flex-basis: 90px;
+  }
+
+  .feedback-card-content h2 {
+    font-size: 20px;
+  }
+
+  .feedback-card-content p {
+    font-size: 16px;
+    line-height: 1.55;
+  }
+
+  .feedback-card textarea,
+  .feedback-message-card textarea {
+    min-height: 190px;
+    height: 190px;
+    font-size: 21px;
+  }
+
+  .feedback-submit {
+    min-height: 58px;
+    border-radius: 29px;
+    font-size: 18px;
+  }
+
+  .feedback-footer {
+    margin-top: 28px;
+  }
+
+  .feedback-footer p {
+    font-size: 14px;
+  }
 }

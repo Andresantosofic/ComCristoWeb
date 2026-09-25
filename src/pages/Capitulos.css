@@ -1,12 +1,17 @@
+/* ============================================================
+   COM CRISTO — CAPÍTULOS
+   Referência: XML Android enviado
+============================================================ */
+
 .capitulos-page {
   width: 100%;
   min-height: 100vh;
 
   box-sizing: border-box;
 
-  background: #f7f8fc;
+  background: #EAEDFE;
 
-  color: #111827;
+  color: #363B6C;
 
   padding:
     18px
@@ -15,13 +20,16 @@
 }
 
 .capitulos-container {
-  width: min(680px, 100%);
+  width: 100%;
 
   margin: 0 auto;
 }
 
 /* ============================================================
    TOPO
+   Android:
+   padding lateral = 18dp
+   padding superior = 18dp
 ============================================================ */
 
 .capitulos-header {
@@ -29,15 +37,21 @@
 
   width: 100%;
 
-  min-height: 74px;
+  min-height: 60px;
 
   display: flex;
-  align-items: center;
 
+  align-items: center;
   justify-content: center;
 
   margin-bottom: 26px;
 }
+
+/* ============================================================
+   VOLTAR
+   Android:
+   26dp x 26dp
+============================================================ */
 
 .capitulos-back {
   position: absolute;
@@ -52,6 +66,7 @@
   height: 42px;
 
   display: flex;
+
   align-items: center;
   justify-content: center;
 
@@ -59,25 +74,21 @@
 
   border: 0;
 
-  border-radius: 21px;
+  border-radius: 50%;
 
-  background: #ffffff;
+  background: transparent;
 
-  color: #111b4d;
-
-  box-shadow:
-    0 2px 7px rgba(15, 23, 42, 0.08);
+  color: #363B6C;
 
   cursor: pointer;
 
   transition:
-    transform 0.15s ease,
-    box-shadow 0.15s ease;
+    background 0.15s ease,
+    transform 0.15s ease;
 }
 
 .capitulos-back:hover {
-  box-shadow:
-    0 4px 12px rgba(15, 23, 42, 0.12);
+  background: #C6C9E7;
 }
 
 .capitulos-back:active {
@@ -85,6 +96,16 @@
     translateY(-50%)
     scale(0.94);
 }
+
+.capitulos-back:focus-visible {
+  outline: 3px solid rgba(54, 59, 108, 0.30);
+
+  outline-offset: 3px;
+}
+
+/* ============================================================
+   CABEÇALHO — TEXTO
+============================================================ */
 
 .capitulos-header-text {
   text-align: center;
@@ -96,9 +117,9 @@
 .capitulos-header-text h1 {
   margin: 0;
 
-  color: #111827;
+  color: #363B6C;
 
-  font-size: 26px;
+  font-size: 22px;
 
   line-height: 1.15;
 
@@ -107,17 +128,21 @@
 
 .capitulos-header-text p {
   margin:
-    6px 0 0;
+    2px 0 0;
 
-  color: #64748b;
+  color: #5F6385;
 
-  font-size: 14px;
+  font-size: 16px;
 
   line-height: 1.2;
+
+  font-weight: 700;
 }
 
 /* ============================================================
    GRID
+   Android:
+   RecyclerView
 ============================================================ */
 
 .capitulos-grid {
@@ -129,10 +154,12 @@
     repeat(4, minmax(0, 1fr));
 
   gap: 14px;
+
+  padding-bottom: 120px;
 }
 
 /* ============================================================
-   CAPÍTULO
+   CARD DO CAPÍTULO
 ============================================================ */
 
 .capitulo-card {
@@ -141,18 +168,19 @@
   min-height: 82px;
 
   display: flex;
+
   align-items: center;
   justify-content: center;
 
   padding: 0;
 
-  border: 1px solid #eef1f5;
+  border: 0;
 
   border-radius: 20px;
 
-  background: #ffffff;
+  background: #C6C9E7;
 
-  color: #111827;
+  color: #363B6C;
 
   font-family:
     Arial,
@@ -164,7 +192,7 @@
   font-weight: 700;
 
   box-shadow:
-    0 2px 7px rgba(15, 23, 42, 0.045);
+    0 2px 7px rgba(15, 23, 42, 0.08);
 
   cursor: pointer;
 
@@ -177,12 +205,20 @@
 .capitulo-card:hover {
   transform: translateY(-2px);
 
+  background: #A8A3E3;
+
   box-shadow:
-    0 5px 14px rgba(15, 23, 42, 0.09);
+    0 5px 12px rgba(15, 23, 42, 0.12);
 }
 
 .capitulo-card:active {
   transform: scale(0.96);
+}
+
+.capitulo-card:focus-visible {
+  outline: 3px solid rgba(54, 59, 108, 0.30);
+
+  outline-offset: 3px;
 }
 
 /* ============================================================
@@ -199,7 +235,6 @@
   flex-direction: column;
 
   align-items: center;
-
   justify-content: center;
 
   gap: 10px;
@@ -210,11 +245,11 @@
 
   text-align: center;
 
-  color: #64748b;
+  color: #5F6385;
 }
 
 .capitulos-state strong {
-  color: #111b4d;
+  color: #363B6C;
 
   font-size: 18px;
 }
@@ -245,7 +280,7 @@
 
   border-radius: 14px;
 
-  background: #042251;
+  background: #363B6C;
 
   color: #ffffff;
 
@@ -255,10 +290,11 @@
 }
 
 /* ============================================================
-   TABLET
+   MOBILE
 ============================================================ */
 
 @media (max-width: 600px) {
+
   .capitulos-page {
     padding:
       14px
@@ -267,7 +303,7 @@
   }
 
   .capitulos-header {
-    min-height: 68px;
+    min-height: 60px;
 
     margin-bottom: 22px;
   }
@@ -277,16 +313,23 @@
     height: 42px;
   }
 
+  .capitulos-header-text {
+    padding:
+      0 48px;
+  }
+
   .capitulos-header-text h1 {
-    font-size: 24px;
+    font-size: 21px;
   }
 
   .capitulos-header-text p {
-    font-size: 13px;
+    font-size: 15px;
   }
 
   .capitulos-grid {
     gap: 12px;
+
+    padding-bottom: 120px;
   }
 
   .capitulo-card {
@@ -303,6 +346,7 @@
 ============================================================ */
 
 @media (max-width: 380px) {
+
   .capitulos-grid {
     gap: 9px;
   }
@@ -321,6 +365,10 @@
   }
 
   .capitulos-header-text h1 {
-    font-size: 22px;
+    font-size: 20px;
+  }
+
+  .capitulos-header-text p {
+    font-size: 14px;
   }
 }

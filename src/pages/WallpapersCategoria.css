@@ -1,3 +1,8 @@
+/* =========================================================
+   COM CRISTO — WALLPAPERS / CATEGORIA
+   Referência: XML Android enviado
+   ========================================================= */
+
 .wallpapers-categoria-page {
   width: 100%;
   min-height: 100vh;
@@ -6,23 +11,29 @@
 
   box-sizing: border-box;
 
-  background: #ffffff;
-  color: #123d67;
+  background: #EAEDFE;
+  color: #363B6C;
 }
 
+/* =========================================================
+   CONTEÚDO
+   Android: padding 20dp
+   ========================================================= */
+
 .wallpapers-categoria-content {
-  width: min(900px, calc(100% - 40px));
+  width: 100%;
+  margin: 0;
 
-  margin: 0 auto;
-
-  padding: 20px 0 30px;
+  padding: 20px 20px 30px;
 
   box-sizing: border-box;
 }
 
-/* =========================
+/* =========================================================
    CABEÇALHO
-========================= */
+   Android:
+   height = 60dp
+   ========================================================= */
 
 .wallpapers-categoria-header {
   width: 100%;
@@ -33,7 +44,7 @@
 
   gap: 12px;
 
-  margin-bottom: 10px;
+  margin-bottom: 0;
 }
 
 .wallpapers-categoria-header h1 {
@@ -44,12 +55,13 @@
 
   font-weight: 700;
 
-  color: #123d67;
+  color: #363B6C;
 }
 
-/* =========================
+/* =========================================================
    VOLTAR
-========================= */
+   Caso exista no Web
+   ========================================================= */
 
 .wallpapers-categoria-back {
   width: 42px;
@@ -66,9 +78,9 @@
   border: none;
   border-radius: 50%;
 
-  background: #f1f4f8;
+  background: #C6C9E7;
 
-  color: #123a63;
+  color: #363B6C;
 
   cursor: pointer;
 
@@ -78,7 +90,7 @@
 }
 
 .wallpapers-categoria-back:hover {
-  background: #e5eaf0;
+  background: #A8A3E3;
 
   transform: translateX(-2px);
 }
@@ -88,14 +100,14 @@
 }
 
 .wallpapers-categoria-back:focus-visible {
-  outline: 3px solid rgba(18, 58, 99, 0.3);
+  outline: 3px solid rgba(54, 59, 108, 0.3);
   outline-offset: 3px;
 }
 
-/* =========================
+/* =========================================================
    GRID
-   Android: 3 colunas
-========================= */
+   Android: RecyclerView
+   ========================================================= */
 
 .wallpapers-categoria-grid {
   width: 100%;
@@ -106,13 +118,16 @@
     repeat(3, minmax(0, 1fr));
 
   gap: 12px;
+
+  padding-bottom: 90px;
 }
 
-/* =========================
+/* =========================================================
    WALLPAPER
-   Proporção Android:
-   135 x 180
-========================= */
+   Android:
+   135dp x 180dp
+   radius 22dp
+   ========================================================= */
 
 .wallpapers-categoria-item {
   width: 100%;
@@ -126,7 +141,7 @@
   border: 0;
   border-radius: 22px;
 
-  background: #e8edf3;
+  background: transparent;
 
   cursor: pointer;
 
@@ -139,10 +154,10 @@
 }
 
 .wallpapers-categoria-item:hover {
-  transform: translateY(-3px);
+  transform: translateY(-2px);
 
   box-shadow:
-    0 6px 14px rgba(0, 0, 0, 0.18);
+    0 4px 10px rgba(0, 0, 0, 0.16);
 }
 
 .wallpapers-categoria-item:active {
@@ -150,7 +165,7 @@
 }
 
 .wallpapers-categoria-item:focus-visible {
-  outline: 3px solid rgba(18, 58, 99, 0.3);
+  outline: 3px solid rgba(54, 59, 108, 0.30);
   outline-offset: 3px;
 }
 
@@ -165,9 +180,9 @@
   user-select: none;
 }
 
-/* =========================
+/* =========================================================
    CARREGANDO
-========================= */
+   ========================================================= */
 
 .wallpapers-categoria-loading {
   width: 100%;
@@ -185,12 +200,12 @@
 
   font-size: 15px;
 
-  color: #68758d;
+  color: #5F6385;
 }
 
-/* =========================
+/* =========================================================
    CATEGORIA VAZIA
-========================= */
+   ========================================================= */
 
 .wallpapers-categoria-empty {
   min-height: 60vh;
@@ -211,7 +226,7 @@
 
   font-size: 22px;
 
-  color: #123d67;
+  color: #363B6C;
 }
 
 .wallpapers-categoria-empty p {
@@ -219,24 +234,25 @@
 
   font-size: 15px;
 
-  color: #68758d;
+  color: #5F6385;
 }
 
-/* =========================
+/* =========================================================
    MOBILE
-========================= */
+   ========================================================= */
 
 @media (max-width: 600px) {
-  .wallpapers-categoria-content {
-    width: calc(100% - 24px);
 
-    padding: 12px 0 30px;
+  .wallpapers-categoria-content {
+    width: 100%;
+
+    padding: 20px 20px 30px;
   }
 
   .wallpapers-categoria-header {
-    height: 52px;
+    height: 60px;
 
-    margin-bottom: 8px;
+    margin-bottom: 0;
   }
 
   .wallpapers-categoria-header h1 {
@@ -244,10 +260,15 @@
   }
 
   .wallpapers-categoria-grid {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+
     gap: 10px;
+
+    padding-bottom: 90px;
   }
 
   .wallpapers-categoria-item {
-    border-radius: 18px;
+    border-radius: 22px;
   }
 }

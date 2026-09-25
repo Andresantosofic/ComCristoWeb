@@ -2,8 +2,8 @@
   width: 100%;
   min-height: 100vh;
   padding-bottom: 96px;
-  background: #ffffff;
-  color: #111827;
+  background: #EAEDFE;
+  color: #363B6C;
 }
 
 .devocional-header {
@@ -58,7 +58,7 @@
   font-size: 12px;
   line-height: 1.3;
   font-weight: 600;
-  color: #667085;
+  color: #5F6385;
 }
 
 /* ============================================================
@@ -80,11 +80,11 @@
   padding: 7px 3px;
   box-sizing: border-box;
 
-  border: 1px solid #e4e8f0;
+  border: 1px solid #C6C9E7;
   border-radius: 16px;
 
-  background: #ffffff;
-  color: #667085;
+  background: #EAEDFE;
+  color: #5F6385;
 
   display: flex;
   flex-direction: column;
@@ -104,7 +104,7 @@
 
 .devocional-day:hover:not(:disabled) {
   transform: translateY(-2px);
-  border-color: #b8c8f5;
+  border-color: #A8A3E3;
   box-shadow: 0 4px 12px rgba(16, 24, 40, 0.08);
 }
 
@@ -129,13 +129,13 @@
 .devocional-day-month {
   font-size: 9px;
   font-weight: 500;
-  color: #98a2b3;
+  color: #5F6385;
 }
 
 .devocional-day-selected {
-  background: #1a2240;
-  border-color: #1a2240;
-  color: #ffffff;
+  background: #363B6C;
+  border-color: #363B6C;
+  color: #EAEDFE;
   box-shadow: 0 4px 10px rgba(26, 34, 64, 0.18);
   transform: translateY(-1px);
 }
@@ -143,7 +143,7 @@
 .devocional-day-selected .devocional-day-name,
 .devocional-day-selected .devocional-day-number,
 .devocional-day-selected .devocional-day-month {
-  color: #ffffff;
+  color: #EAEDFE;
 }
 
 .devocional-day-disabled {
@@ -152,9 +152,9 @@
 }
 
 .devocional-day-completed {
-  background: #e9f8ef;
-  border-color: #b9e8cc;
-  color: #16834b;
+  background: #EAF7F0;
+  border-color: #B8DFC9;
+  color: #2D8A5A;
 }
 
 .devocional-day-check {
@@ -164,15 +164,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #16834b;
-  color: #ffffff;
+  background: #2D8A5A;
+  color: #EAEDFE;
   flex-shrink: 0;
 }
 
 .devocional-day-selected.devocional-day-completed {
-  background: #1a2240;
-  border-color: #1a2240;
-  color: #ffffff;
+  background: #363B6C;
+  border-color: #363B6C;
+  color: #EAEDFE;
 }
 
 .devocional-day-check svg {
@@ -182,18 +182,18 @@
 }
 
 .devocional-day-selected.devocional-day-completed {
-  background: #1a2240;
-  border-color: #1a2240;
-  color: #ffffff;
+  background: #363B6C;
+  border-color: #363B6C;
+  color: #EAEDFE;
 }
 .devocional-day-selected.devocional-day-completed .devocional-day-check {
-  background: #ffffff;
-  color: #1a2240;
+  background: #EAEDFE;
+  color: #363B6C;
 }
 
 .devocional-day:not(.devocional-day-selected):hover {
   border-color: #c7cedb;
-  background: #f7f9fc;
+  background: #F5F6FD;
   transform: translateY(-2px);
   box-shadow: 0 4px 10px rgba(16, 24, 40, 0.08);
 }
@@ -215,9 +215,9 @@
 .devocional-theme {
   width: 100%;
   box-sizing: border-box;
-  padding: 26px 24px 24px;
+  padding: 24px;
   border-radius: 30px;
-  background: #1a2240;
+  background: #363B6C;
   text-align: center;
   box-shadow: 0 4px 12px rgba(16, 24, 40, 0.12);
 }
@@ -230,6 +230,7 @@
   font-weight: 700;
   letter-spacing: 0.3px;
   text-align: center;
+  color: #EAEDFE;
 }
 
 .devocional-theme h2 {
@@ -238,6 +239,7 @@
   line-height: 1.2;
   font-weight: 700;
   text-align: center;
+  color: #EAEDFE;
 }
 
 .devocional-theme-divider {
@@ -245,6 +247,7 @@
   height: 3px;
   margin: 12px auto 16px;
   border-radius: 3px;
+  background: #A8A3E3;
 }
 
 .devocional-theme-verse {
@@ -253,6 +256,7 @@
   line-height: 1.65;
   font-weight: 400;
   text-align: center;
+  color: #EAEDFE;
 }
 
 .devocional-theme-reference {
@@ -262,6 +266,7 @@
   line-height: 1.3;
   font-weight: 700;
   text-align: center;
+  color: #EAEDFE;
 }
 
 /* ============================================================
@@ -277,7 +282,7 @@
   margin-top: 16px;
   padding: 18px;
   border-radius: 24px;
-  background: #f5f7fa;
+  background: #C6C9E7;
   display: flex;
   align-items: flex-start;
   gap: 16px;
@@ -293,6 +298,8 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  background: #363B6C;
+  color: #FFFFFF;
 }
 
 .devocional-section-icon svg {
@@ -311,7 +318,7 @@
   font-size: 24px;
   line-height: 1.2;
   font-weight: 900;
-  color: #1a2240;
+  color: #363B6C;
 }
 
 .devocional-text {
@@ -323,7 +330,7 @@
   font-size: 16px;
   line-height: 1.65;
   font-weight: 700;
-  color: #2a3342;
+  color: #363B6C;
   opacity: 0.85;
 }
 
@@ -344,13 +351,13 @@
   min-height: 180px;
   padding: 40px 24px;
   border-radius: 24px;
-  background: #f5f7fa;
+  background: #C6C9E7;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: #667085;
+  color: #5F6385;
 }
 
 .devocional-empty p {
@@ -386,8 +393,8 @@
   border: 0;
   border-radius: 28px;
 
-  background: #5aa8f0;
-  color: #ffffff;
+  background: #363B6C;
+  color: #EAEDFE;
 
   display: flex;
   align-items: center;
@@ -424,8 +431,8 @@
 }
 
 .devocional-finish-completed {
-  background: #e9f8ef;
-  color: #16834b;
+  background: #EAF7F0;
+  color: #2D8A5A;
   box-shadow: none;
   cursor: default;
 }
@@ -433,8 +440,8 @@
 .devocional-share-finish-button {
   margin-top: 12px;
   margin-bottom: 40px;
-  background: #e6f1f8;
-  color: #1a2240;
+  background: #EAEDFE;
+  color: #363B6C;
 }
 
 /* ============================================================
@@ -615,7 +622,7 @@
   border-radius: 50%;
 
   background: transparent;
-  color: #042251;
+  color: #363B6C;
 
   cursor: pointer;
 
@@ -625,7 +632,7 @@
 }
 
 .devocional-back-button:hover {
-  background: #e9eef5;
+  background: #C6C9E7;
 }
 
 .devocional-back-button:active {

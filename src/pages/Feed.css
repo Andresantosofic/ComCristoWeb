@@ -1,6 +1,7 @@
 /* =========================================================
-   FEED
-========================================================= */
+   COM CRISTO — FEED
+   Referência: XML Android enviado
+   ========================================================= */
 
 .feed-page {
   width: 100%;
@@ -8,15 +9,18 @@
 
   box-sizing: border-box;
 
-  background: #1a2240;
+  background: #363B6C;
 
   padding-bottom: 90px;
+
+  color: #363B6C;
 }
 
 /* =========================================================
    CABEÇALHO
-   Android: 90dp
-========================================================= */
+   Android:
+   height = 90dp
+   ========================================================= */
 
 .feed-header {
   width: 100%;
@@ -44,13 +48,12 @@
    paddingStart = 16dp
    paddingEnd = 16dp
    paddingBottom = 30dp
-========================================================= */
+   ========================================================= */
 
 .feed-container {
   width: 100%;
-  max-width: 900px;
 
-  margin: 0 auto;
+  margin: 0;
 
   padding: 0 16px 30px;
 
@@ -61,13 +64,14 @@
 }
 
 /* =========================================================
-   CARD
+   CARD DA PUBLICAÇÃO
    Android:
    marginBottom = 16dp
+   background = superficie
    radius = 22dp
-   elevation = 4dp
+   elevation = 3dp
    padding = 16dp
-========================================================= */
+   ========================================================= */
 
 .feed-card {
   width: 100%;
@@ -83,17 +87,17 @@
 
   overflow: hidden;
 
-  background: #ffffff;
+  background: #C6C9E7;
 
   border-radius: 22px;
 
   box-shadow:
-    0 3px 9px rgba(0, 0, 0, 0.18);
+    0 3px 8px rgba(0, 0, 0, 0.18);
 }
 
 /* =========================================================
    AUTOR
-========================================================= */
+   ========================================================= */
 
 .feed-author {
   width: 100%;
@@ -106,8 +110,9 @@
 
 /* =========================================================
    AVATAR
-   Android: 52dp
-========================================================= */
+   Android:
+   52dp x 52dp
+   ========================================================= */
 
 .feed-avatar {
   width: 52px;
@@ -123,7 +128,7 @@
 
   border-radius: 50%;
 
-  background: #092b5c;
+  background: #363B6C;
 }
 
 .feed-avatar img {
@@ -139,7 +144,7 @@
 
 /* =========================================================
    INFORMAÇÕES DO AUTOR
-========================================================= */
+   ========================================================= */
 
 .feed-author-info {
   min-width: 0;
@@ -149,7 +154,7 @@
 }
 
 .feed-author-info strong {
-  color: #123d67;
+  color: #363B6C;
 
   font-size: 15px;
   line-height: 1.2;
@@ -160,7 +165,7 @@
 .feed-author-info span {
   margin-top: 2px;
 
-  color: #68758d;
+  color: #5F6385;
 
   font-size: 12px;
   line-height: 1.2;
@@ -171,14 +176,14 @@
    Android:
    marginTop = 14dp
    textSize = 15sp
-========================================================= */
+   ========================================================= */
 
 .feed-caption {
   width: 100%;
 
   margin: 14px 0 0;
 
-  color: #123d67;
+  color: #363B6C;
 
   font-size: 15px;
 
@@ -196,7 +201,8 @@
    Android:
    marginTop = 14dp
    radius = 18dp
-========================================================= */
+   background = cor_primaria
+   ========================================================= */
 
 .feed-media {
   width: 100%;
@@ -209,18 +215,15 @@
 
   border-radius: 18px;
 
-  background: #17335f;
+  background: #363B6C;
 }
 
 /* =========================================================
-   IMAGEM
-   Android:
-   adjustViewBounds = true
-   scaleType = fitCenter
-========================================================= */
+   CONTAINER DA IMAGEM
+   ========================================================= */
 
 .feed-image-container {
-  background: #17335f;
+  background: #363B6C;
 
   line-height: 0;
 }
@@ -235,13 +238,13 @@
 }
 
 /* =========================================================
-   VÍDEO NORMAL
-========================================================= */
+   VÍDEO
+   ========================================================= */
 
 .feed-video-container {
   width: 100%;
 
-  background: #17335f;
+  background: #363B6C;
 
   line-height: 0;
 }
@@ -252,15 +255,14 @@
 
   display: block;
 
-  background: #17335f;
+  background: #363B6C;
 
   object-fit: contain;
 }
 
 /* =========================================================
    YOUTUBE
-   Android ajusta para 16:9
-========================================================= */
+   ========================================================= */
 
 .feed-youtube-container {
   width: 100%;
@@ -298,7 +300,9 @@
 
 /* =========================================================
    CARREGAMENTO DA MÍDIA
-========================================================= */
+   Android:
+   altura = 220dp
+   ========================================================= */
 
 .feed-media-loading {
   width: 100%;
@@ -312,7 +316,7 @@
 
   padding: 30px;
 
-  background: #17335f;
+  background: #363B6C;
 
   color: #ffffff;
 
@@ -325,8 +329,8 @@
 }
 
 /* =========================================================
-   STATUS DO FEED
-========================================================= */
+   STATUS
+   ========================================================= */
 
 .feed-status {
   width: 100%;
@@ -353,20 +357,11 @@
 }
 
 /* =========================================================
-   TABLET / DESKTOP
-========================================================= */
-
-@media (min-width: 601px) {
-  .feed-container {
-    max-width: 900px;
-  }
-}
-
-/* =========================================================
-   CELULAR
-========================================================= */
+   MOBILE
+   ========================================================= */
 
 @media (max-width: 600px) {
+
   .feed-page {
     padding-bottom: 88px;
   }
@@ -383,17 +378,15 @@
   .feed-container {
     width: 100%;
 
-    max-width: none;
-
     padding: 0 16px 30px;
   }
 
   .feed-card {
     padding: 16px;
 
-    border-radius: 22px;
-
     margin-bottom: 16px;
+
+    border-radius: 22px;
   }
 
   .feed-author {
@@ -421,11 +414,19 @@
   }
 
   .feed-caption {
+    margin-top: 14px;
+
     font-size: 15px;
     line-height: 1.45;
   }
 
   .feed-media {
+    margin-top: 14px;
+
     border-radius: 18px;
+  }
+
+  .feed-media-loading {
+    min-height: 220px;
   }
 }

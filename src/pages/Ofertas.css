@@ -1,9 +1,15 @@
+/* =========================================================
+   OFERTAS — APENAS CORES
+   Estrutura, tamanhos, espaçamentos e comportamento preservados.
+   Cores alinhadas ao XML Android.
+========================================================= */
+
 .ofertas-page {
   width: 100%;
   min-height: 100vh;
   padding-bottom: 96px;
-  background: #ffffff;
-  color: #111111;
+  background: #EAEDFE;
+  color: #363B6C;
 }
 
 .ofertas-content {
@@ -22,8 +28,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #f1f4f8;
-  color: #042251;
+  background: #C6C9E7;
+  color: #363B6C;
   cursor: pointer;
   transition:
     transform 0.2s ease,
@@ -32,7 +38,7 @@
 
 .ofertas-back-button:hover {
   transform: translateY(-2px);
-  background: #e8edf4;
+  background: #A8A3E3;
 }
 
 .ofertas-back-button:active {
@@ -51,7 +57,7 @@
   font-size: 40px;
   line-height: 1.12;
   font-weight: 700;
-  color: #17213f;
+  color: #363B6C;
 }
 
 .ofertas-intro p {
@@ -59,7 +65,7 @@
   margin-top: 9px;
   font-size: 16px;
   line-height: 1.6;
-  color: #17213f;
+  color: #363B6C;
 }
 
 /* CARD PRINCIPAL */
@@ -71,9 +77,9 @@
   align-items: flex-start;
   gap: 22px;
   border-radius: 28px;
-  background: #042251;
+  background: #363B6C;
   box-shadow:
-    0 5px 18px rgba(4, 34, 81, 0.16);
+    0 5px 18px rgba(54, 59, 108, 0.16);
 }
 
 .ofertas-heart {
@@ -83,7 +89,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #ffffff;
+  color: #FFFFFF;
 }
 
 .ofertas-missao-text {
@@ -94,7 +100,7 @@
   margin: 0;
   font-size: 15px;
   line-height: 1.72;
-  color: #ffffff;
+  color: #FFFFFF;
 }
 
 .ofertas-missao-text p + p {
@@ -107,9 +113,9 @@
   margin-top: 24px;
   padding: 24px;
   border-radius: 28px;
-  background: #06295f;
+  background: #A8A3E3;
   box-shadow:
-    0 5px 18px rgba(28, 199, 193, 0.16);
+    0 5px 18px rgba(54, 59, 108, 0.16);
 }
 
 .ofertas-apoio-card h2 {
@@ -118,7 +124,7 @@
   font-size: 21px;
   line-height: 1.2;
   font-weight: 700;
-  color: #ffffff;
+  color: #363B6C;
 }
 
 /* MÉTODO */
@@ -137,7 +143,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #ffffff;
+  color: #363B6C;
 }
 
 .ofertas-metodo-info {
@@ -150,14 +156,14 @@
   font-size: 18px;
   line-height: 1.3;
   font-weight: 700;
-  color: #ffffff;
+  color: #363B6C;
 }
 
 .ofertas-metodo-info p {
   margin: 4px 0 0;
   font-size: 14px;
   line-height: 1.4;
-  color: #ffffff;
+  color: #363B6C;
 }
 
 .ofertas-pix-chave {
@@ -176,8 +182,8 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  background: #ffffff;
-  color: #17213f;
+  background: #FFFFFF;
+  color: #363B6C;
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.3px;
@@ -191,8 +197,8 @@
 .ofertas-action-button:hover {
   transform: translateY(-1px);
   box-shadow:
-    0 4px 12px rgba(0, 0, 0, 0.12);
-  background: #f8fafc;
+    0 4px 12px rgba(54, 59, 108, 0.12);
+  background: #EAEDFE;
 }
 
 .ofertas-action-button:active {
@@ -205,7 +211,7 @@
   margin: 10px 0 0;
   font-size: 13px;
   line-height: 1.55;
-  color: #ffffff;
+  color: #363B6C;
 }
 
 /* DIVISOR */
@@ -214,7 +220,7 @@
   width: 100%;
   height: 1px;
   margin: 22px 0;
-  background: rgba(255, 255, 255, 0.34);
+  background: rgba(54, 59, 108, 0.33);
 }
 
 .ofertas-ou {
@@ -222,7 +228,7 @@
   text-align: center;
   font-size: 15px;
   font-weight: 700;
-  color: #ffffff;
+  color: #363B6C;
 }
 
 /* DIVULGAÇÃO */
@@ -236,8 +242,8 @@
   align-items: center;
   justify-content: center;
   gap: 12px;
-  background: #f1f4f8;
-  color: #17213f;
+  background: #C6C9E7;
+  color: #363B6C;
 }
 
 .ofertas-divulgacao-card svg {
@@ -310,4 +316,5 @@
     text-align: left;
     font-size: 14px;
   }
+
 }
