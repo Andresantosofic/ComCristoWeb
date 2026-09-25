@@ -336,7 +336,7 @@ function Splash({ onFinish }: SplashProps) {
     !erroLogo
       ? logoRemota
       : '/logo_splash.png'
-
+ 
   /*
    * ==========================================================
    * ESTILO DO FUNDO
