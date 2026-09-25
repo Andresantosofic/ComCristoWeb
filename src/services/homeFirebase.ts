@@ -22,6 +22,7 @@ export type AvisoFirebase = {
   cor: string
   botaoTexto: string
   botaoLink: string
+  dataCriacao: number
 }
 
 /* =========================================================
@@ -255,6 +256,17 @@ export function observarAvisos(
               typeof dados.botaoLink === 'string'
                 ? dados.botaoLink
                 : '',
+
+            dataCriacao:
+              typeof dados.dataCriacao?.toMillis === 'function'
+                ? dados.dataCriacao.toMillis()
+                : dados.dataCriacao instanceof Date
+                  ? dados.dataCriacao.getTime()
+                  : typeof dados.dataCriacao === 'number'
+                    ? dados.dataCriacao
+                    : typeof dados.dataCriacao === 'string'
+                      ? new Date(dados.dataCriacao).getTime() || 0
+                      : 0,
           }
         })
         .filter((aviso) => aviso.ativo)

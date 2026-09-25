@@ -1551,36 +1551,123 @@ const [
  * continuem lidos mesmo depois de atualizar
  * ou fechar e abrir a página.
  */
+const ULTIMO_AVISO_LIDO_KEY =
+  'comcristo_ultimo_aviso_lido'
+
+const AVISOS_LIDOS_ANTIGOS_KEY =
+  'comcristo_avisos_lidos'
+
 const [
-  avisosLidos,
-  setAvisosLidos,
-] = useState<string[]>(() => {
-  try {
-    const salvos =
-      localStorage.getItem(
-        'comcristo_avisos_lidos',
-      )
-
-    if (!salvos) {
-      return []
-    }
-
-    const dados =
-      JSON.parse(salvos)
-
-    return Array.isArray(dados)
-      ? dados
-      : []
-
-  } catch {
-    return []
-  }
+  ultimoAvisoLido,
+  setUltimoAvisoLido,
+] = useState<string | null>(() => {
+  return localStorage.getItem(
+    ULTIMO_AVISO_LIDO_KEY,
+  )
 })
 
-  useEffect(() => {
+function obterAvisoMaisRecente(
+  lista: AvisoFirebase[],
+): AvisoFirebase | null {
+
+  const avisosComData =
+    lista.filter(
+      (aviso) =>
+        Number.isFinite(aviso.dataCriacao) &&
+        aviso.dataCriacao > 0,
+    )
+
+  if (avisosComData.length === 0) {
+    return null
+  }
+
+  return avisosComData.reduce(
+    (maisRecente, avisoAtual) =>
+      avisoAtual.dataCriacao >
+      maisRecente.dataCriacao
+        ? avisoAtual
+        : maisRecente,
+  )
+}
+
+useEffect(() => {
   const unsubscribe =
     observarAvisos(
       (avisosFirebase) => {
+
+        const avisoMaisRecente =
+          obterAvisoMaisRecente(
+            avisosFirebase,
+          )
+
+        if (!avisoMaisRecente) {
+          setUltimoAvisoLido(
+            localStorage.getItem(
+              ULTIMO_AVISO_LIDO_KEY,
+            ),
+          )
+
+          setAvisos(
+            avisosFirebase.map(
+              (aviso) => ({
+                ...aviso,
+                lido: true,
+              }),
+            ),
+          )
+
+          return
+        }
+
+        let ultimoLido =
+          localStorage.getItem(
+            ULTIMO_AVISO_LIDO_KEY,
+          )
+
+        /*
+         * MIGRAÇÃO:
+         *
+         * A versão anterior guardava uma lista
+         * de IDs em comcristo_avisos_lidos.
+         *
+         * Se o aviso mais recente já estiver
+         * nessa lista, usamos esse ID como
+         * último aviso lido.
+         */
+        if (!ultimoLido) {
+          try {
+            const antigos =
+              localStorage.getItem(
+                AVISOS_LIDOS_ANTIGOS_KEY,
+              )
+
+            if (antigos) {
+              const idsAntigos =
+                JSON.parse(antigos)
+
+              if (
+                Array.isArray(idsAntigos) &&
+                idsAntigos.includes(
+                  avisoMaisRecente.id,
+                )
+              ) {
+                ultimoLido =
+                  avisoMaisRecente.id
+
+                localStorage.setItem(
+                  ULTIMO_AVISO_LIDO_KEY,
+                  ultimoLido,
+                )
+              }
+            }
+          } catch {
+            // Ignora dados antigos inválidos.
+          }
+        }
+
+        setUltimoAvisoLido(
+          ultimoLido,
+        )
 
         setAvisos(
           avisosFirebase.map(
@@ -1588,13 +1675,14 @@ const [
               ...aviso,
 
               /*
-               * O aviso será considerado lido
-               * se o ID estiver salvo no localStorage.
+               * Somente o aviso mais recente
+               * pode ser considerado novo.
                */
               lido:
-                avisosLidos.includes(
-                  aviso.id,
-                ),
+                aviso.id !==
+                  avisoMaisRecente.id ||
+                ultimoLido ===
+                  avisoMaisRecente.id,
             }),
           ),
         )
@@ -1609,13 +1697,17 @@ const [
     )
 
   return () => unsubscribe()
+}, [])
 
-}, [avisosLidos])
+  const avisoMaisRecente =
+    obterAvisoMaisRecente(avisos)
 
   const quantidadeAvisosNaoLidos =
-    avisos.filter(
-      (aviso) => !aviso.lido,
-    ).length
+    avisoMaisRecente &&
+    ultimoAvisoLido !==
+      avisoMaisRecente.id
+      ? 1
+      : 0
 
   function abrirAvisos() {
     setAvisosAbertos(true)
@@ -1629,85 +1721,56 @@ const [
   id: string,
 ) {
 
-  setAvisosLidos(
-    (idsAtuais) => {
+  /*
+   * Somente o aviso mais recente controla
+   * o estado da bolinha.
+   */
+  if (
+    !avisoMaisRecente ||
+    id !== avisoMaisRecente.id
+  ) {
+    return
+  }
 
-      /*
-       * Se já estiver lido,
-       * não fazemos nada.
-       */
-      if (
-        idsAtuais.includes(id)
-      ) {
-        return idsAtuais
-      }
-
-      const novosIds = [
-        ...idsAtuais,
-        id,
-      ]
-
-      /*
-       * Salva permanentemente no navegador.
-       */
-      localStorage.setItem(
-        'comcristo_avisos_lidos',
-        JSON.stringify(
-          novosIds,
-        ),
-      )
-
-      return novosIds
-    },
+  localStorage.setItem(
+    ULTIMO_AVISO_LIDO_KEY,
+    avisoMaisRecente.id,
   )
 
-  /*
-   * Atualiza imediatamente a interface,
-   * sem precisar esperar o listener.
-   */
+  setUltimoAvisoLido(
+    avisoMaisRecente.id,
+  )
+
   setAvisos(
     (avisosAtuais) =>
       avisosAtuais.map(
-        (aviso) =>
-          aviso.id === id
-            ? {
-                ...aviso,
-                lido: true,
-              }
-            : aviso,
+        (aviso) => ({
+          ...aviso,
+          lido:
+            aviso.id !==
+              avisoMaisRecente.id ||
+            aviso.id ===
+              avisoMaisRecente.id,
+        }),
       ),
   )
 }
 
   function marcarTodosComoLidos() {
 
-  setAvisosLidos(
-    (idsAtuais) => {
+  if (!avisoMaisRecente) {
+    return
+  }
 
-      const novosIds = Array.from(
-        new Set([
-          ...idsAtuais,
-          ...avisos.map(
-            (aviso) =>
-              aviso.id,
-          ),
-        ]),
-      )
-
-      localStorage.setItem(
-        'comcristo_avisos_lidos',
-        JSON.stringify(
-          novosIds,
-        ),
-      )
-
-      return novosIds
-    },
+  localStorage.setItem(
+    ULTIMO_AVISO_LIDO_KEY,
+    avisoMaisRecente.id,
   )
 
-  /*
-   * Atualiza imediatamente a interface.
-   */
+  setUltimoAvisoLido(
+    avisoMaisRecente.id,
+  )
+
   setAvisos(
     (avisosAtuais) =>
       avisosAtuais.map(
